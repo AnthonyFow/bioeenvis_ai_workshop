@@ -5,21 +5,21 @@ project:
 website:
   title: "AI for Ecotoxicologists"
   description: "FRB-CESAB AI Toolkit Restitution - FR BioEEnViS"
-  site-url: "https://gitlab.in2p3.fr/anthony.fow/bioeenvis_ai_workshop.git"
+  site-url: [https://anthony.fow.gitlab.io/bioeenvis_ai_workshop](https://anthony.fow.gitlab.io/bioeenvis_ai_workshop)
   navbar:
     background: "#006F7A" # LBBE Teal
     left:
       - href: index.qmd
         text: Home
-      - href: 01_philosophy-seminar.qmd
+      - href: 01_philosophy_seminar.qmd
         text: "WS1: AI Philosophy"
-      - href: 02_technical-workshop.qmd
+      - href: 02_technical_workshop.qmd
         text: "WS2: Tech Case Study"
       - href: 03_references.qmd
         text: References
     right:
       - icon: gitlab
-        href: https://gitlab.in2p3.fr/anthony.fow/bioeenvis_ai_workshop.git
+        href: [https://gitlab.in2p3.fr/anthony.fow/bioeenvis_ai_workshop](https://gitlab.in2p3.fr/anthony.fow/bioeenvis_ai_workshop)
 
 format:
   html:
