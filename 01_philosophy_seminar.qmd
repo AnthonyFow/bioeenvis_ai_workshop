@@ -1,0 +1,93 @@
+---
+title: "Philosophy of AI, Cognitive Guardrails, and ML Foundations"
+subtitle: "FR BioEEnViS Restitution - FRB-CESAB AI Toolkit"
+author: "Anthony Fow Esteves"
+institute: "LBBE / INRAE RiverLy"
+format: 
+  revealjs:
+    theme: default
+    transition: fade
+    slide-number: true
+    chalkboard: true
+---
+
+# Introduction
+
+## The Epistemic Risk
+* We are rapidly adopting Generative AI and automated data-analysis tools in ecological research.
+* **The Danger:** Cognitive proletarianization (Stiegler). The progressive loss of *savoir-faire* and methodological metacognition as we externalize our analytical capabilities to algorithms.
+* **The Illusion of Understanding:** Highly fluent AI outputs often mask a complete lack of mechanistic grounding, leading to scientific monocultures (Messeri & Crockett, 2024).
+* **The Goal:** To move from prompting *"Do X"* to *"Teach me how to do X"*. 
+
+## Interactive Checkpoint 1
+<!-- Wooclap Integration: Embed your Wooclap Word Cloud link or QR code here -->
+**In one word, what is the biggest risk of AI in scientific research?**
+*(Please answer on the screen)*
+
+# Section 1: The AI Universe
+
+## Defining the Taxonomy
+* AI is not a monolith. It historically divides into two distinct paradigms:
+* **Wave 1: Automated Reasoning (Symbolic AI)**
+  * *Mechanism:* Logic, explicit rules, constraint programming.
+  * *Strengths:* Highly interpretable, deductive, mathematically verifiable.
+  * *Weaknesses:* Brittle, cannot learn from noisy data.
+* **Wave 2: Automated Learning (Machine/Deep Learning)**
+  * *Mechanism:* Gradient descent, distributed representation, neural networks.
+  * *Strengths:* Exceptional pattern recognition in unstructured data.
+  * *Weaknesses:* Data-hungry, opaque "black boxes".
+
+## The Curse of High Dimensionality
+* Why do we need Automated Learning?
+* As dimensions (variables) increase, traditional metrics of Euclidean "distance" become meaningless.
+* ML algorithms map data into lower intrinsic dimensionality (e.g., PCA, UMAP) to identify nearest neighbors and patterns invisible to human perception.
+
+# Section 2: Machine Learning Foundations
+
+## Breiman's Two Cultures (2001)
+* **The Data Modeling Culture (Classical Statistics):**
+  * Assumes nature follows a knowable stochastic process (e.g., GLMMs, ANOVAs).
+  * Focuses on inference, $p$-values, and parameter estimation.
+* **The Algorithmic Modeling Culture (Machine Learning):**
+  * Assumes nature's black box is too complex for simple parametric equations.
+  * Treats the model as $\hat{y} = f(x)$.
+  * Focuses entirely on **predictive accuracy** via cross-validation, not goodness-of-fit.
+
+## Interactive Checkpoint 2
+<!-- Wooclap Integration: Embed your Wooclap Multiple Choice link or QR code here -->
+**Be honest: Over the last month, how have you primarily used Generative AI?**
+A) Search engine (finding facts)
+B) Coder (writing scripts for me)
+C) Editor (fixing grammar)
+D) Tutor (explaining concepts)
+
+# Section 3: The Methodological Trap
+
+## The "Black Box" Dilemma
+* Deep Learning excels at perceptual tasks (e.g., Google Alpha Earth embeddings for species distribution).
+* **The Problem:** It is functionally impossible to trace the exact chain of logic from input to output. 
+* "The algorithm predicted it" is an insufficient rationale for environmental policy or ecotoxicological thresholds.
+
+## Rudin's Mandate (2019)
+* For structured, tabular data, there is rarely a trade-off between interpretability and accuracy. 
+* We must stop using opaque deep learning models with flawed post-hoc explanations (like SHAP) for high-stakes decisions.
+* **The Solution:** Prioritize inherently interpretable machine learning models (Sparse Decision Trees, Random Forests) where domain experts can audit the logic.
+
+## The CESAB Takeaway
+* You cannot jump straight into Deep Learning or Symbolic AI.
+* **The Workflow:** 
+  1. Exhaust traditional exploratory data analysis (RDA, Spearman).
+  2. Implement interpretable ML (Random Forests) to audit feature importance.
+  3. Only deploy complex DL/Symbolic AI when biologically justified.
+
+# Conclusion
+
+## Next Steps
+* This was the philosophical foundation. 
+* **Upcoming: Inter-Teams Technical Workshop**
+  * We will apply this exact workflow to my PhD thesis.
+  * Topic: Using Random Forests for sensitivity audits on 216 OECD survival datasets for GUTS modeling.
+
+## Interactive Checkpoint 3 & Q&A
+<!-- Wooclap Integration: Embed your Wooclap Q&A link or QR code here -->
+**What specific AI/ML challenge do you want to see addressed in the technical workshop?**
