@@ -1,0 +1,93 @@
+[
+  {
+    "objectID": "01_philosophy_seminar.html#why-am-i-here",
+    "href": "01_philosophy_seminar.html#why-am-i-here",
+    "title": "Philosophy of AI, Cognitive Guardrails, and ML Foundations",
+    "section": "Why am I here?",
+    "text": "Why am I here?\n\nThe Goal: Bridge the gap between classical ecotoxicology and modern Artificial Intelligence.\nThe Funding: Supported by the FR BioEEnViS Mobility Grant (2026).\nThe Training: AI for Ecologists: A Toolkit (FRB-CESAB, Montpellier).\nThe Deliverable: Two knowledge-transfer workshops.\n\nToday: AI Philosophy & Foundations.\nNext Week: Technical Case Study (ML applied to GUTS modeling)."
+  },
+  {
+    "objectID": "01_philosophy_seminar.html#the-cesab-experience",
+    "href": "01_philosophy_seminar.html#the-cesab-experience",
+    "title": "Philosophy of AI, Cognitive Guardrails, and ML Foundations",
+    "section": "The CESAB Experience",
+    "text": "The CESAB Experience\n\n5 days of intensive training bridging R to Python.\nCovered the full spectrum: from Automated Reasoning to Deep Species Distribution Models.\nMy primary realization: You cannot jump straight into Deep Learning without first understanding the underlying philosophy and statistical friction."
+  },
+  {
+    "objectID": "01_philosophy_seminar.html#the-epistemic-risk",
+    "href": "01_philosophy_seminar.html#the-epistemic-risk",
+    "title": "Philosophy of AI, Cognitive Guardrails, and ML Foundations",
+    "section": "The Epistemic Risk",
+    "text": "The Epistemic Risk\n\nWe are rapidly adopting Generative AI and automated data-analysis tools in ecological research.\nThe Danger: Cognitive proletarianization (Stiegler). The progressive loss of savoir-faire and methodological metacognition as we externalize our analytical capabilities to algorithms.\nThe Illusion of Understanding: Highly fluent AI outputs often mask a complete lack of mechanistic grounding, leading to scientific monocultures (Messeri & Crockett, 2024).\nThe Goal: To move from prompting “Do X” to “Teach me how to do X”."
+  },
+  {
+    "objectID": "01_philosophy_seminar.html#interactive-checkpoint-1",
+    "href": "01_philosophy_seminar.html#interactive-checkpoint-1",
+    "title": "Philosophy of AI, Cognitive Guardrails, and ML Foundations",
+    "section": "Interactive Checkpoint 1",
+    "text": "Interactive Checkpoint 1\nIn one word, what is the biggest risk of AI in scientific research?"
+  },
+  {
+    "objectID": "01_philosophy_seminar.html#defining-the-taxonomy",
+    "href": "01_philosophy_seminar.html#defining-the-taxonomy",
+    "title": "Philosophy of AI, Cognitive Guardrails, and ML Foundations",
+    "section": "Defining the Taxonomy",
+    "text": "Defining the Taxonomy\n\nAI is not a monolith. It historically divides into two distinct paradigms:\nWave 1: Automated Reasoning (Symbolic AI)\n\nMechanism: Logic, explicit rules, constraint programming.\nStrengths: Highly interpretable, deductive, mathematically verifiable.\nWeaknesses: Brittle, cannot learn from noisy data.\n\nWave 2: Automated Learning (Machine/Deep Learning)\n\nMechanism: Gradient descent, distributed representation, neural networks.\nStrengths: Exceptional pattern recognition in unstructured data.\nWeaknesses: Data-hungry, opaque “black boxes”."
+  },
+  {
+    "objectID": "01_philosophy_seminar.html#the-curse-of-high-dimensionality",
+    "href": "01_philosophy_seminar.html#the-curse-of-high-dimensionality",
+    "title": "Philosophy of AI, Cognitive Guardrails, and ML Foundations",
+    "section": "The Curse of High Dimensionality",
+    "text": "The Curse of High Dimensionality\n\n\nWhy do we need Automated Learning?\nAs variables increase, traditional metrics of Euclidean “distance” become meaningless.\nML algorithms map data into lower intrinsic dimensionality (e.g., PCA, UMAP).\nThis identifies patterns completely invisible to human perception."
+  },
+  {
+    "objectID": "01_philosophy_seminar.html#breimans-two-cultures-2001",
+    "href": "01_philosophy_seminar.html#breimans-two-cultures-2001",
+    "title": "Philosophy of AI, Cognitive Guardrails, and ML Foundations",
+    "section": "Breiman’s Two Cultures (2001)",
+    "text": "Breiman’s Two Cultures (2001)\n\nThe Data Modeling Culture (Classical Statistics):\n\nAssumes nature follows a knowable stochastic process (e.g., GLMMs, ANOVAs).\nFocuses on inference, \\(p\\)-values, and parameter estimation.\n\nThe Algorithmic Modeling Culture (Machine Learning):\n\nAssumes nature’s black box is too complex for simple parametric equations.\nTreats the model as \\(\\hat{y} = f(x)\\).\nFocuses entirely on predictive accuracy via cross-validation, not goodness-of-fit."
+  },
+  {
+    "objectID": "01_philosophy_seminar.html#interactive-checkpoint-2",
+    "href": "01_philosophy_seminar.html#interactive-checkpoint-2",
+    "title": "Philosophy of AI, Cognitive Guardrails, and ML Foundations",
+    "section": "Interactive Checkpoint 2",
+    "text": "Interactive Checkpoint 2\n\nBe honest: Over the last month, how have you primarily used Generative AI? A) Search engine (finding facts) B) Coder (writing scripts for me) C) Editor (fixing grammar) D) Tutor (explaining concepts)"
+  },
+  {
+    "objectID": "01_philosophy_seminar.html#the-black-box-dilemma",
+    "href": "01_philosophy_seminar.html#the-black-box-dilemma",
+    "title": "Philosophy of AI, Cognitive Guardrails, and ML Foundations",
+    "section": "The “Black Box” Dilemma",
+    "text": "The “Black Box” Dilemma\n\nDeep Learning excels at perceptual tasks (e.g., Google Alpha Earth embeddings for species distribution).\nThe Problem: It is functionally impossible to trace the exact chain of logic from input to output.\n“The algorithm predicted it” is an insufficient rationale for environmental policy or ecotoxicological thresholds."
+  },
+  {
+    "objectID": "01_philosophy_seminar.html#rudins-mandate-2019",
+    "href": "01_philosophy_seminar.html#rudins-mandate-2019",
+    "title": "Philosophy of AI, Cognitive Guardrails, and ML Foundations",
+    "section": "Rudin’s Mandate (2019)",
+    "text": "Rudin’s Mandate (2019)\n\nFor structured, tabular data, there is rarely a trade-off between interpretability and accuracy.\nWe must stop using opaque deep learning models with flawed post-hoc explanations (like SHAP) for high-stakes decisions.\nThe Solution: Prioritize inherently interpretable machine learning models (Sparse Decision Trees, Random Forests) where domain experts can audit the logic."
+  },
+  {
+    "objectID": "01_philosophy_seminar.html#the-cesab-takeaway",
+    "href": "01_philosophy_seminar.html#the-cesab-takeaway",
+    "title": "Philosophy of AI, Cognitive Guardrails, and ML Foundations",
+    "section": "The CESAB Takeaway",
+    "text": "The CESAB Takeaway\n\nYou cannot jump straight into Deep Learning or Symbolic AI.\nThe Workflow:\n\nExhaust traditional exploratory data analysis (RDA, Spearman).\nImplement interpretable ML (Random Forests) to audit feature importance.\nOnly deploy complex DL/Symbolic AI when biologically justified."
+  },
+  {
+    "objectID": "01_philosophy_seminar.html#next-steps",
+    "href": "01_philosophy_seminar.html#next-steps",
+    "title": "Philosophy of AI, Cognitive Guardrails, and ML Foundations",
+    "section": "Next Steps",
+    "text": "Next Steps\n\nThis was the philosophical foundation.\nUpcoming: Inter-Teams Technical Workshop\n\nWe will apply this exact workflow to my PhD thesis.\nTopic: Using Random Forests for sensitivity audits on 216 OECD survival datasets for GUTS modeling."
+  },
+  {
+    "objectID": "01_philosophy_seminar.html#interactive-checkpoint-3-qa",
+    "href": "01_philosophy_seminar.html#interactive-checkpoint-3-qa",
+    "title": "Philosophy of AI, Cognitive Guardrails, and ML Foundations",
+    "section": "Interactive Checkpoint 3 & Q&A",
+    "text": "Interactive Checkpoint 3 & Q&A\n\nWhat specific AI/ML challenge do you want to see addressed in the technical workshop?"
+  }
+]
