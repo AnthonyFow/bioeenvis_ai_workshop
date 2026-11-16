@@ -16,7 +16,7 @@ format:
 # Context: The BioEEnViS Mobility Grant
 
 ## Why am I here?
-* **The Goal:** Bridge the gap between classical ecotoxicology and modern Artificial Intelligence.
+* **The Goal:**  Bridge the gap between classical ecotoxicology and modern Artificial Intelligence.
 * **The Funding:** Supported by the FR BioEEnViS Mobility Grant (2026).
 * **The Training:** *AI for Ecologists: A Toolkit* (FRB-CESAB, Montpellier).
 * **The Deliverable:** Two knowledge-transfer workshops.
