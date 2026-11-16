@@ -6,10 +6,27 @@ institute: "LBBE / INRAE RiverLy"
 format: 
   revealjs:
     theme: default
-    transition: fade
-    slide-number: true
+    transition: slide
+    background-transition: fade
+    slide-number: c/t
     chalkboard: true
+    logo: "assets/images/logos/LBBE_LOGO_color.png"
 ---
+
+# Context: The BioEEnViS Mobility Grant
+
+## Why am I here?
+* **The Goal:** Bridge the gap between classical ecotoxicology and modern Artificial Intelligence.
+* **The Funding:** Supported by the FR BioEEnViS Mobility Grant (2026).
+* **The Training:** *AI for Ecologists: A Toolkit* (FRB-CESAB, Montpellier).
+* **The Deliverable:** Two knowledge-transfer workshops.
+  1. Today: AI Philosophy & Foundations.
+  2. Next Week: Technical Case Study (ML applied to GUTS modeling).
+
+## The CESAB Experience
+* 5 days of intensive training bridging R to Python.
+* Covered the full spectrum: from Automated Reasoning to Deep Species Distribution Models.
+* **My primary realization:** You cannot jump straight into Deep Learning without first understanding the underlying philosophy and statistical friction.
 
 # Introduction
 
@@ -20,9 +37,8 @@ format:
 * **The Goal:** To move from prompting *"Do X"* to *"Teach me how to do X"*. 
 
 ## Interactive Checkpoint 1
-<!-- Wooclap Integration: Embed your Wooclap Word Cloud link or QR code here -->
 **In one word, what is the biggest risk of AI in scientific research?**
-*(Please answer on the screen)*
+<iframe src="https://app.sli.do/event/[EVENT_CODE]" width="100%" height="500px" style="border:none;"></iframe>
 
 # Section 1: The AI Universe
 
@@ -38,9 +54,12 @@ format:
   * *Weaknesses:* Data-hungry, opaque "black boxes".
 
 ## The Curse of High Dimensionality
+::: {.incremental}
 * Why do we need Automated Learning?
-* As dimensions (variables) increase, traditional metrics of Euclidean "distance" become meaningless.
-* ML algorithms map data into lower intrinsic dimensionality (e.g., PCA, UMAP) to identify nearest neighbors and patterns invisible to human perception.
+* As variables increase, traditional metrics of Euclidean "distance" become meaningless.
+* ML algorithms map data into lower intrinsic dimensionality (e.g., PCA, UMAP).
+* This identifies patterns completely invisible to human perception.
+:::
 
 # Section 2: Machine Learning Foundations
 
@@ -54,7 +73,7 @@ format:
   * Focuses entirely on **predictive accuracy** via cross-validation, not goodness-of-fit.
 
 ## Interactive Checkpoint 2
-<!-- Wooclap Integration: Embed your Wooclap Multiple Choice link or QR code here -->
+<!-- Wooclap Integration -->
 **Be honest: Over the last month, how have you primarily used Generative AI?**
 A) Search engine (finding facts)
 B) Coder (writing scripts for me)
@@ -89,5 +108,5 @@ D) Tutor (explaining concepts)
   * Topic: Using Random Forests for sensitivity audits on 216 OECD survival datasets for GUTS modeling.
 
 ## Interactive Checkpoint 3 & Q&A
-<!-- Wooclap Integration: Embed your Wooclap Q&A link or QR code here -->
+<!-- Wooclap Integration -->
 **What specific AI/ML challenge do you want to see addressed in the technical workshop?**

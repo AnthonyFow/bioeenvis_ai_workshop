@@ -5,9 +5,9 @@ project:
 website:
   title: "AI for Ecotoxicologists"
   description: "FRB-CESAB AI Toolkit Restitution - FR BioEEnViS"
-  site-url: [https://github.com/AnthonyFow/bioeenvis_ai_workshop.git](https://github.com/AnthonyFow/bioeenvis_ai_workshop.git)
+  site-url: "https://AnthonyFow.github.io/bioeenvis_ai_workshop"
   navbar:
-    background: "#006F7A" # LBBE Teal
+    background: "#006F7A"
     left:
       - href: index.qmd
         text: Home
@@ -18,8 +18,8 @@ website:
       - href: 03_references.qmd
         text: References
     right:
-      - icon: gitlab
-        href: [https://github.com/AnthonyFow/bioeenvis_ai_workshop.git](https://github.com/AnthonyFow/bioeenvis_ai_workshop.git)
+      - icon: github
+        href: "https://github.com/AnthonyFow/bioeenvis_ai_workshop"
 
 format:
   html:
