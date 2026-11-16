@@ -9,16 +9,16 @@
   {
     "objectID": "01_philosophy_seminar.html#the-cesab-experience",
     "href": "01_philosophy_seminar.html#the-cesab-experience",
-    "title": "Philosophy of AI, Cognitive Guardrails, and ML Foundations",
+    "title": "Let’s Talk About AI",
     "section": "The CESAB Experience",
-    "text": "The CESAB Experience\n\n5 days of intensive training bridging R to Python.\nCovered the full spectrum: from Automated Reasoning to Deep Species Distribution Models.\nMy primary realization: You cannot jump straight into Deep Learning without first understanding the underlying philosophy and statistical friction."
+    "text": "The CESAB Experience\n“The objective is to give participants the autonomy to assess which algorithms are most adapted to their own research questions.” - ai-ecol.github.io\n\n\n\n1. AI &gt; Generative Chatbots Raising awareness: AI is not just ChatGPT. We must understand the taxonomy (ML vs. DL vs. Symbolic) to know what we are actually using.\n\n\n2. The Baseline Primes Our ecological and statistical background is the foundation of explainability. The algorithm does not replace biological plausibility.\n\n\n\n\n3. Exhaust Traditional Methods We do not jump to neural networks immediately. We must exhaust classical statistical exploratory data analysis before bringing in Machine Learning.\n\n\n4. The Trade-Off We must constantly balance gaining predictive power against losing mechanistic explainability (the “black box” effect)."
   },
   {
     "objectID": "01_philosophy_seminar.html#the-epistemic-risk",
     "href": "01_philosophy_seminar.html#the-epistemic-risk",
-    "title": "Philosophy of AI, Cognitive Guardrails, and ML Foundations",
+    "title": "Let’s Talk About AI",
     "section": "The Epistemic Risk",
-    "text": "The Epistemic Risk\n\nWe are rapidly adopting Generative AI and automated data-analysis tools in ecological research.\nThe Danger: Cognitive proletarianization (Stiegler). The progressive loss of savoir-faire and methodological metacognition as we externalize our analytical capabilities to algorithms.\nThe Illusion of Understanding: Highly fluent AI outputs often mask a complete lack of mechanistic grounding, leading to scientific monocultures (Messeri & Crockett, 2024).\nThe Goal: To move from prompting “Do X” to “Teach me how to do X”."
+    "text": "The Epistemic Risk\nThe rapid adoption of AI introduces a systemic risk: the illusion of understanding.\n\n\n\n\nCognitive Proletarianization: When we externalize analytical reasoning to an algorithm, we risk losing our own savoir-faire and methodological metacognition.\nThe Ecotox Danger: If we rely solely on AI “black boxes” or LLMs to generate our models, we risk losing our grasp on the mechanistic biology and statistical assumptions driving those predictions.\nScientific Monocultures: Highly fluent AI outputs often mask a complete lack of epistemic grounding, standardizing research into a monoculture.\nThe Solution: We must shift from prompting “Do X” to “Teach me how to do X”.\n\n\n\n\n\n[Insert Impactful Plot/Statistic here: e.g., BCG consultant study on AI deskilling, or a graph showing the rise of retracted AI-generated papers]\n\n\n\n\nReferences: Stiegler, B. (2010). For a New Critique of Political Economy. Polity Press. Messeri, L., & Crockett, M. J. (2024). Artificial intelligence and illusions of understanding in scientific research. Nature, 627(8002), 49–58. https://doi.org/10.1038/s41586-024-07146-0"
   },
   {
     "objectID": "01_philosophy_seminar.html#interactive-checkpoint-1",
@@ -37,9 +37,9 @@
   {
     "objectID": "01_philosophy_seminar.html#the-curse-of-high-dimensionality",
     "href": "01_philosophy_seminar.html#the-curse-of-high-dimensionality",
-    "title": "Philosophy of AI, Cognitive Guardrails, and ML Foundations",
+    "title": "Let’s Talk About AI",
     "section": "The Curse of High Dimensionality",
-    "text": "The Curse of High Dimensionality\n\n\nWhy do we need Automated Learning?\nAs variables increase, traditional metrics of Euclidean “distance” become meaningless.\nML algorithms map data into lower intrinsic dimensionality (e.g., PCA, UMAP).\nThis identifies patterns completely invisible to human perception."
+    "text": "The Curse of High Dimensionality\nWhy do we actually need Automated Learning in modern ecology?\n\n\n\nWhen Classical Statistics Break\n\n\nAs variables (dimensions) increase, the mathematical volume grows exponentially.\n\n\nTraditional metrics of Euclidean “distance” become meaningless.\n\n\nThe concept of the “interior” of a dataset is lost; everything is far away from everything else.\n\n\n\n\n\n\n→\n\n\n\n\nThe ML Solution: Dimensionality Reduction\n\n\nData with no intrinsic lower dimensionality is just random noise.\n\n\nML algorithms (like PCA or UMAP) map massive datasets into a lower intrinsic dimensionality.\n\n\nThe Result: We identify biological patterns and nearest neighbors that are completely invisible to human perception.\n\n\n\n\n\n\n\n[Insert Plot: E.g., The CESAB slide showing 3D points mapped to a 2D manifold]"
   },
   {
     "objectID": "01_philosophy_seminar.html#breimans-two-cultures-2001",
@@ -51,9 +51,9 @@
   {
     "objectID": "01_philosophy_seminar.html#interactive-checkpoint-2",
     "href": "01_philosophy_seminar.html#interactive-checkpoint-2",
-    "title": "Philosophy of AI, Cognitive Guardrails, and ML Foundations",
+    "title": "Let’s Talk About AI",
     "section": "Interactive Checkpoint 2",
-    "text": "Interactive Checkpoint 2\n\nBe honest: Over the last month, how have you primarily used Generative AI? A) Search engine (finding facts) B) Coder (writing scripts for me) C) Editor (fixing grammar) D) Tutor (explaining concepts)"
+    "text": "Interactive Checkpoint 2\n\n\nLet’s assess our current ecosystem…"
   },
   {
     "objectID": "01_philosophy_seminar.html#the-black-box-dilemma",
@@ -89,5 +89,54 @@
     "title": "Philosophy of AI, Cognitive Guardrails, and ML Foundations",
     "section": "Interactive Checkpoint 3 & Q&A",
     "text": "Interactive Checkpoint 3 & Q&A\n\nWhat specific AI/ML challenge do you want to see addressed in the technical workshop?"
+  },
+  {
+    "objectID": "01_philosophy_seminar.html#section",
+    "href": "01_philosophy_seminar.html#section",
+    "title": "Let’s Talk About AI",
+    "section": "",
+    "text": "Let’s start with a quick scan…\n\n\n\nWhat is the very first thing you think of when someone mentions Artificial Intelligence? 🤖"
+  },
+  {
+    "objectID": "01_philosophy_seminar.html#the-bioeenvis-grant",
+    "href": "01_philosophy_seminar.html#the-bioeenvis-grant",
+    "title": "Let’s Talk About AI",
+    "section": "The BioEEnViS Grant",
+    "text": "The BioEEnViS Grant\n\n\n\nThe Goal: Bridging the Gap\n\n\nMy PhD requires integrating Machine Learning to optimize the experimental design of 216 OECD datasets for mechanistic (GUTS) modeling.\n\n\nTo do this safely, I required specialized, external methodological training to properly bring AI into ecotoxicology.\n\n\n\n\n\n\n+\n\n\n\n\nThe Resource\n\n\nFRB-CESAB (Montpellier): “AI for Ecologists: A Toolkit” (June 2026).\n\n\n\n\n[Insert CESAB Logo / Screenshot here]\n\n\n\n\n\n\nSpecial thanks to the local LBBE/Bioinformatique pole event (AI4Biomed) for helping me build the baseline vocabulary prior to this mobility."
+  },
+  {
+    "objectID": "01_philosophy_seminar.html#the-bioeenvis-mandate",
+    "href": "01_philosophy_seminar.html#the-bioeenvis-mandate",
+    "title": "Let’s Talk About AI",
+    "section": "The BioEEnViS Mandate",
+    "text": "The BioEEnViS Mandate\n\n\n\nThe Goal: Bridging the Gap\n\n\nMy PhD requires exploring Machine Learning to optimize complex experimental designs for mechanistic modeling.\n\n\nTo do this safely, I required specialized, external methodological training to properly understand how to bring AI into ecotoxicology.\n\n\n\n\n\n\n+\n\n\n\n\nThe Resource\n\n\nFRB-CESAB (Montpellier): “AI for Ecologists: A Toolkit” (June 2026).\n\n\n\n\n[Insert CESAB Logo / Website Screenshot here]\n\n\n\n\n\n\nSpecial thanks to the local LBBE/Bioinformatique pole event (AI4Biomed) for helping me build the baseline vocabulary prior to this mobility."
+  },
+  {
+    "objectID": "01_philosophy_seminar.html#ai-is-not-a-monolith",
+    "href": "01_philosophy_seminar.html#ai-is-not-a-monolith",
+    "title": "Let’s Talk About AI",
+    "section": "AI is Not a Monolith",
+    "text": "AI is Not a Monolith\n“The objective is to give participants the autonomy to assess which algorithms are most adapted to their own research questions.”\n\n\n\nAutomated Reasoning (Symbolic AI) * The Mechanism: Logic, explicit rules, constraint programming. * The Ecologist’s View: Like an automated taxonomic key. Highly interpretable, deductively guaranteed, but very brittle with noisy data.\n\n\n\n\nvs.\n\n\n\n\nAutomated Learning (Machine Learning & Deep Learning) * The Mechanism: Finding patterns in data via loss functions and gradient descent. * The Subsets: * Machine Learning: Random Forests, SVMs, PCA. * Deep Learning: Neural Networks (requires massive data, acts as a “Black Box”). * The Ecologist’s View: Exceptional for recognizing patterns in unstructured data, but lacks causal guarantees."
+  },
+  {
+    "objectID": "01_philosophy_seminar.html#the-two-cultures-the-trade-off",
+    "href": "01_philosophy_seminar.html#the-two-cultures-the-trade-off",
+    "title": "Let’s Talk About AI",
+    "section": "The Two Cultures & The Trade-Off",
+    "text": "The Two Cultures & The Trade-Off\nThe transition to AI requires a philosophical shift in how we approach our data.\n\n\n\nThe Data Modeling Culture (Classical Statistics)\n\n\nAssumes nature follows a knowable, predefined stochastic process (e.g., GLMMs, ANOVAs).\n\n\nFocus: Inference, \\(p\\)-values, and parameter estimation.\n\n\nAdvantage: Complete explainability.\n\n\n\n\n\n\nvs.\n\n\n\n\nThe Algorithmic Modeling Culture (Machine Learning)\n\n\nAssumes nature is too complex for simple parametric equations.\n\n\nFocus: Pure predictive accuracy via out-of-sample testing.\n\n\nAdvantage: Handles vast, complex interactions.\n\n\n\n\n\n\nThe Core Warning: Never sacrifice your biological baseline. “The algorithm predicted it” is an insufficient rationale for environmental science. You must understand when to trade explainability for predictive accuracy.\n\n\nReference: Breiman, L. (2001). Statistical modeling: The two cultures. Statistical Science, 16(3), 199–231."
+  },
+  {
+    "objectID": "01_philosophy_seminar.html#take-home-messages-next-steps",
+    "href": "01_philosophy_seminar.html#take-home-messages-next-steps",
+    "title": "Let’s Talk About AI",
+    "section": "Take-Home Messages & Next Steps",
+    "text": "Take-Home Messages & Next Steps\n\n\n\n\nAI is a Toolkit, Not Magic: Understand the taxonomy before you deploy the algorithm.\n\n\nAvoid the Epistemic Trap: Maintain your methodological metacognition. Do not let generative tools think for you.\n\n\nThe Baseline Primes: In ecotoxicology, biological plausibility and mechanistic explainability must guide the machine.\n\n\nNext Week: The Technical Workshop. We will move from philosophy to application, using this exact perspective to audit mechanistic models.\n\n\n\n\n\nQuestions about the AI Toolkit?Let’s discuss!"
+  },
+  {
+    "objectID": "01_philosophy_seminar.html#section-1",
+    "href": "01_philosophy_seminar.html#section-1",
+    "title": "Let’s Talk About AI",
+    "section": "",
+    "text": "Thanks!\n\n\n\n\n\n[Insert LBBE Logo here]\n\n\n\n\n\n[Insert INRAE Logo here]\n\n\n\n\nMade in Quarto made with ❤️"
   }
 ]

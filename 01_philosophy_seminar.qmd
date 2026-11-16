@@ -1,112 +1,342 @@
 ---
-title: "Philosophy of AI, Cognitive Guardrails, and ML Foundations"
-subtitle: "FR BioEEnViS Restitution - FRB-CESAB AI Toolkit"
-author: "Anthony Fow Esteves"
-institute: "LBBE / INRAE RiverLy"
-format: 
+title: "Let's Talk About AI"
+subtitle: "Restitution of the FRB-CESAB AI Toolkit - FR BioEEnViS"
+author: "**Anthony Fow Esteves**"
+institute: "<span style='font-size: 0.8em;'> LBBE-UCB Lyon 1 (UMR CNRS 5558) | Ecotox - INRAE </span>"
+format:
   revealjs:
-    theme: default
-    transition: slide
-    background-transition: fade
-    slide-number: c/t
-    chalkboard: true
-    logo: "assets/images/logos/LBBE_LOGO_color.png"
+    theme: [default, assets/css/custom.scss]
+    transition: fade 
+    slide-number: true
+    chalkboard: false
+    hash: false
+    history: false
+    embed-resources: true
+    width: 1280
+    height: 720
+    include-in-header: 
+      text: |
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;700&display=swap');
+        
+        * { box-sizing: border-box; }
+        .reveal { font-family: 'Inter', sans-serif; background: #e9ecef; }
+        .reveal h1, .reveal h2, .reveal h3 { font-family: 'Space Grotesk', sans-serif; color: #005a8c; margin-top: 0; margin-bottom: 15px;}
+        .reveal h2 { font-size: 1.5em; }
+
+        .reveal .title-slide { background-color: #005a8c; color: white;}
+        .reveal .title-slide h1 { color: #ffffff; font-size: 3.2em; font-weight: 700; line-height: 1.1;}
+        .reveal .title-slide .subtitle { color: #00a3a6; font-size: 1.5em; font-weight: 600; margin-bottom: 40px;}
+        .reveal .title-slide p { color: #e9ecef; font-size: 1.1em;}
+        
+        .box-grey { background-color: #f1f3f5; padding: 15px 20px; border-left: 6px solid #adb5bd; border-radius: 4px; font-size: 0.85em; margin-bottom: 15px; }
+        .box-teal { background-color: #e6f6f6; padding: 15px 20px; border-left: 6px solid #00a3a6; border-radius: 4px; font-size: 0.85em; margin-bottom: 15px; }
+        .box-red { background-color: #fdf0f0; padding: 15px 20px; border-left: 6px solid #e53935; border-radius: 4px; font-size: 0.85em; margin-bottom: 15px; }
+        
+        .flex-row { display: flex; gap: 24px; width: 100%; height: auto; min-height: 0; align-items: stretch; }
+        .flex-col { display: flex; flex-direction: column; flex: 1; min-width: 0; min-height: 0; }
+        .flex-2 { flex: 2; }
+        .center-content { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; }
+        
+        .reveal p, .reveal li { font-size: 0.85em; line-height: 1.4; margin-bottom: 10px; }
+        .plot-placeholder { background-color: #ffffff; border: 3px dashed #ced4da; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #6c757d; width: 100%; flex: 1; font-weight: 600; padding: 15px; text-align: center; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05);}
+        </style>
 ---
 
-# Context: The BioEEnViS Mobility Grant
+## {.center}
 
-## Why am I here?
-* **The Goal:**  Bridge the gap between classical ecotoxicology and modern Artificial Intelligence.
-* **The Funding:** Supported by the FR BioEEnViS Mobility Grant (2026).
-* **The Training:** *AI for Ecologists: A Toolkit* (FRB-CESAB, Montpellier).
-* **The Deliverable:** Two knowledge-transfer workshops.
-  1. Today: AI Philosophy & Foundations.
-  2. Next Week: Technical Case Study (ML applied to GUTS modeling).
+::: {.center-content}
+<h2 style="font-size: 2em; margin-bottom: 40px;">Let's start with a quick scan...</h2>
 
-## The CESAB Experience
-* 5 days of intensive training bridging R to Python.
-* Covered the full spectrum: from Automated Reasoning to Deep Species Distribution Models.
-* **My primary realization:** You cannot jump straight into Deep Learning without first understanding the underlying philosophy and statistical friction.
+::: {.fragment .fade-in-then-semi-out style="margin-top: 30px;"}
+<h3> What is the <span style="color: rgb(10, 10, 10);">very first thing</span> you think of when someone mentions <span style="color: rgb(10, 10, 10);">Artificial Intelligence</span>? 🤖</h3>
+:::
 
-# Introduction
+::: {.fragment .box-teal style="margin-top: 50px; transform: scale(1.1); font-weight: bold;"}
+<!-- SLIDO ICEBREAKER WORD CLOUD GOES HERE -->
+<iframe src="https://app.sli.do/event/[YOUR_EVENT_CODE_HERE]" width="100%" height="400px" style="border:none;"></iframe>
+:::
+:::
 
-## The Epistemic Risk
-* We are rapidly adopting Generative AI and automated data-analysis tools in ecological research.
-* **The Danger:** Cognitive proletarianization (Stiegler). The progressive loss of *savoir-faire* and methodological metacognition as we externalize our analytical capabilities to algorithms.
-* **The Illusion of Understanding:** Highly fluent AI outputs often mask a complete lack of mechanistic grounding, leading to scientific monocultures (Messeri & Crockett, 2024).
-* **The Goal:** To move from prompting *"Do X"* to *"Teach me how to do X"*. 
 
-## Interactive Checkpoint 1
-**In one word, what is the biggest risk of AI in scientific research?**
-<iframe src="https://app.sli.do/event/[EVENT_CODE]" width="100%" height="500px" style="border:none;"></iframe>
+## The BioEEnViS Mandate {.smaller}
+
+::: {.flex-row}
+
+::: {.flex-col}
+::: {.box-teal style="flex: 1; display: flex; flex-direction: column;"}
+**The Goal: Bridging the Gap**
+<ul>
+  <li>My PhD requires exploring **Machine Learning** to optimize complex experimental designs for mechanistic modeling.</li>
+  <li>To do this safely, I required specialized, external methodological training to properly understand how to bring AI into ecotoxicology.</li>
+</ul>
+:::
+:::
+
+::: {.flex-col style="flex: 0.15; align-items: center; justify-content: center;"}
+<h2 style="margin: 0; color: #6c757d;">+</h2>
+:::
+
+::: {.flex-col}
+::: {.box-grey style="flex: 1; display: flex; flex-direction: column;"}
+**The Resource**
+<ul>
+  <li>**FRB-CESAB (Montpellier):** *"AI for Ecologists: A Toolkit"* (June 2026).</li>
+</ul>
+
+::: {.flex-row style="justify-content: center; margin-top: 15px;"}
+<div class="plot-placeholder" style="padding: 5px;">[Insert CESAB Logo / Website Screenshot here]</div>
+:::
+
+:::
+:::
+
+:::
+
+<div style="font-size: 0.6em; text-align: center; margin-top: 20px; line-height: 1.2; color: #6c757d;">
+*Special thanks to the local LBBE/Bioinformatique pole event (AI4Biomed) for helping me build the baseline vocabulary prior to this mobility.*
+</div>
+
+
+## The CESAB Experience {.smaller}
+*“The objective is to give participants the autonomy to assess which algorithms are most adapted to their own research questions.”* - ai-ecol.github.io
+
+::: {.flex-row style="margin-top: 20px;"}
+
+::: {.flex-col}
+::: {.fragment .box-grey}
+**1. AI > Generative Chatbots**<br>
+Raising awareness: AI is not just ChatGPT. We must understand the taxonomy (ML vs. DL vs. Symbolic) to know what we are actually using.
+:::
+
+::: {.fragment .box-red}
+**2. The Baseline Primes**<br>
+Our ecological and statistical background is the foundation of explainability. The algorithm does not replace biological plausibility.
+:::
+:::
+
+::: {.flex-col}
+::: {.fragment .box-teal}
+**3. Exhaust Traditional Methods**<br>
+We do not jump to neural networks immediately. We must exhaust classical statistical exploratory data analysis before bringing in Machine Learning.
+:::
+
+::: {.fragment .box-grey}
+**4. The Trade-Off**<br>
+We must constantly balance gaining predictive power against losing mechanistic explainability (the "black box" effect).
+:::
+:::
+
+:::
+
+
+## The Epistemic Risk {.smaller}
+The rapid adoption of AI introduces a systemic risk: **the illusion of understanding.**
+
+::: {.flex-row}
+::: {.flex-col .flex-2}
+::: {.incremental}
+- **Cognitive Proletarianization:** When we externalize analytical reasoning to an algorithm, we risk losing our own *savoir-faire* and methodological metacognition.
+- **The Ecotox Danger:** If we rely solely on AI "black boxes" or LLMs to generate our models, we risk losing our grasp on the mechanistic biology and statistical assumptions driving those predictions.
+- **Scientific Monocultures:** Highly fluent AI outputs often mask a complete lack of epistemic grounding, standardizing research into a monoculture.
+- **The Solution:** We must shift from prompting *"Do X"* to *"Teach me how to do X"*.
+:::
+:::
+
+::: {.flex-col .fragment}
+<div class="plot-placeholder" style="height: 100%;">
+[Insert Impactful Plot/Statistic here: e.g., BCG consultant study on AI deskilling, or a graph showing the rise of retracted AI-generated papers]
+</div>
+:::
+:::
+
+<div style="font-size: 0.6em; text-align: left; margin-top: 20px; line-height: 1.2; color: #6c757d;">
+*References:*<br>
+Stiegler, B. (2010). For a New Critique of Political Economy. Polity Press.<br>
+Messeri, L., & Crockett, M. J. (2024). Artificial intelligence and illusions of understanding in scientific research. *Nature, 627*(8002), 49–58. https://doi.org/10.1038/s41586-024-07146-0
+</div>
+
 
 # Section 1: The AI Universe
 
-## Defining the Taxonomy
-* AI is not a monolith. It historically divides into two distinct paradigms:
-* **Wave 1: Automated Reasoning (Symbolic AI)**
-  * *Mechanism:* Logic, explicit rules, constraint programming.
-  * *Strengths:* Highly interpretable, deductive, mathematically verifiable.
-  * *Weaknesses:* Brittle, cannot learn from noisy data.
-* **Wave 2: Automated Learning (Machine/Deep Learning)**
-  * *Mechanism:* Gradient descent, distributed representation, neural networks.
-  * *Strengths:* Exceptional pattern recognition in unstructured data.
-  * *Weaknesses:* Data-hungry, opaque "black boxes".
+## AI is Not a Monolith {.smaller}
+*“The objective is to give participants the autonomy to assess which algorithms are most adapted to their own research questions.”*
 
-## The Curse of High Dimensionality
-::: {.incremental}
-* Why do we need Automated Learning?
-* As variables increase, traditional metrics of Euclidean "distance" become meaningless.
-* ML algorithms map data into lower intrinsic dimensionality (e.g., PCA, UMAP).
-* This identifies patterns completely invisible to human perception.
+::: {.flex-row style="margin-top: 20px;"}
+
+::: {.flex-col}
+::: {.box-grey style="height: 100%;"}
+**Automated Reasoning (Symbolic AI)**<br>
+*   **The Mechanism:** Logic, explicit rules, constraint programming.
+*   **The Ecologist's View:** Like an automated taxonomic key. Highly interpretable, deductively guaranteed, but very brittle with noisy data.
+:::
 :::
 
-# Section 2: Machine Learning Foundations
+::: {.flex-col style="flex: 0.15; align-items: center; justify-content: center;"}
+<h2 style="margin: 0; color: #6c757d;">vs.</h2>
+:::
 
-## Breiman's Two Cultures (2001)
-* **The Data Modeling Culture (Classical Statistics):**
-  * Assumes nature follows a knowable stochastic process (e.g., GLMMs, ANOVAs).
-  * Focuses on inference, $p$-values, and parameter estimation.
-* **The Algorithmic Modeling Culture (Machine Learning):**
-  * Assumes nature's black box is too complex for simple parametric equations.
-  * Treats the model as $\hat{y} = f(x)$.
-  * Focuses entirely on **predictive accuracy** via cross-validation, not goodness-of-fit.
+::: {.flex-col .flex-2}
+::: {.box-teal style="height: 100%;"}
+**Automated Learning (Machine Learning & Deep Learning)**<br>
+*   **The Mechanism:** Finding patterns in data via loss functions and gradient descent.
+*   **The Subsets:** 
+    *   *Machine Learning:* Random Forests, SVMs, PCA.
+    *   *Deep Learning:* Neural Networks (requires massive data, acts as a "Black Box").
+*   **The Ecologist's View:** Exceptional for recognizing patterns in unstructured data, but lacks causal guarantees.
+:::
+:::
 
-## Interactive Checkpoint 2
-<!-- Wooclap Integration -->
-**Be honest: Over the last month, how have you primarily used Generative AI?**
-A) Search engine (finding facts)
-B) Coder (writing scripts for me)
-C) Editor (fixing grammar)
-D) Tutor (explaining concepts)
+:::
 
-# Section 3: The Methodological Trap
 
-## The "Black Box" Dilemma
-* Deep Learning excels at perceptual tasks (e.g., Google Alpha Earth embeddings for species distribution).
-* **The Problem:** It is functionally impossible to trace the exact chain of logic from input to output. 
-* "The algorithm predicted it" is an insufficient rationale for environmental policy or ecotoxicological thresholds.
+## Interactive Checkpoint 2 {.smaller}
 
-## Rudin's Mandate (2019)
-* For structured, tabular data, there is rarely a trade-off between interpretability and accuracy. 
-* We must stop using opaque deep learning models with flawed post-hoc explanations (like SHAP) for high-stakes decisions.
-* **The Solution:** Prioritize inherently interpretable machine learning models (Sparse Decision Trees, Random Forests) where domain experts can audit the logic.
+::: {.center-content}
+<h3 style="margin-bottom: 30px;">Let's assess our current ecosystem...</h3>
 
-## The CESAB Takeaway
-* You cannot jump straight into Deep Learning or Symbolic AI.
-* **The Workflow:** 
-  1. Exhaust traditional exploratory data analysis (RDA, Spearman).
-  2. Implement interpretable ML (Random Forests) to audit feature importance.
-  3. Only deploy complex DL/Symbolic AI when biologically justified.
+::: {.box-grey style="width: 80%; transform: scale(1.05); font-weight: bold;"}
+<!-- SLIDO MULTIPLE CHOICE GOES HERE -->
+<iframe src="https://app.sli.do/event/[YOUR_EVENT_CODE_HERE]" width="100%" height="450px" style="border:none;"></iframe>
+:::
+:::
+
+
+# Section 2: Navigating the Data
+
+## The Curse of High Dimensionality {.smaller}
+Why do we actually *need* Automated Learning in modern ecology?
+
+::: {.flex-row style="margin-top: 20px;"}
+
+::: {.flex-col}
+::: {.box-red}
+**When Classical Statistics Break**
+<ul>
+  <li>As variables (dimensions) increase, the mathematical volume grows exponentially.</li>
+  <li>Traditional metrics of Euclidean "distance" become meaningless.</li>
+  <li>The concept of the "interior" of a dataset is lost; everything is far away from everything else.</li>
+</ul>
+:::
+:::
+
+::: {.flex-col style="flex: 0.15; align-items: center; justify-content: center;"}
+<h2 style="margin: 0; color: #6c757d;">→</h2>
+:::
+
+::: {.flex-col}
+::: {.box-teal}
+**The ML Solution: Dimensionality Reduction**
+<ul>
+  <li>Data with no intrinsic lower dimensionality is just random noise.</li>
+  <li>ML algorithms (like PCA or UMAP) map massive datasets into a lower intrinsic dimensionality.</li>
+  <li>**The Result:** We identify biological patterns and nearest neighbors that are completely invisible to human perception.</li>
+</ul>
+:::
+:::
+
+:::
+
+::: {.fragment .flex-row style="justify-content: center; margin-top: 15px;"}
+<div class="plot-placeholder" style="padding: 10px; width: 60%;">[Insert Plot: E.g., The CESAB slide showing 3D points mapped to a 2D manifold]</div>
+:::
+
+
+# Section 3: The Ecologist's Dilemma
+
+## The Two Cultures & The Trade-Off {.smaller}
+The transition to AI requires a philosophical shift in how we approach our data.
+
+::: {.flex-row style="margin-top: 20px;"}
+
+::: {.flex-col}
+::: {.box-grey style="height: 100%;"}
+**The Data Modeling Culture**<br>
+*(Classical Statistics)*
+<ul>
+  <li>Assumes nature follows a knowable, predefined stochastic process (e.g., GLMMs, ANOVAs).</li>
+  <li>**Focus:** Inference, $p$-values, and parameter estimation.</li>
+  <li>**Advantage:** Complete explainability.</li>
+</ul>
+:::
+:::
+
+::: {.flex-col style="flex: 0.15; align-items: center; justify-content: center;"}
+<h2 style="margin: 0; color: #6c757d;">vs.</h2>
+:::
+
+::: {.flex-col}
+::: {.box-grey style="height: 100%;"}
+**The Algorithmic Modeling Culture**<br>
+*(Machine Learning)*
+<ul>
+  <li>Assumes nature is too complex for simple parametric equations.</li>
+  <li>**Focus:** Pure predictive accuracy via out-of-sample testing.</li>
+  <li>**Advantage:** Handles vast, complex interactions.</li>
+</ul>
+:::
+:::
+
+:::
+
+::: {.fragment .box-red style="margin-top: 20px; text-align: center;"}
+**The Core Warning:** Never sacrifice your biological baseline. "The algorithm predicted it" is an insufficient rationale for environmental science. You must understand *when* to trade explainability for predictive accuracy.
+:::
+
+<div style="font-size: 0.6em; text-align: left; margin-top: 10px; line-height: 1.2; color: #6c757d;">
+*Reference:* Breiman, L. (2001). Statistical modeling: The two cultures. *Statistical Science, 16*(3), 199–231.
+</div>
+
 
 # Conclusion
 
-## Next Steps
-* This was the philosophical foundation. 
-* **Upcoming: Inter-Teams Technical Workshop**
-  * We will apply this exact workflow to my PhD thesis.
-  * Topic: Using Random Forests for sensitivity audits on 216 OECD survival datasets for GUTS modeling.
+## Take-Home Messages & Next Steps {.smaller}
 
-## Interactive Checkpoint 3 & Q&A
-<!-- Wooclap Integration -->
-**What specific AI/ML challenge do you want to see addressed in the technical workshop?**
+::: {.flex-row}
+
+::: {.flex-col .flex-2 style="justify-content: center; padding-right: 20px;"}
+<ol style="font-size: 1.2em; line-height: 1.8;">
+  <li class="fragment"><b>AI is a Toolkit, Not Magic:</b> Understand the taxonomy before you deploy the algorithm.</li>
+  <li class="fragment"><b>Avoid the Epistemic Trap:</b> Maintain your methodological metacognition. Do not let generative tools think for you.</li>
+  <li class="fragment"><b>The Baseline Primes:</b> In ecotoxicology, biological plausibility and mechanistic explainability must guide the machine.</li>
+  <li class="fragment"><b>Next Week: The Technical Workshop.</b> We will move from philosophy to application, using this exact perspective to audit mechanistic models.</li>
+</ol>
+:::
+
+::: {.fragment .flex-col style="border-left: 2px dashed #ced4da; padding-left: 35px; align-items: center; justify-content: center;"}
+<p style="text-align: center; margin-top: 20px;">Questions about the AI Toolkit?<br><span style = "color: #005a8c;">**Let's discuss!**</span></p>
+
+<!-- SLIDO Q&A GOES HERE -->
+<div class="plot-placeholder" style="padding: 10px; height: 300px;">
+<iframe src="https://app.sli.do/event/[YOUR_EVENT_CODE_HERE]" width="100%" height="100%" style="border:none;"></iframe>
+</div>
+:::
+:::
+
+## {background-color="#005a8c"}
+
+<br><br><br>
+<div style="font-size: 3em; text-align: center; margin-top: 10px; line-height: 1.2; font-family: monospace;">
+**Thanks!** 
+<div style="font-size: 0.1em; text-align: center; margin-top: 10px; line-height: 1.2; font-family: monospace;">
+<br><br>
+
+:::: {.columns}
+
+::: {.column width="25%" }
+<div class="plot-placeholder" style="padding: 5px;">[Insert LBBE Logo here]</div>
+:::
+
+::: {.column width="10%"}
+
+:::
+
+::: {.column width="25%"}
+<div class="plot-placeholder" style="padding: 5px;">[Insert INRAE Logo here]</div>
+:::
+
+:::
+
+::: {.footer}
+[Made in [Quarto](https://quarto.org) made with ❤️]{style="color: hsl(227, 24%, 89%);"}
+:::

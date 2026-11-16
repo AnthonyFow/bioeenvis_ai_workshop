@@ -25,5 +25,5 @@ format:
   html:
     theme:
       - cosmo
-      - custom.scss
+      - assets/css/custom.scss
     toc: true
