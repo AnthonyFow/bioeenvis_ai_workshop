@@ -444,6 +444,7 @@
   <meta name="generator" content="quarto-1.4.553">
 
   <meta name="author" content="Anthony Fow Esteves">
+  <meta name="dcterms.date" content="2026-12-16">
   <title>AI for Ecotoxicologists - Let’s Talk About AI</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -1182,21 +1183,72 @@ src: url(data:font/ttf;base64,AAEAAAAQAQAABAAAR0RFRn6vcr8AAAIkAAABqkdQT1MbD6i/AA
 }
 * { box-sizing: border-box; }
 .reveal { font-family: 'Inter', sans-serif; background: #e9ecef; }
-.reveal h1, .reveal h2, .reveal h3 { font-family: 'Space Grotesk', sans-serif; color: #005a8c; margin-top: 0; margin-bottom: 15px;}
-.reveal h2 { font-size: 1.5em; }
-.reveal .title-slide { background-color: #005a8c; color: white;}
-.reveal .title-slide h1 { color: #ffffff; font-size: 3.2em; font-weight: 700; line-height: 1.1;}
-.reveal .title-slide .subtitle { color: #00a3a6; font-size: 1.5em; font-weight: 600; margin-bottom: 40px;}
-.reveal .title-slide p { color: #e9ecef; font-size: 1.1em;}
-.box-grey { background-color: #f1f3f5; padding: 15px 20px; border-left: 6px solid #adb5bd; border-radius: 4px; font-size: 0.85em; margin-bottom: 15px; }
-.box-teal { background-color: #e6f6f6; padding: 15px 20px; border-left: 6px solid #00a3a6; border-radius: 4px; font-size: 0.85em; margin-bottom: 15px; }
-.box-red { background-color: #fdf0f0; padding: 15px 20px; border-left: 6px solid #e53935; border-radius: 4px; font-size: 0.85em; margin-bottom: 15px; }
-.flex-row { display: flex; gap: 24px; width: 100%; height: auto; min-height: 0; align-items: stretch; }
+.reveal h1, .reveal h2, .reveal h3 { font-family: 'Space Grotesk', sans-serif; color: #005a8c; margin-top: 0; margin-bottom: 12px; }
+.reveal h2 { font-size: 1.45em; }
+.reveal a { color: #005a8c; text-decoration: underline; }
+.reveal a:hover { color: #00a3a6; }
+
+.reveal .title-slide { background-color: #005a8c; color: #ffffff; }
+.reveal .title-slide h1 { color: #ffffff; font-size: 3.1em; font-weight: 700; line-height: 1.1; }
+.reveal .title-slide .subtitle { color: #00a3a6; font-size: 1.35em; font-weight: 600; margin-bottom: 35px; line-height: 1.35; }
+.reveal .title-slide p { color: #e9ecef; font-size: 1.05em; }
+
+.box-grey { background-color: #f1f3f5; padding: 14px 18px; border-left: 6px solid #adb5bd; border-radius: 6px; font-size: 0.82em; margin-bottom: 12px; }
+.box-teal { background-color: #e6f6f6; padding: 14px 18px; border-left: 6px solid #00a3a6; border-radius: 6px; font-size: 0.82em; margin-bottom: 12px; }
+.box-red { background-color: #fdf0f0; padding: 14px 18px; border-left: 6px solid #e53935; border-radius: 6px; font-size: 0.82em; margin-bottom: 12px; }
+.box-blue { background-color: #e7f1f8; padding: 14px 18px; border-left: 6px solid #005a8c; border-radius: 6px; font-size: 0.82em; margin-bottom: 12px; }
+
+.flex-row { display: flex; gap: 20px; width: 100%; min-height: 0; align-items: stretch; }
 .flex-col { display: flex; flex-direction: column; flex: 1; min-width: 0; min-height: 0; }
 .flex-2 { flex: 2; }
 .center-content { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; }
-.reveal p, .reveal li { font-size: 0.85em; line-height: 1.4; margin-bottom: 10px; }
-.plot-placeholder { background-color: #ffffff; border: 3px dashed #ced4da; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #6c757d; width: 100%; flex: 1; font-weight: 600; padding: 15px; text-align: center; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05);}
+.reveal p, .reveal li { font-size: 0.82em; line-height: 1.38; margin-bottom: 8px; }
+
+.plot-placeholder {
+background-color: #ffffff;
+border: 2.5px dashed #adb5bd;
+border-radius: 8px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+color: #6c757d;
+width: 100%;
+flex: 1;
+font-size: 0.72em;
+font-weight: 600;
+padding: 12px;
+text-align: center;
+box-shadow: 0 3px 6px rgba(0,0,0,0.04);
+}
+
+.ref-footer { font-size: 0.52em; text-align: left; margin-top: 12px; line-height: 1.3; color: #5c636a; border-top: 1px solid #ced4da; padding-top: 6px; }
+
+.bubble-cloud { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; align-items: center; padding: 28px 16px; }
+.pill { display: inline-block; padding: 8px 16px; border-radius: 999px; font-weight: 600; font-size: 0.75em; box-shadow: 0 2px 5px rgba(0,0,0,0.08); }
+.pill-grey { background: #dee2e6; color: #212529; border: 1.5px solid #868e96; }
+.pill-teal { background: #d3f2f2; color: #004d50; border: 1.5px solid #00a3a6; }
+.pill-blue { background: #d6e9f8; color: #003b5c; border: 1.5px solid #005a8c; }
+.pill-red { background: #fde2e2; color: #8c1d18; border: 1.5px solid #e53935; }
+
+.nest-ai { background: #f8f9fa; border: 2.5px solid #005a8c; border-radius: 12px; padding: 12px 14px; }
+.nest-ml { background: #e6f6f6; border: 2px solid #00a3a6; border-radius: 10px; padding: 10px 12px; margin-top: 8px; }
+.nest-dl { background: #d6e9f8; border: 2px solid #005a8c; border-radius: 8px; padding: 8px 10px; margin-top: 8px; }
+.nest-gen { background: #fdf0f0; border: 2px solid #e53935; border-radius: 8px; padding: 8px 10px; margin-top: 8px; }
+.nest-label { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 0.78em; margin-bottom: 6px; display: block; }
+
+.spectrum-bar {
+background: linear-gradient(90deg, #e6f6f6 0%, #d6e9f8 50%, #fdf0f0 100%);
+border: 1.5px solid #adb5bd;
+border-radius: 8px;
+padding: 10px 16px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-size: 0.72em;
+font-weight: 600;
+margin: 10px 0;
+}
 </style>
 </head>
 <body class="quarto-light">
@@ -1205,7 +1257,7 @@ src: url(data:font/ttf;base64,AAEAAAAQAQAABAAAR0RFRn6vcr8AAAIkAAABqkdQT1MbD6i/AA
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Let’s Talk About AI</h1>
-  <p class="subtitle">Restitution of the FRB-CESAB AI Toolkit - FR BioEEnViS</p>
+  <p class="subtitle">Epistemology, Foundations &amp; Applied Machine Learning in Ecotoxicology<br><span style="font-size: 0.65em; font-weight: 400; color: #e9ecef;">Restitution of the FRB-CESAB ‘AI for Ecologists: A Toolkit’ Training — FR BioEEnViS</span></p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -1213,321 +1265,622 @@ src: url(data:font/ttf;base64,AAEAAAAQAQAABAAAR0RFRn6vcr8AAAIkAAABqkdQT1MbD6i/AA
 <strong>Anthony Fow Esteves</strong> 
 </div>
         <p class="quarto-title-affiliation">
-            <span style="font-size: 0.8em;"> LBBE-UCB Lyon 1 (UMR CNRS 5558) | Ecotox - INRAE </span>
+            <span style="font-size: 0.8em;">LBBE – UCB Lyon 1 (UMR CNRS 5558) | Ecotox – UR RiverLy (INRAE)</span>
           </p>
     </div>
 </div>
 
+  <p class="date">December 16, 2026</p>
 </section>
-<section id="section" class="slide level2 center">
-<h2></h2>
-<div class="center-content">
-<h2 style="font-size: 2em; margin-bottom: 40px;">
-Let’s start with a quick scan…
-</h2>
-<div class="fragment fade-in-then-semi-out" style="margin-top: 30px;">
-<h3>
-What is the <span style="color: rgb(10, 10, 10);">very first thing</span> you think of when someone mentions <span style="color: rgb(10, 10, 10);">Artificial Intelligence</span>? 🤖
-</h3>
-</div>
-<div class="fragment box-teal" style="margin-top: 50px; transform: scale(1.1); font-weight: bold;">
-<!-- SLIDO ICEBREAKER WORD CLOUD GOES HERE -->
-<iframe src="https://app.sli.do/event/[YOUR_EVENT_CODE_HERE]" width="100%" height="400px" style="border:none;">
-</iframe>
-</div>
-</div>
-</section>
-<section id="the-bioeenvis-mandate" class="slide level2 smaller">
-<h2>The BioEEnViS Mandate</h2>
-<div class="flex-row">
-<div class="flex-col">
-<div class="box-teal" style="flex: 1; display: flex; flex-direction: column;">
-<strong>The Goal: Bridging the Gap</strong>
-<ul>
-<li>
-My PhD requires exploring <strong>Machine Learning</strong> to optimize complex experimental designs for mechanistic modeling.
-</li>
-<li>
-To do this safely, I required specialized, external methodological training to properly understand how to bring AI into ecotoxicology.
-</li>
-</ul>
-</div>
-</div>
-<div class="flex-col" style="flex: 0.15; align-items: center; justify-content: center;">
-<h2 style="margin: 0; color: #6c757d;">
-+
-</h2>
-</div>
-<div class="flex-col">
-<div class="box-grey" style="flex: 1; display: flex; flex-direction: column;">
-<strong>The Resource</strong>
-<ul>
-<li>
-<strong>FRB-CESAB (Montpellier):</strong> <em>“AI for Ecologists: A Toolkit”</em> (June 2026).
-</li>
-</ul>
-<div class="flex-row" style="justify-content: center; margin-top: 15px;">
-<div class="plot-placeholder" style="padding: 5px;">
-[Insert CESAB Logo / Website Screenshot here]
-</div>
-</div>
-</div>
-</div>
-</div>
-<div style="font-size: 0.6em; text-align: center; margin-top: 20px; line-height: 1.2; color: #6c757d;">
-<p><em>Special thanks to the local LBBE/Bioinformatique pole event (AI4Biomed) for helping me build the baseline vocabulary prior to this mobility.</em></p>
-</div>
-</section>
-<section id="the-cesab-experience" class="slide level2 smaller">
-<h2>The CESAB Experience</h2>
-<p><em>“The objective is to give participants the autonomy to assess which algorithms are most adapted to their own research questions.”</em> - ai-ecol.github.io</p>
-<div class="flex-row" style="margin-top: 20px;">
-<div class="flex-col">
-<div class="fragment box-grey">
-<p><strong>1. AI &gt; Generative Chatbots</strong><br> Raising awareness: AI is not just ChatGPT. We must understand the taxonomy (ML vs. DL vs. Symbolic) to know what we are actually using.</p>
-</div>
-<div class="fragment box-red">
-<p><strong>2. The Baseline Primes</strong><br> Our ecological and statistical background is the foundation of explainability. The algorithm does not replace biological plausibility.</p>
-</div>
-</div>
-<div class="flex-col">
-<div class="fragment box-teal">
-<p><strong>3. Exhaust Traditional Methods</strong><br> We do not jump to neural networks immediately. We must exhaust classical statistical exploratory data analysis before bringing in Machine Learning.</p>
-</div>
-<div class="fragment box-grey">
-<p><strong>4. The Trade-Off</strong><br> We must constantly balance gaining predictive power against losing mechanistic explainability (the “black box” effect).</p>
-</div>
-</div>
-</div>
-</section>
-<section id="the-epistemic-risk" class="slide level2 smaller">
-<h2>The Epistemic Risk</h2>
-<p>The rapid adoption of AI introduces a systemic risk: <strong>the illusion of understanding.</strong></p>
-<div class="flex-row">
+<section id="lets-start-with-a-quick-scan" class="slide level2 smaller">
+<h2>Let’s Start With a Quick Scan…</h2>
+<div class="flex-row" style="align-items: center; margin-top: 25px;">
 <div class="flex-col flex-2">
-<div>
-<ul>
-<li class="fragment"><strong>Cognitive Proletarianization:</strong> When we externalize analytical reasoning to an algorithm, we risk losing our own <em>savoir-faire</em> and methodological metacognition.</li>
-<li class="fragment"><strong>The Ecotox Danger:</strong> If we rely solely on AI “black boxes” or LLMs to generate our models, we risk losing our grasp on the mechanistic biology and statistical assumptions driving those predictions.</li>
-<li class="fragment"><strong>Scientific Monocultures:</strong> Highly fluent AI outputs often mask a complete lack of epistemic grounding, standardizing research into a monoculture.</li>
-<li class="fragment"><strong>The Solution:</strong> We must shift from prompting <em>“Do X”</em> to <em>“Teach me how to do X”</em>.</li>
-</ul>
-</div>
-</div>
-<div class="flex-col fragment">
-<div class="plot-placeholder" style="height: 100%;">
-<p>[Insert Impactful Plot/Statistic here: e.g., BCG consultant study on AI deskilling, or a graph showing the rise of retracted AI-generated papers]</p>
-</div>
-</div>
-</div>
-<div style="font-size: 0.6em; text-align: left; margin-top: 20px; line-height: 1.2; color: #6c757d;">
-<p><em>References:</em><br> Stiegler, B. (2010). For a New Critique of Political Economy. Polity Press.<br> Messeri, L., &amp; Crockett, M. J. (2024). Artificial intelligence and illusions of understanding in scientific research. <em>Nature, 627</em>(8002), 49–58. https://doi.org/10.1038/s41586-024-07146-0</p>
-</div>
-</section>
-<section>
-<section id="section-1-the-ai-universe" class="title-slide slide level1 center">
-<h1>Section 1: The AI Universe</h1>
-
-</section>
-<section id="ai-is-not-a-monolith" class="slide level2 smaller">
-<h2>AI is Not a Monolith</h2>
-<p><em>“The objective is to give participants the autonomy to assess which algorithms are most adapted to their own research questions.”</em></p>
-<div class="flex-row" style="margin-top: 20px;">
-<div class="flex-col">
-<div class="box-grey" style="height: 100%;">
-<p><strong>Automated Reasoning (Symbolic AI)</strong><br> * <strong>The Mechanism:</strong> Logic, explicit rules, constraint programming. * <strong>The Ecologist’s View:</strong> Like an automated taxonomic key. Highly interpretable, deductively guaranteed, but very brittle with noisy data.</p>
-</div>
-</div>
-<div class="flex-col" style="flex: 0.15; align-items: center; justify-content: center;">
-<h2 style="margin: 0; color: #6c757d;">
-vs.
-</h2>
-</div>
-<div class="flex-col flex-2">
-<div class="box-teal" style="height: 100%;">
-<p><strong>Automated Learning (Machine Learning &amp; Deep Learning)</strong><br> * <strong>The Mechanism:</strong> Finding patterns in data via loss functions and gradient descent. * <strong>The Subsets:</strong> * <em>Machine Learning:</em> Random Forests, SVMs, PCA. * <em>Deep Learning:</em> Neural Networks (requires massive data, acts as a “Black Box”). * <strong>The Ecologist’s View:</strong> Exceptional for recognizing patterns in unstructured data, but lacks causal guarantees.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="interactive-checkpoint-2" class="slide level2 smaller">
-<h2>Interactive Checkpoint 2</h2>
-<div class="center-content">
-<h3 style="margin-bottom: 30px;">
-Let’s assess our current ecosystem…
+<h3 style="font-size: 1.5em; line-height: 1.3; margin-bottom: 20px;">
+What is the <span style="color: #00a3a6;">very first word (or words)</span> that come to mind when someone mentions <span style="color: #005a8c;">Artificial Intelligence</span>?
 </h3>
-<div class="box-grey" style="width: 80%; transform: scale(1.05); font-weight: bold;">
-<!-- SLIDO MULTIPLE CHOICE GOES HERE -->
-<iframe src="https://app.sli.do/event/[YOUR_EVENT_CODE_HERE]" width="100%" height="450px" style="border:none;">
-</iframe>
-</div>
-</div>
-</section></section>
-<section>
-<section id="section-2-navigating-the-data" class="title-slide slide level1 center">
-<h1>Section 2: Navigating the Data</h1>
-
-</section>
-<section id="the-curse-of-high-dimensionality" class="slide level2 smaller">
-<h2>The Curse of High Dimensionality</h2>
-<p>Why do we actually <em>need</em> Automated Learning in modern ecology?</p>
-<div class="flex-row" style="margin-top: 20px;">
-<div class="flex-col">
-<div class="box-red">
-<strong>When Classical Statistics Break</strong>
+<div class="box-grey">
 <ul>
-<li>
-As variables (dimensions) increase, the mathematical volume grows exponentially.
-</li>
-<li>
-Traditional metrics of Euclidean “distance” become meaningless.
-</li>
-<li>
-The concept of the “interior” of a dataset is lost; everything is far away from everything else.
-</li>
+<li>Go to <strong>slido.com</strong> and enter code <strong><code>#[SLIDO_1_CODE]</code></strong> (or scan the QR code).</li>
+<li>Submit <strong>as many words as you like</strong> — we will capture this baseline map now and revisit it at the end of Part 1.</li>
 </ul>
 </div>
 </div>
-<div class="flex-col" style="flex: 0.15; align-items: center; justify-content: center;">
+<div class="flex-col" style="align-items: center;">
+<div class="plot-placeholder" style="height: 360px; width: 360px;">
+<p><strong>[QR CODE: Slido 1 — Word Cloud]</strong><br><br> Save file as:<br><code>assets/images/slido_1_wordcloud_qr.png</code><br><br> <em>(Switch browser tab to Slido Present Mode for live word cloud)</em> <!-- ![](assets/images/slido_1_wordcloud_qr.png){width="100%"} --></p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p><strong>OPENING ICEBREAKER (deliver while on Slide 1 before advancing here):</strong> “Good morning everyone. Before we dive in, let me lower the pressure—mostly for myself! I am not an AI researcher or a computer scientist; I am a PhD student in ecotoxicology. My goal today is not to lecture you as an expert, but to share a structured, critical compass from the FRB-CESAB training I attended thanks to FR BioEEnViS.”</p>
+<p><strong>ON SLIDE 2:</strong> Switch browser tab (Ctrl+Tab) to Slido Present Mode so the audience watches the word cloud build live. <strong>Narrative mission:</strong> Expect words like ChatGPT, LLMs, Gemini, chatbots to dominate the center. Note it out loud—do not dismiss it, just say: “Keep this picture in mind. We will come back to it.”</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section>
+<section id="the-bioeenvis-opportunity" class="slide level2 smaller">
+<h2>The BioEEnViS Opportunity</h2>
+<div class="flex-row" style="margin-top: 10px;">
+<div class="flex-col">
+<div class="box-teal" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+<p><strong>PhD Motivation: Bridging the Methodological Gap</strong></p>
+<ul>
+<li>Early in my thesis, we considered AI to <strong>guide ecotoxicological experimental designs</strong> or extract experimental data.</li>
+<li>This problem differs from standard ecotoxicology AI uses (e.g., <strong>QSARs</strong> or direct toxicity prediction).</li>
+<li>Because I lacked formal AI training, I applied for an <strong>FR BioEEnViS Mobility Grant</strong> to acquire structured external foundations.</li>
+</ul>
+</div>
+</div>
+<div class="flex-col" style="flex: 0.12; align-items: center; justify-content: center;">
 <h2 style="margin: 0; color: #6c757d;">
 →
 </h2>
 </div>
 <div class="flex-col">
-<div class="box-teal">
-<strong>The ML Solution: Dimensionality Reduction</strong>
+<div class="box-grey" style="flex: 1; display: flex; flex-direction: column;">
+<p><strong>The External Training Resource</strong></p>
 <ul>
-<li>
-Data with no intrinsic lower dimensionality is just random noise.
-</li>
-<li>
-ML algorithms (like PCA or UMAP) map massive datasets into a lower intrinsic dimensionality.
-</li>
-<li>
-<strong>The Result:</strong> We identify biological patterns and nearest neighbors that are completely invisible to human perception.
-</li>
+<li><strong>FRB-CESAB (Montpellier, June 2026):</strong> <a href="https://ai-ecol.github.io/"><em>“AI for Ecologists: A Toolkit”</em></a> — 5-day intensive course (all materials open-access).</li>
 </ul>
+<div class="plot-placeholder" style="margin-top: 10px; min-height: 210px;">
+<p><strong>[IMAGE: FRB-CESAB Course Website / Logo + BioEEnViS Logo]</strong><br> Save file as: <code>assets/images/cesab_website_screenshot.png</code> <!-- ![](assets/images/cesab_website_screenshot.png){width="100%"} --></p>
 </div>
 </div>
 </div>
-<div class="fragment flex-row" style="justify-content: center; margin-top: 15px;">
-<div class="plot-placeholder" style="padding: 10px; width: 60%;">
-[Insert Plot: E.g., The CESAB slide showing 3D points mapped to a 2D manifold]
 </div>
+<div class="box-blue" style="margin-top: 10px; padding: 10px 16px; font-size: 0.74em;">
+<p><strong>Local Acknowledgment (independent of the BioEEnViS mobility grant):</strong> Prior to Montpellier, attending <a href="https://indico.engineering.univ-lyon1.fr/event/29/"><strong>AI4Biomed</strong></a> in Lyon—mainly organized and promoted by <strong>LBBE members</strong>—introduced key terminology that made the CESAB transition much smoother.</p>
 </div>
-</section></section>
-<section>
-<section id="section-3-the-ecologists-dilemma" class="title-slide slide level1 center">
-<h1>Section 3: The Ecologist’s Dilemma</h1>
-
 </section>
-<section id="the-two-cultures-the-trade-off" class="slide level2 smaller">
-<h2>The Two Cultures &amp; The Trade-Off</h2>
-<p>The transition to AI requires a philosophical shift in how we approach our data.</p>
-<div class="flex-row" style="margin-top: 20px;">
-<div class="flex-col">
-<div class="box-grey" style="height: 100%;">
-<strong>The Data Modeling Culture</strong><br> <em>(Classical Statistics)</em>
-<ul>
-<li>
-Assumes nature follows a knowable, predefined stochastic process (e.g., GLMMs, ANOVAs).
-</li>
-<li>
-<strong>Focus:</strong> Inference, <span class="math inline">\(p\)</span>-values, and parameter estimation.
-</li>
-<li>
-<strong>Advantage:</strong> Complete explainability.
-</li>
-</ul>
+<section id="the-cesab-experience" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">The CESAB Experience</h2>
+<p>Four core modules covered during the 5-day <a href="https://ai-ecol.github.io/">FRB-CESAB program</a>:</p>
+<p><br></p>
+<div class="r-hstack" style="gap: 18px; margin-top: 25px;">
+<div class="box-grey" data-id="card1" style="width: 280px; height: 260px; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+<p><strong>Module 1</strong><br><br> Introduction to AI, History &amp; Machine Learning Foundations</p>
+</div>
+<div class="box-grey" data-id="card2" style="width: 280px; height: 260px; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+<p><strong>Module 2</strong><br><br> Introduction to Deep Learning &amp; Neural Architectures</p>
+</div>
+<div class="box-grey" data-id="card3" style="width: 280px; height: 260px; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+<p><strong>Module 3</strong><br><br> Applied Deep Learning<br><em>(Species Distribution Models &amp; LLMs)</em></p>
+</div>
+<div class="box-grey" data-id="card4" style="width: 280px; height: 260px; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+<p><strong>Module 4</strong><br><br> Symbolic AI &amp; Constraint-Based Reasoning</p>
 </div>
 </div>
-<div class="flex-col" style="flex: 0.15; align-items: center; justify-content: center;">
-<h2 style="margin: 0; color: #6c757d;">
-vs.
-</h2>
-</div>
-<div class="flex-col">
-<div class="box-grey" style="height: 100%;">
-<strong>The Algorithmic Modeling Culture</strong><br> <em>(Machine Learning)</em>
-<ul>
-<li>
-Assumes nature is too complex for simple parametric equations.
-</li>
-<li>
-<strong>Focus:</strong> Pure predictive accuracy via out-of-sample testing.
-</li>
-<li>
-<strong>Advantage:</strong> Handles vast, complex interactions.
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="fragment box-red" style="margin-top: 20px; text-align: center;">
-<p><strong>The Core Warning:</strong> Never sacrifice your biological baseline. “The algorithm predicted it” is an insufficient rationale for environmental science. You must understand <em>when</em> to trade explainability for predictive accuracy.</p>
-</div>
-<div style="font-size: 0.6em; text-align: left; margin-top: 10px; line-height: 1.2; color: #6c757d;">
-<p><em>Reference:</em> Breiman, L. (2001). Statistical modeling: The two cultures. <em>Statistical Science, 16</em>(3), 199–231.</p>
-</div>
-</section></section>
-<section>
-<section id="conclusion" class="title-slide slide level1 center">
-<h1>Conclusion</h1>
-
 </section>
-<section id="take-home-messages-next-steps" class="slide level2 smaller">
-<h2>Take-Home Messages &amp; Next Steps</h2>
+<section id="the-cesab-experience-1" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">The CESAB Experience</h2>
+<p>All four modules converge on a single pedagogical objective:</p>
+<p><br></p>
+<div class="r-stack" style="margin-top: 30px;">
+<div class="box-grey" data-id="card1" style="width: 780px; height: 250px; border-radius: 10px; opacity: 0.25;">
+
+</div>
+<div class="box-grey" data-id="card2" style="width: 760px; height: 240px; border-radius: 10px; opacity: 0.25;">
+
+</div>
+<div class="box-grey" data-id="card3" style="width: 740px; height: 230px; border-radius: 10px; opacity: 0.25;">
+
+</div>
+<div class="box-red" data-id="card4" style="width: 740px; height: 220px; border-radius: 10px; display: flex; flex-direction: column; justify-content: center; text-align: center; padding: 24px;">
+<p><span style="font-size: 1.15em; font-weight: 700; color: #8c1d18; margin-bottom: 10px;">Official Course Objective — ai-ecol.github.io</span> <em>“Give participants the <strong>autonomy</strong> to assess which algorithms are most adapted to their own research questions, where to find them, and how to adjust them to the desired question.”</em></p>
+</div>
+</div>
+</section>
+<section id="the-cesab-experience-2" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">The CESAB Experience</h2>
+<div class="box-red" data-id="card4" style="padding: 10px 18px; margin-bottom: 16px; font-size: 0.76em; text-align: center;">
+<p><strong>Course Objective:</strong> Autonomy to assess which algorithms fit your research question (<a href="https://ai-ecol.github.io/">ai-ecol.github.io</a>) <span class="math inline">\(\rightarrow\)</span> <strong>Translated into 4 Core Insights (Today’s Roadmap)</strong></p>
+</div>
 <div class="flex-row">
-<div class="flex-col flex-2" style="justify-content: center; padding-right: 20px;">
-<ol style="font-size: 1.2em; line-height: 1.8;">
-<li class="fragment">
-<b>AI is a Toolkit, Not Magic:</b> Understand the taxonomy before you deploy the algorithm.
-</li>
-<li class="fragment">
-<b>Avoid the Epistemic Trap:</b> Maintain your methodological metacognition. Do not let generative tools think for you.
-</li>
-<li class="fragment">
-<b>The Baseline Primes:</b> In ecotoxicology, biological plausibility and mechanistic explainability must guide the machine.
-</li>
-<li class="fragment">
-<b>Next Week: The Technical Workshop.</b> We will move from philosophy to application, using this exact perspective to audit mechanistic models.
-</li>
+<div class="flex-col">
+<div class="box-teal" data-id="card1">
+<p><strong>Insight 1 · AI &gt; Generative Chatbots</strong><br> <em>Covered next:</em> Distinguish GenAI from the wider AI taxonomy (ML, DL, Symbolic AI) and assess its epistemic &amp; ecological costs.</p>
+</div>
+<div class="box-teal" data-id="card2">
+<p><strong>Insight 2 · Domain Baseline Primes</strong><br> <em>Covered in Section 2:</em> Ecological and statistical knowledge anchors plausibility and dictates how a problem is framed.</p>
+</div>
+</div>
+<div class="flex-col">
+<div class="box-teal" data-id="card3">
+<p><strong>Insight 3 · Exhaust Traditional Methods</strong><br> <em>Covered in Section 2:</em> Verify dimensionality and exhaust classical statistical analyses before adopting complex ML.</p>
+</div>
+<div class="box-teal" data-id="card4b">
+<p><strong>Insight 4 · Explicit Trade-Offs</strong><br> <em>Covered in Section 3:</em> Balance predictive gain against explainability based on the scientific goal.</p>
+</div>
+</div>
+</div>
+<div style="font-size: 0.68em; color: #495057; text-align: center; margin-top: 6px;">
+<p><em>Note: Part 1 is a curated synthesis of CESAB Day 1 principles—not a full 5-day syllabus dump. Part 2 (10:45) shows how these insights landed in my PhD.</em></p>
+</div>
+</section>
+<section id="why-learn-ai-a-bio-inspired-paradox" class="slide level2 smaller">
+<h2>Why Learn AI? A Bio-Inspired Paradox</h2>
+<p>As a scientist trained to look for mechanistic explanations, why invest in learning opaque algorithms?</p>
+<div class="flex-row" style="margin-top: 10px;">
+<div class="flex-col">
+<div class="box-grey" style="flex: 1; display: flex; flex-direction: column;">
+<p><strong>Biological Signal Integration (Human Learning)</strong></p>
+<ul>
+<li>Biological neurons integrate electrochemical inputs across complex networks.</li>
+<li>Scientific understanding emerges through <strong>effortful cognitive friction</strong>—writing, debugging, synthesizing, and testing hypotheses.</li>
+</ul>
+<div class="plot-placeholder" style="margin-top: 8px; min-height: 150px;">
+<p><strong>[IMAGE: Biological Neuron / Synaptic Integration]</strong><br> Save file as: <code>assets/images/bio_neuron.png</code> <!-- ![](assets/images/bio_neuron.png){width="90%"} --></p>
+</div>
+</div>
+</div>
+<div class="flex-col">
+<div class="box-teal" style="flex: 1; display: flex; flex-direction: column;">
+<p><strong>Artificial Neuron (Perceptron, 1957)</strong></p>
+<ul>
+<li>Loosely inspired by biology: <code>Inputs</code> <span class="math inline">\(\rightarrow\)</span> <code>Weights</code> <span class="math inline">\(\rightarrow\)</span> <code>Weighted Sum</code> <span class="math inline">\(\rightarrow\)</span> <code>Activation</code> <span class="math inline">\(\rightarrow\)</span> <code>Output</code>.</li>
+<li>Parameter estimation is <strong>numerical loss minimization</strong>—not biological reasoning or comprehension.</li>
+</ul>
+<div class="plot-placeholder" style="margin-top: 8px; min-height: 150px;">
+<p><strong>[IMAGE: Perceptron Diagram (CESAB Day 1 Slide 70)]</strong><br> Save file as: <code>assets/images/artificial_perceptron.png</code> <!-- ![](assets/images/artificial_perceptron.png){width="90%"} --></p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment box-red" style="margin-top: 10px; text-align: center;">
+<p><strong>The Paradox:</strong> AI delivers major scientific breakthroughs (e.g., AlphaFold), yet our most frequent daily contact is with <strong>Generative AI chatbots</strong>. When misused to bypass writing, literature synthesis, or coding, a bio-inspired tool <strong>short-circuits our own biological learning process</strong>.</p>
+</div>
+</section>
+<section id="epistemic-ecological-guardrails-insight-1a" class="slide level2 smaller">
+<h2>Epistemic &amp; Ecological Guardrails (Insight 1a)</h2>
+<div class="flex-row" style="margin-top: 6px;">
+<div class="flex-col flex-2">
+<div>
+<ul>
+<li class="fragment"><strong>Cognitive Proletarianization:</strong> Externalizing analytical tasks erodes our <em>savoir-faire</em> and methodological metacognition (Stiegler, 2010).</li>
+<li class="fragment"><strong>Empirical Evidence on Cognition:</strong> Controlled studies indicate that over-reliance on GenAI can reduce knowledge retention (Barcaui, 2025), lower persistence and independent performance (Liu et al., 2026, <em>preprint</em>), and foster dependence/deskilling (Kim et al., 2025).</li>
+<li class="fragment"><strong>Illusions of Understanding:</strong> Fluent outputs can mask weak epistemic grounding (Messeri &amp; Crockett, 2024)—sparking active debate across French doctoral schools on protecting core research training.</li>
+<li class="fragment"><strong>Pragmatic Guardrail:</strong> Retain cognitive friction for reasoning, writing, and analysis. Delegate routine formatting or syntax checks; shift from <em>“Do X”</em> to <em>“Critique / explain X”</em>.</li>
+</ul>
+</div>
+</div>
+<div class="flex-col fragment">
+<div class="box-grey" style="flex: 1; display: flex; flex-direction: column; padding: 12px;">
+<p><strong>Material &amp; Ecological Footprint</strong></p>
+<ul>
+<li>Global energy-economy modeling shows AI productivity gains can drive net <span class="math inline">\(\text{CO}_2\)</span> increases via rebound effects (Alpine et al., 2026).</li>
+<li>Infrastructure expansion concentrates in water-stressed regions (e.g., <strong>Uruguay: 1.77</strong> and <strong>Chile: 3.49</strong> data centers per 1M inhabitants; <a href="https://www.ifc.org/en/insights-reports/2026/risks-and-opportunities-in-data-center-and-ai-investment-in-ems#group-section-Fig-2-K8AjwpCMpV">IFC, 2026</a>).</li>
+</ul>
+<div class="plot-placeholder" style="margin: 6px 0; min-height: 155px;">
+<p><strong>[IMAGE: IFC 2026 Data Centers Map — Uruguay 1.77]</strong><br> Save file as: <code>assets/images/datacenters_uruguay_ifc2026.png</code> <!-- ![](assets/images/datacenters_uruguay_ifc2026.png){width="100%"} --></p>
+</div>
+<div style="font-size: 0.72em; font-style: italic; color: #005a8c; border-left: 3px solid #005a8c; padding-left: 8px; margin-top: 4px;">
+<p>“Only a tiny proportion of water in Uruguay is used for human consumption.” — Daniel Pena (<a href="https://restofworld.org/2026/ai-datacenters-water-resistance-global/">Rest of World, 2026</a>)</p>
+</div>
+</div>
+</div>
+</div>
+<div class="ref-footer">
+<p>Stiegler (2010) <em>For a New Critique of Political Economy</em> · Messeri &amp; Crockett (2024) <em>Nature</em> <a href="https://doi.org/10.1038/s41586-024-07146-0">10.1038/s41586-024-07146-0</a> · Barcaui (2025) <em>SSH Open</em> <a href="https://doi.org/10.1016/j.ssaho.2025.102287">10.1016/j.ssaho.2025.102287</a> · Kim et al. (2025) <em>Consum. Psychol. Rev.</em> <a href="https://doi.org/10.1002/arcp.70008">10.1002/arcp.70008</a> · Liu et al. (2026) <a href="https://arxiv.org/abs/2604.04721">arXiv:2604.04721</a> · Alpine et al. (2026) <em>npj Clim. Action</em> <a href="https://doi.org/10.1038/s44168-026-00411-0">10.1038/s44168-026-00411-0</a></p>
+</div>
+</section>
+<section>
+<section id="section-1-ai-is-an-umbrella-term" class="title-slide slide level1 center" data-background-color="#005a8c">
+<h1>Section 1: AI is an Umbrella Term</h1>
+<p><span style="color: #e9ecef; font-size: 0.9em;">Insight 1b — Moving beyond chatbots to map the algorithmic toolkit</span></p>
+</section>
+<section id="ai-is-not-a-monolith-it-is-an-umbrella-term" class="slide level2 smaller">
+<h2>AI is Not a Monolith… It Is an Umbrella Term</h2>
+<p><strong>Quick Poll (Slido 2):</strong> Which of these four diagrams correctly organizes Artificial Intelligence?</p>
+<div class="flex-row" style="margin-top: 8px;">
+<div class="flex-col flex-2">
+<div class="flex-row" style="margin-bottom: 10px;">
+<div class="plot-placeholder" style="height: 210px;">
+<p><strong>A. Nested Algorithms</strong><br> <code>assets/images/taxo_1_nested_algorithms.png</code> <!-- ![](assets/images/taxo_1_nested_algorithms.png){height="195px"} --></p>
+</div>
+<div class="plot-placeholder" style="height: 210px;">
+<p><strong>B. AI / ML / DL / NLP / LLM</strong><br> <code>assets/images/taxo_2_venn_nlp_llm.png</code> <!-- ![](assets/images/taxo_2_venn_nlp_llm.png){height="195px"} --></p>
+</div>
+</div>
+<div class="flex-row">
+<div class="plot-placeholder" style="height: 210px;">
+<p><strong>C. AI / Data Science / Big Data</strong><br> <code>assets/images/taxo_3_venn_bigdata.png</code> <!-- ![](assets/images/taxo_3_venn_bigdata.png){height="195px"} --></p>
+</div>
+<div class="plot-placeholder" style="height: 210px;">
+<p><strong>D. CS / AI / Data Science / Math</strong><br> <code>assets/images/taxo_4_venn_cs_stats.png</code> <!-- ![](assets/images/taxo_4_venn_cs_stats.png){height="195px"} --></p>
+</div>
+</div>
+</div>
+<div class="flex-col" style="justify-content: space-between;">
+<div class="plot-placeholder" style="height: 240px;">
+<p><strong>[QR CODE: Slido 2 — Multiple Choice]</strong><br> <code>assets/images/slido_2_taxonomy_qr.png</code><br> Code: <code>#[SLIDO_2_CODE]</code> <!-- ![](assets/images/slido_2_taxonomy_qr.png){width="85%"} --></p>
+</div>
+<div class="fragment box-teal" style="margin-top: 10px;">
+<p><strong>Answer: All four are partial lenses.</strong><br> There is no single formal definition of AI—each diagram highlights a different disciplinary cut (algorithms, language, data, or math).</p>
+</div>
+</div>
+</div>
+</section>
+<section id="navigating-the-ai-vocabulary" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Navigating the AI Vocabulary</h2>
+<p>In practice, researchers encounter a scattered soup of overlapping terms and tools:</p>
+<p><br></p>
+<div class="bubble-cloud">
+<p><span class="pill pill-teal" data-id="b-reg">Linear &amp; Logistic Regression</span> <span class="pill pill-red" data-id="b-gpt">ChatGPT / Claude / Perplexity</span> <span class="pill pill-grey" data-id="b-sym">Symbolic Logic &amp; Rules</span> <span class="pill pill-teal" data-id="b-pca">PCA / UMAP</span> <span class="pill pill-blue" data-id="b-cnn">CNN &amp; RNN</span> <span class="pill pill-grey" data-id="b-ds">Data Science &amp; Statistics</span> <span class="pill pill-teal" data-id="b-rf">Random Forest &amp; Decision Trees</span> <span class="pill pill-grey" data-id="b-rob">Intelligent Robots</span> <span class="pill pill-blue" data-id="b-mlp">Neural Networks (MLP)</span> <span class="pill pill-teal" data-id="b-svm">Support Vector Machines (SVM)</span> <span class="pill pill-grey" data-id="b-kg">Knowledge Representation</span></p>
+</div>
+<div style="text-align: center; font-size: 0.8em; color: #495057; margin-top: 25px;">
+<p>Which field contains which—and where do everyday chatbots actually sit?</p>
+</div>
+</section>
+<section id="navigating-the-ai-vocabulary-1" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Navigating the AI Vocabulary</h2>
+<p>Organizing the umbrella into parallel domains and nested subsets:</p>
+<div class="nest-ai" style="margin-top: 6px;">
+<p><span class="nest-label" style="color: #005a8c;">ARTIFICIAL INTELLIGENCE (Umbrella Discipline)</span></p>
+<div class="flex-row" style="gap: 14px;">
+<div class="flex-col">
+<div class="box-grey" style="height: 100%; margin-bottom: 0;">
+<span class="nest-label" style="color: #495057;">Symbolic AI, Reasoning &amp; Embodied Systems</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+<p><span class="pill pill-grey" data-id="b-sym">Symbolic Logic &amp; Rules</span> <span class="pill pill-grey" data-id="b-kg">Knowledge Representation</span> <span class="pill pill-grey" data-id="b-rob">Intelligent Robots</span></p>
+</div>
+<p style="font-size: 0.72em; margin-top: 10px;">
+Explicit rules, ontologies, and constraint solving (e.g., protected-area design in CESAB Day 5).
+</p>
+<div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #adb5bd;">
+<p><span class="nest-label" style="color: #495057;">Overlapping Quantitative Pillar</span> <span class="pill pill-grey" data-id="b-ds">Data Science &amp; Statistics</span></p>
+</div>
+</div>
+</div>
+<div class="flex-col flex-2">
+<div class="nest-ml">
+<span class="nest-label" style="color: #006f7a;">MACHINE LEARNING (Automated Learning from Data)</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px;">
+<p><span class="pill pill-teal" data-id="b-reg">Linear &amp; Logistic Regression</span> <span class="pill pill-teal" data-id="b-pca">PCA / UMAP</span> <span class="pill pill-teal" data-id="b-svm">Support Vector Machines (SVM)</span> <span class="pill pill-teal" data-id="b-rf">Random Forest &amp; Decision Trees</span></p>
+</div>
+<div class="nest-dl">
+<span class="nest-label" style="color: #005a8c;">DEEP LEARNING (Multi-Layer Neural Networks)</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px;">
+<p><span class="pill pill-blue" data-id="b-mlp">Neural Networks (MLP)</span> <span class="pill pill-blue" data-id="b-cnn">CNN &amp; RNN</span></p>
+</div>
+<div class="nest-gen">
+<p><span class="nest-label" style="color: #8c1d18;">GENERATIVE AI &amp; LLMs (A small, highly visible subset)</span> <span class="pill pill-red" data-id="b-gpt">ChatGPT / Claude / Perplexity</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div style="font-size: 0.65em; margin-top: 8px; color: #495057;">
+<p><strong>Standard reference taxonomy:</strong> The <a href="https://oecd.ai/en/classification">OECD Framework for the Classification of AI Systems</a> classifies systems by model type (<em>symbolic, statistical, or hybrid</em>), learning paradigm, and transparency.</p>
+</div>
+<aside class="notes">
+<p>Optional backup: You can keep <code>assets/images/oecd_ai_classification.png</code> in your backup folder or click the live OECD link during Q&amp;A if anyone asks for formal regulatory criteria.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section></section>
+<section>
+<section id="section-2-from-classical-data-to-ml" class="title-slide slide level1 center" data-background-color="#005a8c">
+<h1>Section 2: From Classical Data to ML</h1>
+<p><span style="color: #e9ecef; font-size: 0.9em;">Insights 2 &amp; 3 — Domain baseline, dimensionality, and exhausting traditional methods</span></p>
+</section>
+<section id="when-does-a-research-problem-need-ml" class="slide level2 smaller">
+<h2>When Does a Research Problem Need ML?</h2>
+<p><em>Scenario:</em> An environmental scientist monitors <strong>100 river sites</strong> across chemical concentrations, water quality, climate, and community traits.</p>
+<div class="flex-row" style="margin-top: 10px;">
+<div class="flex-col">
+<div class="box-grey">
+<p><strong>What Is a “Dimension”?</strong></p>
+<ul>
+<li><strong>In Ecology / Env. Science:</strong> Usually 3D physical space <span class="math inline">\((x, y, z)\)</span> + time.</li>
+<li><strong>In Machine Learning:</strong> <strong>Every measured variable is an axis (<span class="math inline">\(d\)</span>).</strong> Measuring 50 water chemistry &amp; species variables places each site in a 50-dimensional space.</li>
+</ul>
+</div>
+<div class="fragment box-red">
+<p><strong>The Curse of High Dimensionality</strong></p>
+<p>In a unit hypercube with <span class="math inline">\(n=100\)</span> samples, the edge length <span class="math inline">\(l = (k/n)^{1/d}\)</span> needed to capture even <span class="math inline">\(k=1\)</span> neighbor grows rapidly:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Dimensions (<span class="math inline">\(d\)</span>)</th>
+<th style="text-align: center;">2</th>
+<th style="text-align: center;">3</th>
+<th style="text-align: center;">10</th>
+<th style="text-align: center;">100</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Cube edge (<span class="math inline">\(l\)</span>)</strong></td>
+<td style="text-align: center;">0.10</td>
+<td style="text-align: center;">0.21</td>
+<td style="text-align: center;">0.63</td>
+<td style="text-align: center;"><strong>0.955</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Distance flattens; almost every observation lies near the “border.”</p>
+</div>
+</div>
+<div class="flex-col">
+<div class="plot-placeholder" style="min-height: 250px;">
+<p><strong>[IMAGE: CESAB Day 1 — Hypercube Distance &amp; 3D-to-2D Manifold]</strong><br> Save file as: <code>assets/images/curse_dim_cube_manifold.png</code> <!-- ![](assets/images/curse_dim_cube_manifold.png){width="100%"} --></p>
+</div>
+<div class="fragment box-teal" style="margin-top: 12px;">
+<p><strong>The Methodological Filter</strong></p>
+<ul>
+<li><strong>Low <span class="math inline">\(d\)</span>, linear/known structure?</strong> Traditional statistics are sufficient and preferable.</li>
+<li><strong>High <span class="math inline">\(d\)</span>, sparse space?</strong> Dimensionality reduction (PCA, UMAP) and ML help uncover lower <strong>intrinsic dimensionality</strong> (manifolds).</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="demystifying-ml-scaling-one-research-question" class="slide level2 smaller">
+<h2>Demystifying ML: Scaling One Research Question</h2>
+<p>Following the same environmental dataset from classical statistics into the ML toolkit:</p>
+<div class="flex-row" style="margin-top: 8px;">
+<div class="flex-col">
+<div class="box-grey" style="height: 100%;">
+<p><strong>1. Classical Baseline</strong><br> One predictor, linear trend:<br> <span class="math inline">\(Y = ax + b + \varepsilon\)</span></p>
+<p>Solved analytically via Ordinary Least Squares.</p>
+</div>
+</div>
+<div class="flex-col" style="flex: 0.08; align-items: center; justify-content: center;">
+<h3 style="margin: 0; color: #6c757d;">
+→
+</h3>
+</div>
+<div class="flex-col">
+<div class="fragment box-teal" style="height: 100%;">
+<p><strong>2. Same Problem as ML</strong><br> Any ML workflow = <strong>3 parts</strong>:</p>
+<ol type="1">
+<li><strong>Model</strong> (equation)</li>
+<li><strong>Loss function</strong> (error metric, e.g., MSE)</li>
+<li><strong>Solver</strong> (iterative step, e.g., gradient descent)</li>
 </ol>
 </div>
-<div class="fragment flex-col" style="border-left: 2px dashed #ced4da; padding-left: 35px; align-items: center; justify-content: center;">
-<p style="text-align: center; margin-top: 20px;">
-Questions about the AI Toolkit?<br><span style="color: #005a8c;"><strong>Let’s discuss!</strong></span>
-</p>
-<!-- SLIDO Q&A GOES HERE -->
-<div class="plot-placeholder" style="padding: 10px; height: 300px;">
-<iframe src="https://app.sli.do/event/[YOUR_EVENT_CODE_HERE]" width="100%" height="100%" style="border:none;">
-</iframe>
+</div>
+<div class="flex-col" style="flex: 0.08; align-items: center; justify-content: center;">
+<h3 style="margin: 0; color: #6c757d;">
+→
+</h3>
+</div>
+<div class="flex-col">
+<div class="fragment box-blue" style="height: 100%;">
+<p><strong>3. Earned Complexity</strong><br> Add non-linear thresholds, categories, or high-<span class="math inline">\(d\)</span> features:</p>
+<p>Move deliberately along the toolkit <span class="math inline">\(\rightarrow\)</span> <strong>Classification (Cross-Entropy), Random Forests, SVMs, or Neural Nets</strong>.</p>
+</div>
+</div>
+</div>
+<div class="flex-row" style="margin-top: 10px; align-items: center;">
+<div class="flex-col flex-2">
+<table style="width: 100%; font-size: 0.7em; border-collapse: collapse; background: #ffffff; border-radius: 6px; overflow: hidden;">
+<tbody><tr style="background: #005a8c; color: #ffffff;">
+<th style="padding: 6px 10px; text-align: left;">
+Classical Statistics Dictionary
+</th>
+<th style="padding: 6px 10px; text-align: left;">
+Machine Learning Dictionary
+</th>
+<th style="padding: 6px 10px; text-align: left;">
+Scientific Note
+</th>
+</tr>
+<tr style="border-bottom: 1px solid #dee2e6;">
+<td style="padding: 6px 10px;">
+Covariates / Explanatory variables (<span class="math inline">\(X\)</span>)
+</td>
+<td style="padding: 6px 10px; color: #005a8c; font-weight: 600;">
+Features / Inputs
+</td>
+<td style="padding: 6px 10px;">
+Domain knowledge guides selection
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #dee2e6;">
+<td style="padding: 6px 10px;">
+Response variable (<span class="math inline">\(Y\)</span>) &amp; Residuals
+</td>
+<td style="padding: 6px 10px; color: #005a8c; font-weight: 600;">
+Target / Label &amp; Loss Function
+</td>
+<td style="padding: 6px 10px;">
+Defines what is optimized
+</td>
+</tr>
+<tr>
+<td style="padding: 6px 10px;">
+Mechanistic / Biological parameters
+</td>
+<td style="padding: 6px 10px; color: #005a8c; font-weight: 600;">
+Weights / Hyperparameters
+</td>
+<td style="padding: 6px 10px;">
+<strong>Often have no biological meaning</strong>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="flex-col fragment">
+<div class="box-red" style="margin-bottom: 0; font-size: 0.76em;">
+<p><strong>Check before scaling up:</strong><br> Exhaust classical exploratory data analysis first. Complex algorithms are justified only when data shape and dimensionality demand them.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="section-1" class="slide level2" data-background-color="#005a8c">
+<section id="interactive-checkpoint-frame-your-question" class="slide level2 smaller">
+<h2>Interactive Checkpoint: Frame Your Question</h2>
+<div class="flex-row" style="align-items: center; margin-top: 20px;">
+<div class="flex-col flex-2">
+<h3 style="font-size: 1.35em; line-height: 1.3; margin-bottom: 18px;">
+How would you formulate one question from your own research as <span style="color: #00a3a6;"><span class="math inline">\(Y \sim X\)</span></span>?
+</h3>
+<div class="box-teal">
+<p>In <strong>Slido 3</strong> (<code>#[SLIDO_3_CODE]</code>), write a short 1-line formulation:</p>
+<ol type="1">
+<li><strong>Target (<span class="math inline">\(Y\)</span>):</strong> What do you want to explain or predict? <em>(continuous value or category?)</em></li>
+<li><strong>Features (<span class="math inline">\(X\)</span>):</strong> What predictors do you have—and roughly how many dimensions (<span class="math inline">\(d\)</span>)?</li>
+<li><strong>Priority:</strong> Do you care more about <strong>mechanistic inference</strong> or <strong>predictive accuracy</strong>?</li>
+</ol>
+</div>
+</div>
+<div class="flex-col" style="align-items: center;">
+<div class="plot-placeholder" style="height: 350px; width: 350px;">
+<p><strong>[QR CODE: Slido 3 — Open Text (<span class="math inline">\(Y \sim X\)</span>)]</strong><br><br> Save file as:<br><code>assets/images/slido_3_research_qr.png</code><br><br> <em>(Switch browser tab to Slido Present Mode to discuss live examples)</em> <!-- ![](assets/images/slido_3_research_qr.png){width="100%"} --></p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="section-3-the-modelling-trade-off" class="title-slide slide level1 center" data-background-color="#005a8c">
+<h1>Section 3: The Modelling Trade-Off</h1>
+<p><span style="color: #e9ecef; font-size: 0.9em;">Insight 4 — Balancing predictive performance and explainability</span></p>
+</section>
+<section id="the-two-cultures-the-flexible-trade-off" class="slide level2 smaller">
+<h2>The Two Cultures &amp; The Flexible Trade-Off</h2>
+<div class="flex-row" style="margin-top: 8px;">
+<div class="flex-col">
+<div class="box-grey" style="height: 100%;">
+<p><strong>Data Modeling Culture</strong> <em>(Classical Statistics)</em></p>
+<ul>
+<li>Assumes data arise from a specified stochastic/mechanistic process (e.g., GLMMs, ODEs).</li>
+<li><strong>Primary goal:</strong> Parameter inference, uncertainty quantification, and causal interpretation.</li>
+</ul>
+</div>
+</div>
+<div class="flex-col" style="flex: 0.1; align-items: center; justify-content: center;">
+<h3 style="margin: 0; color: #6c757d;">
+↔︎
+</h3>
+</div>
+<div class="flex-col">
+<div class="box-teal" style="height: 100%;">
+<p><strong>Algorithmic Modeling Culture</strong> <em>(Machine Learning)</em></p>
+<ul>
+<li>Treats the underlying data-generating mechanism as unknown or too complex to write analytically.</li>
+<li><strong>Primary goal:</strong> Out-of-sample predictive accuracy across high-dimensional, non-linear interactions.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="spectrum-bar">
+<p><span style="color: #006f7a;">High Interpretability<br><small>Linear / Mechanistic (GUTS)</small></span> <span style="color: #005a8c;">← Hybrid &amp; Explainable AI (XAI) →<br><small>Decision Trees · Random Forests + Feature Importance</small></span> <span style="color: #8c1d18;">High Predictive Capacity<br><small>Deep Neural Networks</small></span></p>
+</div>
+<div class="fragment box-blue" style="margin-top: 10px;">
+<p><strong>A Pragmatic, Objective-Driven Choice:</strong> Interpretability is not a dogma—it is an explicit scientific decision. High-throughput screening (e.g., QSARs) may justify prioritizing accuracy; regulatory or mechanistic risk assessment demands explainability. Increasingly, <strong>hybrid pipelines</strong> combine both.</p>
+</div>
+<div class="ref-footer">
+<p>Breiman, L. (2001). Statistical modeling: The two cultures. <em>Statistical Science</em>, 16(3), 199–231. <a href="https://doi.org/10.1214/ss/1009213726">10.1214/ss/1009213726</a> · Rudin, C. (2019). Stop explaining black box machine learning models for high stakes decisions and use interpretable models instead. <em>Nature Machine Intelligence</em>, 1, 206–215. <a href="https://doi.org/10.1038/s42256-019-0048-x">10.1038/s42256-019-0048-x</a></p>
+</div>
+</section>
+<section id="closing-the-loop-bridge-to-part-2" class="slide level2 smaller">
+<h2>Closing the Loop &amp; Bridge to Part 2</h2>
+<div class="flex-row" style="margin-top: 12px;">
+<div class="flex-col">
+<div class="box-grey" style="height: 100%; display: flex; flex-direction: column;">
+<p><strong>Revisit Slide 2: Our Opening Word Cloud</strong></p>
+<ul>
+<li>Where did our collective word cloud cluster 45 minutes ago?</li>
+<li>AI is not synonymous with chatbots—it is an organized <strong>toolkit</strong> spanning symbolic logic, classical ML, deep learning, and generative models.</li>
+</ul>
+<div class="plot-placeholder" style="margin-top: 10px; min-height: 185px;">
+<p><strong>[LIVE CALLBACK: Switch to Slido 1 Word Cloud tab]</strong><br> <em>(Post-event: final exported word cloud will be archived on the workshop website)</em></p>
+</div>
+</div>
+</div>
+<div class="flex-col fragment">
+<div class="box-teal" style="height: 100%; display: flex; flex-direction: column; justify-content: center;">
+<p><strong>How These 4 Insights Reshaped My PhD</strong> <em>(Preview of Part 2 — Today at 10:45)</em></p>
+<ol type="1">
+<li><strong>Exhausted traditional statistics first</strong> (descriptive &amp; linear multivariate audits) before invoking ML.</li>
+<li><strong>Kept mechanistic models (GUTS)</strong> at the core where biological interpretability is essential.</li>
+<li><strong>Deployed ML as an explainable meta-model</strong> to audit which experimental design features govern parameter precision.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="take-home-messages" class="slide level2 smaller">
+<h2>Take-Home Messages</h2>
+<div class="flex-row" style="margin-top: 15px;">
+<div class="flex-col flex-2" style="justify-content: center; padding-right: 16px;">
+<ol style="font-size: 1.05em; line-height: 1.65;">
+<li class="fragment">
+<b>AI is an Umbrella Toolkit:</b> Know the taxonomy before choosing an algorithm—GenAI chatbots are only one narrow subset.
+</li>
+<li class="fragment">
+<b>Protect Cognitive Friction:</b> Preserve your scientific <i>savoir-faire</i> and remain aware of the ecological footprint of GenAI workflows.
+</li>
+<li class="fragment">
+<b>Earn Model Complexity:</b> Check true dimensionality and exhaust classical statistical analyses before adopting ML.
+</li>
+<li class="fragment">
+<b>Align the Trade-Off to Your Goal:</b> Use domain knowledge to decide where interpretability is essential, where predictive power wins, or where hybrid approaches bridge both.
+</li>
+</ol>
+<div class="fragment box-blue" style="margin-top: 12px; font-size: 0.78em;">
+<p><strong>Next up today (after a 15-min break):</strong> <strong>10:45 – 11:45 | Part 2 — Technical Case Study</strong> (Applied ML &amp; GUTS experimental designs).</p>
+</div>
+</div>
+<div class="flex-col" style="border-left: 2px dashed #ced4da; padding-left: 24px; justify-content: center; gap: 14px;">
+<div class="plot-placeholder" style="min-height: 195px;">
+<p><strong>[QR CODE: FRB-CESAB Course]</strong><br> <a href="https://ai-ecol.github.io/">ai-ecol.github.io</a><br> <code>assets/images/qr_cesab_course.png</code> <!-- ![](assets/images/qr_cesab_course.png){width="140px"} --></p>
+</div>
+<div class="plot-placeholder" style="min-height: 195px;">
+<p><strong>[QR CODE: Workshop Site &amp; Contact]</strong><br> <code>assets/images/qr_workshop_contact.png</code> <!-- ![](assets/images/qr_workshop_contact.png){width="140px"} --></p>
+</div>
+</div>
+</div>
+</section>
+<section id="section" class="slide level2" data-background-color="#005a8c">
 <h2></h2>
-<br><br><br>
-<div style="font-size: 3em; text-align: center; margin-top: 10px; line-height: 1.2; font-family: monospace;">
-<strong>Thanks!</strong>
-<div style="font-size: 0.1em; text-align: center; margin-top: 10px; line-height: 1.2; font-family: monospace;">
+<br><br>
+<div style="font-size: 2.8em; text-align: center; color: #ffffff; font-family: &#39;Space Grotesk&#39;, sans-serif; font-weight: 700;">
+<p>Thank you — Questions?</p>
+</div>
+<div style="font-size: 0.95em; text-align: center; color: #00a3a6; margin-top: 10px;">
+<p>Anthony Fow Esteves · anthony.fow@univ-lyon1.fr</p>
+</div>
 <p><br><br></p>
 <div class="columns">
-<div class="column" style="width:25%;">
-<div class="plot-placeholder" style="padding: 5px;">
-[Insert LBBE Logo here]
+<div class="column" style="width:30%;">
+<div class="plot-placeholder" style="height: 100px; background: rgba(255,255,255,0.92);">
+<p><code>assets/images/LBBE_LOGO_color.png</code> <!-- ![](assets/images/LBBE_LOGO_color.png){height="75px"} --></p>
 </div>
-</div><div class="column" style="width:10%;">
+</div><div class="column" style="width:5%;">
 
-</div><div class="column" style="width:25%;">
-<div class="plot-placeholder" style="padding: 5px;">
-[Insert INRAE Logo here]
+</div><div class="column" style="width:30%;">
+<div class="plot-placeholder" style="height: 100px; background: rgba(255,255,255,0.92);">
+<p><code>assets/images/INRAE_LOGO_color.png</code> <!-- ![](assets/images/INRAE_LOGO_color.png){height="75px"} --></p>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:30%;">
+<div class="plot-placeholder" style="height: 100px; background: rgba(255,255,255,0.92);">
+<p><code>assets/images/BIOEENVIS_LOGO.png</code> <!-- ![](assets/images/BIOEENVIS_LOGO.png){height="75px"} --></p>
 </div>
 </div>
 </div>
 <div class="footer">
-<p><span style="color: hsl(227, 24%, 89%);">Made in <a href="https://quarto.org">Quarto</a> made with ❤️</span></p>
+<p><span style="color: #e9ecef;">Built with <a href="https://quarto.org" style="color: #00a3a6;">Quarto</a> · Supported by FR BioEEnViS</span></p>
 </div>
 
 <div class="quarto-auto-generated-content">
@@ -1535,7 +1888,7 @@ Questions about the AI Toolkit?<br><span style="color: #005a8c;"><strong>Let’s
 
 </div>
 </div>
-</div></div></section></section>
+</section></section>
     </div>
   </div>
 
@@ -2408,8 +2761,8 @@ window.QuartoSupport = function () {
 'controlsAuto': true,
 'previewLinksAuto': false,
 'pdfSeparateFragments': false,
-'autoAnimateEasing': "ease",
-'autoAnimateDuration': 1,
+'autoAnimateEasing': "ease-in-out",
+'autoAnimateDuration': 0.75,
 'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'smaller': false,
