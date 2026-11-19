@@ -138,5 +138,124 @@
     "title": "Let’s Talk About AI",
     "section": "",
     "text": "Thanks!\n\n\n\n\n\n[Insert LBBE Logo here]\n\n\n\n\n\n[Insert INRAE Logo here]\n\n\n\n\nMade in Quarto made with ❤️"
+  },
+  {
+    "objectID": "01_philosophy_seminar2.html#lets-start-with-a-quick-scan",
+    "href": "01_philosophy_seminar2.html#lets-start-with-a-quick-scan",
+    "title": "Let’s Talk About AI",
+    "section": "Let’s Start With a Quick Scan…",
+    "text": "Let’s Start With a Quick Scan…\n\n\n\nWhat is the very first word (or words) that come to mind when someone mentions Artificial Intelligence?\n\n\n\nGo to slido.com and enter code #[SLIDO_1_CODE] (or scan the QR code).\nSubmit as many words as you like — we will capture this baseline map now and revisit it at the end of Part 1.\n\n\n\n\n\n[QR CODE: Slido 1 — Word Cloud] Save file as:assets/images/slido_1_wordcloud_qr.png (Switch browser tab to Slido Present Mode for live word cloud) \n\n\n\n\nOPENING ICEBREAKER (deliver while on Slide 1 before advancing here): “Good morning everyone. Before we dive in, let me lower the pressure—mostly for myself! I am not an AI researcher or a computer scientist; I am a PhD student in ecotoxicology. My goal today is not to lecture you as an expert, but to share a structured, critical compass from the FRB-CESAB training I attended thanks to FR BioEEnViS.”\nON SLIDE 2: Switch browser tab (Ctrl+Tab) to Slido Present Mode so the audience watches the word cloud build live. Narrative mission: Expect words like ChatGPT, LLMs, Gemini, chatbots to dominate the center. Note it out loud—do not dismiss it, just say: “Keep this picture in mind. We will come back to it.”"
+  },
+  {
+    "objectID": "01_philosophy_seminar2.html#the-bioeenvis-opportunity",
+    "href": "01_philosophy_seminar2.html#the-bioeenvis-opportunity",
+    "title": "Let’s Talk About AI",
+    "section": "The BioEEnViS Opportunity",
+    "text": "The BioEEnViS Opportunity\n\n\n\nPhD Motivation: Bridging the Methodological Gap\n\nEarly in my thesis, we considered AI to guide ecotoxicological experimental designs or extract experimental data.\nThis problem differs from standard ecotoxicology AI uses (e.g., QSARs or direct toxicity prediction).\nBecause I lacked formal AI training, I applied for an FR BioEEnViS Mobility Grant to acquire structured external foundations.\n\n\n\n\n\n→\n\n\n\n\nThe External Training Resource\n\nFRB-CESAB (Montpellier, June 2026): “AI for Ecologists: A Toolkit” — 5-day intensive course (all materials open-access).\n\n\n[IMAGE: FRB-CESAB Course Website / Logo + BioEEnViS Logo] Save file as: assets/images/cesab_website_screenshot.png \n\n\n\n\n\nLocal Acknowledgment (independent of the BioEEnViS mobility grant): Prior to Montpellier, attending AI4Biomed in Lyon—mainly organized and promoted by LBBE members—introduced key terminology that made the CESAB transition much smoother."
+  },
+  {
+    "objectID": "01_philosophy_seminar2.html#the-cesab-experience",
+    "href": "01_philosophy_seminar2.html#the-cesab-experience",
+    "title": "Let’s Talk About AI",
+    "section": "The CESAB Experience",
+    "text": "The CESAB Experience\nFour core modules covered during the 5-day FRB-CESAB program:\n\n\n\nModule 1 Introduction to AI, History & Machine Learning Foundations\n\n\nModule 2 Introduction to Deep Learning & Neural Architectures\n\n\nModule 3 Applied Deep Learning(Species Distribution Models & LLMs)\n\n\nModule 4 Symbolic AI & Constraint-Based Reasoning"
+  },
+  {
+    "objectID": "01_philosophy_seminar2.html#the-cesab-experience-1",
+    "href": "01_philosophy_seminar2.html#the-cesab-experience-1",
+    "title": "Let’s Talk About AI",
+    "section": "The CESAB Experience",
+    "text": "The CESAB Experience\nAll four modules converge on a single pedagogical objective:\n\n\n\n\n\n\n\n\n\n\n\n\nOfficial Course Objective — ai-ecol.github.io “Give participants the autonomy to assess which algorithms are most adapted to their own research questions, where to find them, and how to adjust them to the desired question.”"
+  },
+  {
+    "objectID": "01_philosophy_seminar2.html#the-cesab-experience-2",
+    "href": "01_philosophy_seminar2.html#the-cesab-experience-2",
+    "title": "Let’s Talk About AI",
+    "section": "The CESAB Experience",
+    "text": "The CESAB Experience\n\nCourse Objective: Autonomy to assess which algorithms fit your research question (ai-ecol.github.io) \\(\\rightarrow\\) Translated into 4 Core Insights (Today’s Roadmap)\n\n\n\n\nInsight 1 · AI &gt; Generative Chatbots Covered next: Distinguish GenAI from the wider AI taxonomy (ML, DL, Symbolic AI) and assess its epistemic & ecological costs.\n\n\nInsight 2 · Domain Baseline Primes Covered in Section 2: Ecological and statistical knowledge anchors plausibility and dictates how a problem is framed.\n\n\n\n\nInsight 3 · Exhaust Traditional Methods Covered in Section 2: Verify dimensionality and exhaust classical statistical analyses before adopting complex ML.\n\n\nInsight 4 · Explicit Trade-Offs Covered in Section 3: Balance predictive gain against explainability based on the scientific goal.\n\n\n\n\nNote: Part 1 is a curated synthesis of CESAB Day 1 principles—not a full 5-day syllabus dump. Part 2 (10:45) shows how these insights landed in my PhD."
+  },
+  {
+    "objectID": "01_philosophy_seminar2.html#why-learn-ai-a-bio-inspired-paradox",
+    "href": "01_philosophy_seminar2.html#why-learn-ai-a-bio-inspired-paradox",
+    "title": "Let’s Talk About AI",
+    "section": "Why Learn AI? A Bio-Inspired Paradox",
+    "text": "Why Learn AI? A Bio-Inspired Paradox\nAs a scientist trained to look for mechanistic explanations, why invest in learning opaque algorithms?\n\n\n\nBiological Signal Integration (Human Learning)\n\nBiological neurons integrate electrochemical inputs across complex networks.\nScientific understanding emerges through effortful cognitive friction—writing, debugging, synthesizing, and testing hypotheses.\n\n\n[IMAGE: Biological Neuron / Synaptic Integration] Save file as: assets/images/bio_neuron.png \n\n\n\n\n\nArtificial Neuron (Perceptron, 1957)\n\nLoosely inspired by biology: Inputs \\(\\rightarrow\\) Weights \\(\\rightarrow\\) Weighted Sum \\(\\rightarrow\\) Activation \\(\\rightarrow\\) Output.\nParameter estimation is numerical loss minimization—not biological reasoning or comprehension.\n\n\n[IMAGE: Perceptron Diagram (CESAB Day 1 Slide 70)] Save file as: assets/images/artificial_perceptron.png \n\n\n\n\n\nThe Paradox: AI delivers major scientific breakthroughs (e.g., AlphaFold), yet our most frequent daily contact is with Generative AI chatbots. When misused to bypass writing, literature synthesis, or coding, a bio-inspired tool short-circuits our own biological learning process."
+  },
+  {
+    "objectID": "01_philosophy_seminar2.html#epistemic-ecological-guardrails-insight-1a",
+    "href": "01_philosophy_seminar2.html#epistemic-ecological-guardrails-insight-1a",
+    "title": "Let’s Talk About AI",
+    "section": "Epistemic & Ecological Guardrails (Insight 1a)",
+    "text": "Epistemic & Ecological Guardrails (Insight 1a)\n\n\n\n\nCognitive Proletarianization: Externalizing analytical tasks erodes our savoir-faire and methodological metacognition (Stiegler, 2010).\nEmpirical Evidence on Cognition: Controlled studies indicate that over-reliance on GenAI can reduce knowledge retention (Barcaui, 2025), lower persistence and independent performance (Liu et al., 2026, preprint), and foster dependence/deskilling (Kim et al., 2025).\nIllusions of Understanding: Fluent outputs can mask weak epistemic grounding (Messeri & Crockett, 2024)—sparking active debate across French doctoral schools on protecting core research training.\nPragmatic Guardrail: Retain cognitive friction for reasoning, writing, and analysis. Delegate routine formatting or syntax checks; shift from “Do X” to “Critique / explain X”.\n\n\n\n\n\nMaterial & Ecological Footprint\n\nGlobal energy-economy modeling shows AI productivity gains can drive net \\(\\text{CO}_2\\) increases via rebound effects (Alpine et al., 2026).\nInfrastructure expansion concentrates in water-stressed regions (e.g., Uruguay: 1.77 and Chile: 3.49 data centers per 1M inhabitants; IFC, 2026).\n\n\n[IMAGE: IFC 2026 Data Centers Map — Uruguay 1.77] Save file as: assets/images/datacenters_uruguay_ifc2026.png \n\n\n“Only a tiny proportion of water in Uruguay is used for human consumption.” — Daniel Pena (Rest of World, 2026)\n\n\n\n\n\nStiegler (2010) For a New Critique of Political Economy · Messeri & Crockett (2024) Nature 10.1038/s41586-024-07146-0 · Barcaui (2025) SSH Open 10.1016/j.ssaho.2025.102287 · Kim et al. (2025) Consum. Psychol. Rev. 10.1002/arcp.70008 · Liu et al. (2026) arXiv:2604.04721 · Alpine et al. (2026) npj Clim. Action 10.1038/s44168-026-00411-0"
+  },
+  {
+    "objectID": "01_philosophy_seminar2.html#ai-is-not-a-monolith-it-is-an-umbrella-term",
+    "href": "01_philosophy_seminar2.html#ai-is-not-a-monolith-it-is-an-umbrella-term",
+    "title": "Let’s Talk About AI",
+    "section": "AI is Not a Monolith… It Is an Umbrella Term",
+    "text": "AI is Not a Monolith… It Is an Umbrella Term\nQuick Poll (Slido 2): Which of these four diagrams correctly organizes Artificial Intelligence?\n\n\n\n\nA. Nested Algorithms assets/images/taxo_1_nested_algorithms.png \n\n\nB. AI / ML / DL / NLP / LLM assets/images/taxo_2_venn_nlp_llm.png \n\n\n\n\nC. AI / Data Science / Big Data assets/images/taxo_3_venn_bigdata.png \n\n\nD. CS / AI / Data Science / Math assets/images/taxo_4_venn_cs_stats.png \n\n\n\n\n\n[QR CODE: Slido 2 — Multiple Choice] assets/images/slido_2_taxonomy_qr.png Code: #[SLIDO_2_CODE] \n\n\nAnswer: All four are partial lenses. There is no single formal definition of AI—each diagram highlights a different disciplinary cut (algorithms, language, data, or math)."
+  },
+  {
+    "objectID": "01_philosophy_seminar2.html#navigating-the-ai-vocabulary",
+    "href": "01_philosophy_seminar2.html#navigating-the-ai-vocabulary",
+    "title": "Let’s Talk About AI",
+    "section": "Navigating the AI Vocabulary",
+    "text": "Navigating the AI Vocabulary\nIn practice, researchers encounter a scattered soup of overlapping terms and tools:\n\n\nLinear & Logistic Regression ChatGPT / Claude / Perplexity Symbolic Logic & Rules PCA / UMAP CNN & RNN Data Science & Statistics Random Forest & Decision Trees Intelligent Robots Neural Networks (MLP) Support Vector Machines (SVM) Knowledge Representation\n\n\nWhich field contains which—and where do everyday chatbots actually sit?"
+  },
+  {
+    "objectID": "01_philosophy_seminar2.html#navigating-the-ai-vocabulary-1",
+    "href": "01_philosophy_seminar2.html#navigating-the-ai-vocabulary-1",
+    "title": "Let’s Talk About AI",
+    "section": "Navigating the AI Vocabulary",
+    "text": "Navigating the AI Vocabulary\nOrganizing the umbrella into parallel domains and nested subsets:\n\nARTIFICIAL INTELLIGENCE (Umbrella Discipline)\n\n\n\nSymbolic AI, Reasoning & Embodied Systems\n\nSymbolic Logic & Rules Knowledge Representation Intelligent Robots\n\n\nExplicit rules, ontologies, and constraint solving (e.g., protected-area design in CESAB Day 5).\n\n\nOverlapping Quantitative Pillar Data Science & Statistics\n\n\n\n\n\nMACHINE LEARNING (Automated Learning from Data)\n\nLinear & Logistic Regression PCA / UMAP Support Vector Machines (SVM) Random Forest & Decision Trees\n\n\nDEEP LEARNING (Multi-Layer Neural Networks)\n\nNeural Networks (MLP) CNN & RNN\n\n\nGENERATIVE AI & LLMs (A small, highly visible subset) ChatGPT / Claude / Perplexity\n\n\n\n\n\n\n\nStandard reference taxonomy: The OECD Framework for the Classification of AI Systems classifies systems by model type (symbolic, statistical, or hybrid), learning paradigm, and transparency.\n\n\nOptional backup: You can keep assets/images/oecd_ai_classification.png in your backup folder or click the live OECD link during Q&A if anyone asks for formal regulatory criteria."
+  },
+  {
+    "objectID": "01_philosophy_seminar2.html#when-does-a-research-problem-need-ml",
+    "href": "01_philosophy_seminar2.html#when-does-a-research-problem-need-ml",
+    "title": "Let’s Talk About AI",
+    "section": "When Does a Research Problem Need ML?",
+    "text": "When Does a Research Problem Need ML?\nScenario: An environmental scientist monitors 100 river sites across chemical concentrations, water quality, climate, and community traits.\n\n\n\nWhat Is a “Dimension”?\n\nIn Ecology / Env. Science: Usually 3D physical space \\((x, y, z)\\) + time.\nIn Machine Learning: Every measured variable is an axis (\\(d\\)). Measuring 50 water chemistry & species variables places each site in a 50-dimensional space.\n\n\n\nThe Curse of High Dimensionality\nIn a unit hypercube with \\(n=100\\) samples, the edge length \\(l = (k/n)^{1/d}\\) needed to capture even \\(k=1\\) neighbor grows rapidly:\n\n\n\nDimensions (\\(d\\))\n2\n3\n10\n100\n\n\n\n\nCube edge (\\(l\\))\n0.10\n0.21\n0.63\n0.955\n\n\n\nDistance flattens; almost every observation lies near the “border.”\n\n\n\n\n[IMAGE: CESAB Day 1 — Hypercube Distance & 3D-to-2D Manifold] Save file as: assets/images/curse_dim_cube_manifold.png \n\n\nThe Methodological Filter\n\nLow \\(d\\), linear/known structure? Traditional statistics are sufficient and preferable.\nHigh \\(d\\), sparse space? Dimensionality reduction (PCA, UMAP) and ML help uncover lower intrinsic dimensionality (manifolds)."
+  },
+  {
+    "objectID": "01_philosophy_seminar2.html#demystifying-ml-scaling-one-research-question",
+    "href": "01_philosophy_seminar2.html#demystifying-ml-scaling-one-research-question",
+    "title": "Let’s Talk About AI",
+    "section": "Demystifying ML: Scaling One Research Question",
+    "text": "Demystifying ML: Scaling One Research Question\nFollowing the same environmental dataset from classical statistics into the ML toolkit:\n\n\n\n1. Classical Baseline One predictor, linear trend: \\(Y = ax + b + \\varepsilon\\)\nSolved analytically via Ordinary Least Squares.\n\n\n\n\n→\n\n\n\n\n2. Same Problem as ML Any ML workflow = 3 parts:\n\nModel (equation)\nLoss function (error metric, e.g., MSE)\nSolver (iterative step, e.g., gradient descent)\n\n\n\n\n\n→\n\n\n\n\n3. Earned Complexity Add non-linear thresholds, categories, or high-\\(d\\) features:\nMove deliberately along the toolkit \\(\\rightarrow\\) Classification (Cross-Entropy), Random Forests, SVMs, or Neural Nets.\n\n\n\n\n\n\n\n\nClassical Statistics Dictionary\n\n\nMachine Learning Dictionary\n\n\nScientific Note\n\n\n\n\nCovariates / Explanatory variables (\\(X\\))\n\n\nFeatures / Inputs\n\n\nDomain knowledge guides selection\n\n\n\n\nResponse variable (\\(Y\\)) & Residuals\n\n\nTarget / Label & Loss Function\n\n\nDefines what is optimized\n\n\n\n\nMechanistic / Biological parameters\n\n\nWeights / Hyperparameters\n\n\nOften have no biological meaning\n\n\n\n\n\n\nCheck before scaling up: Exhaust classical exploratory data analysis first. Complex algorithms are justified only when data shape and dimensionality demand them."
+  },
+  {
+    "objectID": "01_philosophy_seminar2.html#interactive-checkpoint-frame-your-question",
+    "href": "01_philosophy_seminar2.html#interactive-checkpoint-frame-your-question",
+    "title": "Let’s Talk About AI",
+    "section": "Interactive Checkpoint: Frame Your Question",
+    "text": "Interactive Checkpoint: Frame Your Question\n\n\n\nHow would you formulate one question from your own research as \\(Y \\sim X\\)?\n\n\nIn Slido 3 (#[SLIDO_3_CODE]), write a short 1-line formulation:\n\nTarget (\\(Y\\)): What do you want to explain or predict? (continuous value or category?)\nFeatures (\\(X\\)): What predictors do you have—and roughly how many dimensions (\\(d\\))?\nPriority: Do you care more about mechanistic inference or predictive accuracy?\n\n\n\n\n\n[QR CODE: Slido 3 — Open Text (\\(Y \\sim X\\))] Save file as:assets/images/slido_3_research_qr.png (Switch browser tab to Slido Present Mode to discuss live examples)"
+  },
+  {
+    "objectID": "01_philosophy_seminar2.html#the-two-cultures-the-flexible-trade-off",
+    "href": "01_philosophy_seminar2.html#the-two-cultures-the-flexible-trade-off",
+    "title": "Let’s Talk About AI",
+    "section": "The Two Cultures & The Flexible Trade-Off",
+    "text": "The Two Cultures & The Flexible Trade-Off\n\n\n\nData Modeling Culture (Classical Statistics)\n\nAssumes data arise from a specified stochastic/mechanistic process (e.g., GLMMs, ODEs).\nPrimary goal: Parameter inference, uncertainty quantification, and causal interpretation.\n\n\n\n\n\n↔︎\n\n\n\n\nAlgorithmic Modeling Culture (Machine Learning)\n\nTreats the underlying data-generating mechanism as unknown or too complex to write analytically.\nPrimary goal: Out-of-sample predictive accuracy across high-dimensional, non-linear interactions.\n\n\n\n\n\nHigh InterpretabilityLinear / Mechanistic (GUTS) ← Hybrid & Explainable AI (XAI) →Decision Trees · Random Forests + Feature Importance High Predictive CapacityDeep Neural Networks\n\n\nA Pragmatic, Objective-Driven Choice: Interpretability is not a dogma—it is an explicit scientific decision. High-throughput screening (e.g., QSARs) may justify prioritizing accuracy; regulatory or mechanistic risk assessment demands explainability. Increasingly, hybrid pipelines combine both.\n\n\nBreiman, L. (2001). Statistical modeling: The two cultures. Statistical Science, 16(3), 199–231. 10.1214/ss/1009213726 · Rudin, C. (2019). Stop explaining black box machine learning models for high stakes decisions and use interpretable models instead. Nature Machine Intelligence, 1, 206–215. 10.1038/s42256-019-0048-x"
+  },
+  {
+    "objectID": "01_philosophy_seminar2.html#closing-the-loop-bridge-to-part-2",
+    "href": "01_philosophy_seminar2.html#closing-the-loop-bridge-to-part-2",
+    "title": "Let’s Talk About AI",
+    "section": "Closing the Loop & Bridge to Part 2",
+    "text": "Closing the Loop & Bridge to Part 2\n\n\n\nRevisit Slide 2: Our Opening Word Cloud\n\nWhere did our collective word cloud cluster 45 minutes ago?\nAI is not synonymous with chatbots—it is an organized toolkit spanning symbolic logic, classical ML, deep learning, and generative models.\n\n\n[LIVE CALLBACK: Switch to Slido 1 Word Cloud tab] (Post-event: final exported word cloud will be archived on the workshop website)\n\n\n\n\n\nHow These 4 Insights Reshaped My PhD (Preview of Part 2 — Today at 10:45)\n\nExhausted traditional statistics first (descriptive & linear multivariate audits) before invoking ML.\nKept mechanistic models (GUTS) at the core where biological interpretability is essential.\nDeployed ML as an explainable meta-model to audit which experimental design features govern parameter precision."
+  },
+  {
+    "objectID": "01_philosophy_seminar2.html#take-home-messages",
+    "href": "01_philosophy_seminar2.html#take-home-messages",
+    "title": "Let’s Talk About AI",
+    "section": "Take-Home Messages",
+    "text": "Take-Home Messages\n\n\n\n\nAI is an Umbrella Toolkit: Know the taxonomy before choosing an algorithm—GenAI chatbots are only one narrow subset.\n\n\nProtect Cognitive Friction: Preserve your scientific savoir-faire and remain aware of the ecological footprint of GenAI workflows.\n\n\nEarn Model Complexity: Check true dimensionality and exhaust classical statistical analyses before adopting ML.\n\n\nAlign the Trade-Off to Your Goal: Use domain knowledge to decide where interpretability is essential, where predictive power wins, or where hybrid approaches bridge both.\n\n\n\nNext up today (after a 15-min break): 10:45 – 11:45 | Part 2 — Technical Case Study (Applied ML & GUTS experimental designs).\n\n\n\n\n[QR CODE: FRB-CESAB Course] ai-ecol.github.io assets/images/qr_cesab_course.png \n\n\n[QR CODE: Workshop Site & Contact] assets/images/qr_workshop_contact.png"
+  },
+  {
+    "objectID": "01_philosophy_seminar2.html#section",
+    "href": "01_philosophy_seminar2.html#section",
+    "title": "Let’s Talk About AI",
+    "section": "",
+    "text": "Thank you — Questions?\n\n\nAnthony Fow Esteves · anthony.fow@univ-lyon1.fr\n\n\n\n\n\nassets/images/LBBE_LOGO_color.png \n\n\n\n\n\nassets/images/INRAE_LOGO_color.png \n\n\n\n\n\nassets/images/BIOEENVIS_LOGO.png \n\n\n\n\nBuilt with Quarto · Supported by FR BioEEnViS"
   }
 ]

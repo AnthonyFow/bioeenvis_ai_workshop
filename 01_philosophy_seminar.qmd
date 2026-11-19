@@ -139,8 +139,8 @@ The rapid adoption of AI introduces a systemic risk: **the illusion of understan
 - **Cognitive Proletarianization:** When we externalize analytical reasoning to an algorithm, we risk losing our own *savoir-faire* and methodological metacognition.
 - **The Ecotox Danger:** If we rely solely on AI "black boxes" or LLMs to generate our models, we risk losing our grasp on the mechanistic biology and statistical assumptions driving those predictions.
 - **Scientific Monocultures:** Highly fluent AI outputs often mask a complete lack of epistemic grounding, standardizing research into a monoculture.
-- **The Solution:** We must shift from prompting *"Do X"* to *"Teach me how to do X"*.
-:::
+- **The Solution:** We must shift from prompting *"Do X"* to *"Teach me how to do X"*. 
+::: 
 :::
 
 ::: {.flex-col .fragment}
