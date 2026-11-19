@@ -11,7 +11,7 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: 01_philosophy_seminar2.qmd
+      - href: 01_philosophy_seminar.qmd
         text: "WS1: AI Philosophy"
       - href: 02_technical_workshop.qmd
         text: "WS2: Tech Case Study"
