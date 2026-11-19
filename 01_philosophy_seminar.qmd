@@ -109,21 +109,20 @@ format:
 
 ::: {.flex-col .flex-2}
 <h3 style="font-size: 1.5em; line-height: 1.3; margin-bottom: 20px;">
-What is the <span style="color: #00a3a6;">very first word (or words)</span> that come to mind when someone mentions <span style="color: #005a8c;">Artificial Intelligence</span>?
+<span style="color: #0a0a0a;">What is the</span> <span style="color: #00a3a6;">very first word (or words)</span> <span style="color: #0a0a0a;">that come to mind when someone mentions</span> <span style="color: #00a3a6;">Artificial Intelligence?</span>
 </h3>
 
 ::: {.box-grey}
-- Go to **slido.com** and enter code **`#[SLIDO_1_CODE]`** (or scan the QR code).
-- Submit **as many words as you like** — we will capture this baseline map now and revisit it at the end of Part 1.
+- Go to <span style="color: #000000;">**slido.com**</span> and enter code <span style="color: #000000;">**#37915273**</span> (or scan the QR code).
+- Submit <span style="color: #000000;">**as many words as you like**</span> — we will capture this baseline map now and revisit it at the end of Part 1.
 :::
 :::
 
 ::: {.flex-col style="align-items: center;"}
 <div class="plot-placeholder" style="height: 360px; width: 360px;">
-**[QR CODE: Slido 1 — Word Cloud]**<br><br>
-Save file as:<br><code>assets/images/slido_1_wordcloud_qr.png</code><br><br>
-<em>(Switch browser tab to Slido Present Mode for live word cloud)</em>
-<!-- ![](assets/images/slido_1_wordcloud_qr.png){width="100%"} -->
+
+
+![](assets/images/slido_1_wordcloud_qr.png){width="100%"} 
 </div>
 :::
 
@@ -148,8 +147,9 @@ Switch browser tab (Ctrl+Tab) to Slido Present Mode so the audience watches the 
 **PhD Motivation: Bridging the Methodological Gap**
 
 - Early in my thesis, we considered AI to **guide ecotoxicological experimental designs** or extract experimental data.
-- This problem differs from standard ecotoxicology AI uses (e.g., **QSARs** or direct toxicity prediction).
-- Because I lacked formal AI training, I applied for an **FR BioEEnViS Mobility Grant** to acquire structured external foundations.
+![](assets/images/phd_motivation.png){width="70%"}
+<!--- This problem differs from standard ecotoxicology AI uses (e.g., **QSARs** or direct toxicity prediction). --->
+<!-- - Because I lacked formal AI training, I applied for an **FR BioEEnViS Mobility Grant** to acquire structured external foundations. --->
 :::
 :::
 
@@ -161,20 +161,16 @@ Switch browser tab (Ctrl+Tab) to Slido Present Mode so the audience watches the 
 ::: {.box-grey style="flex: 1; display: flex; flex-direction: column;"}
 **The External Training Resource**
 
-- **FRB-CESAB (Montpellier, June 2026):** [*"AI for Ecologists: A Toolkit"*](https://ai-ecol.github.io/) — 5-day intensive course (all materials open-access).
+- **FRB-CESAB (Montpellier, June 2026):** [**AI for Ecologists: A Toolkit**](https://ai-ecol.github.io/) — 5-day intensive course (all materials open-access).
+![](assets/images/cesab_website_screenshot.png){width="100%"}
 
-<div class="plot-placeholder" style="margin-top: 10px; min-height: 210px;">
-**[IMAGE: FRB-CESAB Course Website / Logo + BioEEnViS Logo]**<br>
-Save file as: <code>assets/images/cesab_website_screenshot.png</code>
-<!-- ![](assets/images/cesab_website_screenshot.png){width="100%"} -->
-</div>
 :::
 :::
 
 :::
 
-::: {.box-blue style="margin-top: 10px; padding: 10px 16px; font-size: 0.74em;"}
-**Local Acknowledgment (independent of the BioEEnViS mobility grant):** Prior to Montpellier, attending [**AI4Biomed**](https://indico.engineering.univ-lyon1.fr/event/29/) in Lyon—mainly organized and promoted by **LBBE members**—introduced key terminology that made the CESAB transition much smoother.
+::: {.fragment .box-blue style="margin-top: 10px; padding: 10px 16px; font-size: 0.74em;"}
+**Local Acknowledgment (independent of the BioEEnViS mobility grant):** Prior to Montpellier, attending [**AI4BioMed**](https://indico.engineering.univ-lyon1.fr/event/29/) in Lyon, mainly organized and promoted by **LBBE members**, introduced key terminology that made the CESAB transition much smoother.
 :::
 
 
@@ -222,8 +218,8 @@ All four modules converge on a single pedagogical objective:
 :::
 
 ::: {data-id="card4" class="box-red" style="width: 740px; height: 220px; border-radius: 10px; display: flex; flex-direction: column; justify-content: center; text-align: center; padding: 24px;"}
-<span style="font-size: 1.15em; font-weight: 700; color: #8c1d18; margin-bottom: 10px;">Official Course Objective — ai-ecol.github.io</span>
-*"Give participants the **autonomy** to assess which algorithms are most adapted to their own research questions, where to find them, and how to adjust them to the desired question."*
+<span style="font-size: 1.5em; font-weight: 700; color: #8c1d18; margin-bottom: 10px;">Official Course Objective — ai-ecol.github.io</span><br>
+"Give participants the **autonomy** to assess which algorithms are most adapted to their own research questions, where to find them, and how to adjust them to the desired question."
 :::
 ::::
 
@@ -231,7 +227,7 @@ All four modules converge on a single pedagogical objective:
 ## The CESAB Experience {.smaller auto-animate="true"}
 
 ::: {data-id="card4" class="box-red" style="padding: 10px 18px; margin-bottom: 16px; font-size: 0.76em; text-align: center;"}
-**Course Objective:** Autonomy to assess which algorithms fit your research question ([ai-ecol.github.io](https://ai-ecol.github.io/)) $\rightarrow$ **Translated into 4 Core Insights (Today's Roadmap)**
+Autonomy to assess which algorithms fit your research question ([ai-ecol.github.io](https://ai-ecol.github.io/)) $\rightarrow$ **Translated into 4 Core Insights (Today's Roadmap)**
 :::
 
 ::: {.flex-row}
@@ -303,7 +299,7 @@ Save file as: <code>assets/images/artificial_perceptron.png</code>
 :::
 
 ::: {.fragment .box-red style="margin-top: 10px; text-align: center;"}
-**The Paradox:** AI delivers major scientific breakthroughs (e.g., AlphaFold), yet our most frequent daily contact is with **Generative AI chatbots**. When misused to bypass writing, literature synthesis, or coding, a bio-inspired tool **short-circuits our own biological learning process**.
+**The Paradox:** AI delivers major scientific breakthroughs (e.g., [AlphaFold](https://www.nobelprize.org/prizes/chemistry/2024/press-release/)), yet our most frequent daily contact is with **Generative AI chatbots**. When misused to bypass writing, literature synthesis, or coding, a bio-inspired tool **short-circuits our own biological learning process**.
 :::
 
 
