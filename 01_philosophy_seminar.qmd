@@ -147,7 +147,7 @@ Switch browser tab (Ctrl+Tab) to Slido Present Mode so the audience watches the 
 **PhD Motivation: Bridging the Methodological Gap**
 
 - Early in my thesis, we considered AI to **guide ecotoxicological experimental designs** or extract experimental data.
-![](assets/images/phd_motivation.png){width="70%"}
+![](assets/images/phd_motivation.png){width="100%"}
 <!--- This problem differs from standard ecotoxicology AI uses (e.g., **QSARs** or direct toxicity prediction). --->
 <!-- - Because I lacked formal AI training, I applied for an **FR BioEEnViS Mobility Grant** to acquire structured external foundations. --->
 :::
@@ -218,7 +218,7 @@ All four modules converge on a single pedagogical objective:
 :::
 
 ::: {data-id="card4" class="box-red" style="width: 740px; height: 220px; border-radius: 10px; display: flex; flex-direction: column; justify-content: center; text-align: center; padding: 24px;"}
-<span style="font-size: 1.5em; font-weight: 700; color: #8c1d18; margin-bottom: 10px;">Official Course Objective — ai-ecol.github.io</span><br>
+<span style="font-size: 1.5em; font-weight: 700; color: #8c1d18; margin-bottom: 10px;">Official Course Objective — [ai-ecol.github.io](https://ai-ecol.github.io/)</span><br>
 "Give participants the **autonomy** to assess which algorithms are most adapted to their own research questions, where to find them, and how to adjust them to the desired question."
 :::
 ::::
@@ -232,24 +232,24 @@ Autonomy to assess which algorithms fit your research question ([ai-ecol.github.
 
 ::: {.flex-row}
 ::: {.flex-col}
-::: {data-id="card1" class="box-teal"}
+::: {.fragment data-id="card1" class="box-teal"}
 **Insight 1 · AI > Generative Chatbots**<br>
 *Covered next:* Distinguish GenAI from the wider AI taxonomy (ML, DL, Symbolic AI) and assess its epistemic & ecological costs.
 :::
 
-::: {data-id="card2" class="box-teal"}
+::: {.fragment data-id="card2" class="box-teal"}
 **Insight 2 · Domain Baseline Primes**<br>
 *Covered in Section 2:* Ecological and statistical knowledge anchors plausibility and dictates how a problem is framed.
 :::
 :::
 
 ::: {.flex-col}
-::: {data-id="card3" class="box-teal"}
+::: {.fragment data-id="card3" class="box-teal"}
 **Insight 3 · Exhaust Traditional Methods**<br>
 *Covered in Section 2:* Verify dimensionality and exhaust classical statistical analyses before adopting complex ML.
 :::
 
-::: {data-id="card4b" class="box-teal"}
+::: {.fragment data-id="card4b" class="box-teal"}
 **Insight 4 · Explicit Trade-Offs**<br>
 *Covered in Section 3:* Balance predictive gain against explainability based on the scientific goal.
 :::
