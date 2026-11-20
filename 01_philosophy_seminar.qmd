@@ -103,7 +103,7 @@ format:
         </style>
 ---
 
-## Let's Start With a Quick Scan... {.smaller}
+## Let's Start With a Game... {.smaller}
 
 ::: {.flex-row style="align-items: center; margin-top: 25px;"}
 
