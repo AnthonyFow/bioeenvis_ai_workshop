@@ -21,7 +21,7 @@ format:
         * { box-sizing: border-box; }
         .reveal { font-family: 'Inter', sans-serif; background: #e9ecef; }
         .reveal h1, .reveal h2, .reveal h3 { font-family: 'Space Grotesk', sans-serif; color: #005a8c; margin-top: 0; margin-bottom: 10px; }
-        .reveal h2 { font-size: 1.32em; line-height: 1.18; }
+        .reveal h2 { font-size: 1.26em; line-height: 1.15; }
         .reveal a { color: #005a8c; text-decoration: underline; }
         .reveal a:hover { color: #00a3a6; }
 
@@ -76,6 +76,71 @@ format:
         }
         .img-card img { margin: 0 !important; object-fit: contain; }
 
+        /* Slide 8 Taxonomy 2x2 Cards (Unclippable Top Label Bar) */
+        .taxo-card {
+          background-color: #ffffff;
+          border: 1.5px solid #ced4da;
+          border-radius: 8px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
+          width: 100%;
+          height: 215px;
+          padding: 6px 8px;
+          gap: 6px;
+          overflow: hidden;
+          box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+        }
+        .taxo-header {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          gap: 7px;
+          padding: 4px 7px;
+          background-color: #f1f3f5;
+          border-bottom: 1px solid #dee2e6;
+          border-radius: 4px;
+          flex-shrink: 0;
+        }
+        .taxo-badge {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 22px;
+          height: 22px;
+          border-radius: 4px;
+          background-color: #005a8c;
+          color: #ffffff;
+          font-family: 'Space Grotesk', sans-serif;
+          font-weight: 700;
+          font-size: 0.72em;
+          flex-shrink: 0;
+        }
+        .taxo-label {
+          font-family: 'Space Grotesk', sans-serif;
+          font-size: 0.70em;
+          font-weight: 700;
+          color: #005a8c;
+          text-align: left;
+          line-height: 1.15;
+        }
+        .taxo-img-wrap {
+          flex: 1;
+          width: 100%;
+          min-height: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .taxo-img-wrap img {
+          max-height: 148px;
+          width: auto;
+          max-width: 100%;
+          object-fit: contain;
+          margin: 0 !important;
+        }
+
         /* Dashed Placeholders for Pending Assets */
         .plot-placeholder {
           background-color: #ffffff;
@@ -125,14 +190,14 @@ format:
           align-items: stretch;
           margin: 10px 0;
         }
-        .spectrum-col { flex: 1; display: flex; flex-direction: column; justify-content: center; font-size: 0.68em; line-height: 1.32; }
+        .spectrum-col { flex: 1; display: flex; flex-direction: column; justify-content: center; font-size: 0.67em; line-height: 1.32; }
         .spectrum-col .spec-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.12em; margin-bottom: 3px; }
         .spectrum-col .spec-eq { font-family: 'Inter', sans-serif; font-weight: 600; color: #212529; margin-bottom: 3px; }
         .spectrum-col .spec-reg { font-style: italic; color: #495057; font-size: 0.94em; }
 
         /* Dimension Progression Strip (Slide 15) */
         .dim-strip { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin: 8px 0 10px 0; }
-        .dim-chip { flex: 1; background: #ffffff; border: 1.5px solid #e53935; border-radius: 6px; padding: 6px 8px; text-align: center; font-size: 0.85em; line-height: 1.2; }
+        .dim-chip { flex: 1; background: #ffffff; border: 1.5px solid #e53935; border-radius: 6px; padding: 6px 8px; text-align: center; font-size: 0.83em; line-height: 1.2; }
         .dim-chip strong { color: #8c1d18; display: block; font-size: 1.05em; }
         .dim-arrow { color: #8c1d18; font-weight: 700; font-size: 1.1em; }
         </style>
@@ -352,31 +417,31 @@ Autonomy to assess which algorithms fit your research question ([ai-ecol.github.
 :::
 
 
-## AI is Not a Monolith — It's an Umbrella Term {.smaller}
+## AI Is an Umbrella Term — Not a Monolith {.smaller}
 **Quick Poll (Slido 2):** Which of these four diagrams correctly organises Artificial Intelligence?
 
 ::: {.flex-row style="margin-top: 6px;"}
 
 ::: {.flex-col .flex-2 style="gap: 10px;"}
 ::: {.flex-row style="gap: 12px;"}
-<div class="img-card" style="height: 215px;">
-<div class="img-caption">A. Nested Algorithms</div>
-<img src="assets/images/taxo_1_nested_algorithms.png" style="max-height: 175px; max-width: 100%;" alt="A. Nested Algorithms">
+<div class="taxo-card">
+<div class="taxo-header"><span class="taxo-badge">A</span><span class="taxo-label">A. Nested Algorithms</span></div>
+<div class="taxo-img-wrap"><img src="assets/images/taxo_1_nested_algorithms.png" alt="A. Nested Algorithms"></div>
 </div>
-<div class="img-card" style="height: 215px;">
-<div class="img-caption">B. AI / ML / DL / NLP / LLM</div>
-<img src="assets/images/taxo_2_venn_nlp_llm.png" style="max-height: 175px; max-width: 100%;" alt="B. AI ML DL NLP LLM">
+<div class="taxo-card">
+<div class="taxo-header"><span class="taxo-badge">B</span><span class="taxo-label">B. AI / ML / DL / NLP / LLM</span></div>
+<div class="taxo-img-wrap"><img src="assets/images/taxo_2_venn_nlp_llm.png" alt="B. AI / ML / DL / NLP / LLM"></div>
 </div>
 :::
 
 ::: {.flex-row style="gap: 12px;"}
-<div class="img-card" style="height: 215px;">
-<div class="img-caption">C. AI / Data Science / Big Data</div>
-<img src="assets/images/taxo_3_venn_bigdata.png" style="max-height: 175px; max-width: 100%;" alt="C. AI Data Science Big Data">
+<div class="taxo-card">
+<div class="taxo-header"><span class="taxo-badge">C</span><span class="taxo-label">C. AI / Data Science / Big Data</span></div>
+<div class="taxo-img-wrap"><img src="assets/images/taxo_3_venn_bigdata.png" alt="C. AI / Data Science / Big Data"></div>
 </div>
-<div class="img-card" style="height: 215px;">
-<div class="img-caption">D. CS / AI / Data Science / Math</div>
-<img src="assets/images/taxo_4_venn_cs_stats.png" style="max-height: 175px; max-width: 100%;" alt="D. CS AI Data Science Math">
+<div class="taxo-card">
+<div class="taxo-header"><span class="taxo-badge">D</span><span class="taxo-label">D. CS / AI / Data Science / Math</span></div>
+<div class="taxo-img-wrap"><img src="assets/images/taxo_4_venn_cs_stats.png" alt="D. CS / AI / Data Science / Math"></div>
 </div>
 :::
 :::
@@ -496,7 +561,7 @@ Organizing the umbrella into parallel domains and nested subsets:
 :::
 
 
-## A Personal Misconception &amp; The Bio-Inspired Paradox {.smaller}
+## My Initial Misconception &amp; The Bio-Inspired Paradox {.smaller}
 *When I started learning ML, I assumed neural networks worked like my brain processing thoughts.*
 
 <div style="text-align: center; font-size: 0.78em; font-weight: 600; color: #005a8c; margin-bottom: 8px;">
@@ -505,7 +570,7 @@ Inspired by biology — <u>not</u> biologically grounded <em>(like a movie "base
 
 ::: {.flex-row style="margin-top: 4px;"}
 
-::: {.flex-col}
+::: {.flex-col .fragment fragment-index="1"}
 ::: {.box-grey style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 0;"}
 <div>
 **Biological Brain**
@@ -523,7 +588,7 @@ Save file as: <code>assets/images/bio_brain_network.png</code>
 :::
 :::
 
-::: {.flex-col}
+::: {.flex-col .fragment fragment-index="2"}
 ::: {.box-teal style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 0;"}
 <div>
 **Artificial Neural Networks**
@@ -543,7 +608,7 @@ Save file as: <code>assets/images/ann_perceptron_layers.png</code>
 
 :::
 
-::: {.fragment .box-red style="margin-top: 10px; text-align: center; margin-bottom: 4px;"}
+::: {.fragment fragment-index="3" .box-red style="margin-top: 10px; text-align: center; margin-bottom: 4px;"}
 **The Paradox:** Tools loosely inspired by human cognition are increasingly used in ways that **short-circuit the very biological process our brains need to learn**.
 :::
 
@@ -552,60 +617,79 @@ Conceptual inspiration: A. Andalman ([The Deep View, 2025](https://www.youtube.c
 :::
 
 ::: {.notes}
-- **Spoken core:** Use my own initial misconception as a teaching moment: coming from biology, I first imagined artificial neurons as miniature reasoning units. In reality, biological brains run on ~20 watts with slow chemical signaling and local learning rules, whereas ANNs do fast matrix algebra and global backpropagation—they share inspiration, not mechanism. Click to reveal the paradox: these bio-inspired tools are now routinely used in ways that bypass our own biological learning.
+- **Spoken core (3 clicks):**
+  - *Initial state:* Open honestly with my own misconception—coming from biology, I initially assumed artificial neural networks processed thoughts the way our brain does. In reality, ANNs are inspired by biology rather than biologically grounded, much like a movie "based on true events."
+  - *Click 1 (Biological Brain):* Our brain runs on ~20 W with slow ionic spikes, diverse chemical neurotransmitters, and local synaptic plasticity, yet learns flexibly from just a few exposures.
+  - *Click 2 (Artificial Neural Networks):* ANNs rely on fast floating-point matrix multiplications, global backpropagation over a mathematical loss function, and massive compute—there are far more fundamental differences than similarities.
+  - *Click 3 (The Paradox):* Ironically, tools loosely inspired by human cognition are increasingly used in ways that short-circuit the exact biological process our brains require to learn.
 - **Callback:** Connects directly to the Deep Learning & GenAI nested boxes we just mapped on Slide 10.
-- **Bridge:** Let's look closely at how that cognitive shortcut works in everyday research practice.
+- **Bridge:** Let's look closely at how that cognitive shortcut operates in everyday scientific work.
 :::
 
 
-## Insight 1b: Cognitive Bypassing &amp; Expertise Asymmetry {.smaller}
+## Insight 1b: Cognitive Bypassing &amp; Expertise {.smaller}
 
+```{=html}
 <div class="r-stack" style="width: 100%; margin: 4px 0 8px 0;">
-<svg viewBox="0 0 1160 215" style="width: 100%; height: 215px; display: block;">
+<svg viewBox="0 0 1160 210" style="width: 100%; height: 210px; display: block;">
+  <rect x="10" y="10" width="235" height="74" rx="8" fill="#f1f3f5" stroke="#6c757d" stroke-width="2.2"/>
+  <text x="127" y="42" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="19" font-weight="700" fill="#212529">Raw Information</text>
+  <text x="127" y="66" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#495057">Papers · Data · Code</text>
+  <rect x="844" y="10" width="306" height="74" rx="8" fill="#d3f2f2" stroke="#006f7a" stroke-width="2.5"/>
+  <text x="997" y="42" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="19" font-weight="700" fill="#004d50">Durable Expertise</text>
+  <text x="997" y="66" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#004d50">&amp; Critical Audit Capacity</text>
+</svg>
+<svg class="fragment" data-fragment-index="1" viewBox="0 0 1160 210" style="width: 100%; height: 210px; display: block;">
   <defs>
     <marker id="arrow-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#00a3a6"/>
     </marker>
   </defs>
-  <rect x="10" y="12" width="235" height="74" rx="8" fill="#f1f3f5" stroke="#6c757d" stroke-width="2.2"/>
-  <text x="127" y="44" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="19" font-weight="700" fill="#212529">Raw Information</text>
-  <text x="127" y="68" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#495057">Papers · Data · Code</text>
-  <line x1="245" y1="49" x2="312" y2="49" stroke="#00a3a6" stroke-width="3.5" marker-end="url(#arrow-teal)"/>
-  <rect x="322" y="12" width="445" height="74" rx="8" fill="#e6f6f6" stroke="#00a3a6" stroke-width="2.5"/>
-  <text x="544" y="44" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="19" font-weight="700" fill="#005a5c">Effortful Processing</text>
-  <text x="544" y="68" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#004d50">Cognitive Friction &amp; Schema Building</text>
-  <line x1="767" y1="49" x2="834" y2="49" stroke="#00a3a6" stroke-width="3.5" marker-end="url(#arrow-teal)"/>
-  <rect x="844" y="12" width="306" height="74" rx="8" fill="#d3f2f2" stroke="#006f7a" stroke-width="2.5"/>
-  <text x="997" y="44" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="19" font-weight="700" fill="#004d50">Durable Expertise</text>
-  <text x="997" y="68" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#004d50">&amp; Critical Audit Capacity</text>
+  <line x1="245" y1="47" x2="312" y2="47" stroke="#00a3a6" stroke-width="3.5" marker-end="url(#arrow-teal)"/>
+  <rect x="322" y="10" width="445" height="74" rx="8" fill="#e6f6f6" stroke="#00a3a6" stroke-width="2.5"/>
+  <text x="544" y="42" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="19" font-weight="700" fill="#005a5c">Effortful Processing</text>
+  <text x="544" y="66" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#004d50">Cognitive Friction &amp; Schema Building</text>
+  <line x1="767" y1="47" x2="834" y2="47" stroke="#00a3a6" stroke-width="3.5" marker-end="url(#arrow-teal)"/>
 </svg>
-<svg class="fragment" viewBox="0 0 1160 215" style="width: 100%; height: 215px; display: block;">
+<svg class="fragment" data-fragment-index="2" viewBox="0 0 1160 210" style="width: 100%; height: 210px; display: block;">
   <defs>
     <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#e53935"/>
     </marker>
   </defs>
-  <path d="M 127 86 L 127 166 L 834 166" fill="none" stroke="#e53935" stroke-width="3.5" stroke-dasharray="8 5" marker-end="url(#arrow-red)"/>
-  <rect x="335" y="143" width="415" height="28" rx="6" fill="#fdf0f0" stroke="#e53935" stroke-width="1.5"/>
-  <text x="542" y="162" text-anchor="middle" font-family="Inter, sans-serif" font-size="14.5" font-weight="700" fill="#8c1d18">GenAI Shortcut — Bypasses Effortful Processing</text>
-  <rect x="844" y="129" width="306" height="74" rx="8" fill="#fdf0f0" stroke="#e53935" stroke-width="2.5"/>
-  <text x="997" y="161" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="19" font-weight="700" fill="#8c1d18">Illusion of Learning</text>
-  <text x="997" y="185" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#8c1d18">&amp; Cognitive Debt</text>
+  <path d="M 127 84 L 127 162 L 834 162" fill="none" stroke="#e53935" stroke-width="3.5" stroke-dasharray="8 5" marker-end="url(#arrow-red)"/>
+  <rect x="335" y="139" width="415" height="28" rx="6" fill="#fdf0f0" stroke="#e53935" stroke-width="1.5"/>
+  <text x="542" y="158" text-anchor="middle" font-family="Inter, sans-serif" font-size="14.5" font-weight="700" fill="#8c1d18">GenAI Shortcut — Bypasses Effortful Processing</text>
+  <rect x="844" y="125" width="306" height="74" rx="8" fill="#fdf0f0" stroke="#e53935" stroke-width="2.5"/>
+  <text x="997" y="157" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="19" font-weight="700" fill="#8c1d18">Illusion of Learning</text>
+  <text x="997" y="181" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#8c1d18">&amp; Cognitive Debt</text>
 </svg>
 </div>
+```
 
-::: {.fragment .flex-row style="margin-top: 2px; gap: 16px;"}
+::: {.flex-row style="margin-top: 2px; gap: 16px;"}
 
 ::: {.flex-col}
-::: {.box-blue style="height: 100%; margin-bottom: 0; font-size: 0.77em;"}
+::: {.r-stack style="width: 100%; height: 100%; align-items: stretch; justify-items: stretch;"}
+::: {.fragment .fade-in-then-out fragment-index="3" .box-grey style="width: 100%; height: 100%; margin: 0; font-size: 0.74em; border-left-color: #e53935;"}
+**Empirical Evidence: Why Bypassing Hurts**
+
+- **Barcaui (2025, RCT):** Lower knowledge retention when using ChatGPT as a cognitive crutch.
+- **Gerlich (2025):** Higher cognitive offloading linked to reduced critical thinking.
+- **Kosmyna et al. (2025, *arXiv preprint*):** Reduced EEG neural connectivity and accumulated cognitive debt.
+<!-- ![](assets/images/empirical_cognitive_debt.png){style="max-height: 155px; width: 100%; object-fit: contain;"} -->
+:::
+
+::: {.fragment .fade-in fragment-index="4" .box-blue style="width: 100%; height: 100%; margin: 0; font-size: 0.75em;"}
 **How LLMs Actually Operate**
 
 - LLMs are **probabilistic next-token generators** optimized for fluency—not truth-verification engines.
-- Externalizing core analysis risks *cognitive proletarianization* (Stiegler, 2010): fluent outputs can mask weak epistemic grounding and reduce retention, critical thinking, and neural engagement.
+- Externalizing core analysis risks *cognitive proletarianization* (Stiegler, 2010): fluent outputs mask weak epistemic grounding and erode critical audit skills.
+:::
 :::
 :::
 
-::: {.flex-col style="gap: 8px;"}
+::: {.flex-col .fragment fragment-index="3" style="gap: 8px;"}
 ::: {.box-teal style="margin-bottom: 0; padding: 10px 14px; font-size: 0.75em;"}
 **High Domain Background (Your Field):** You form concrete hypotheses $\rightarrow$ write precise prompts $\rightarrow$ **audit and catch errors**.
 :::
@@ -622,7 +706,12 @@ Stiegler (2010) *For a New Critique of Political Economy* · Messeri &amp; Crock
 :::
 
 ::: {.notes}
-- **Spoken core:** Walk through the SVG first (Click 1 reveals the red shortcut): biological learning requires the middle step—cognitive friction—to build mental schemas and expertise. Skipping that step does *not* land on expertise faster; it lands on an illusion of learning and cognitive debt (supported by controlled studies: Barcaui 2025, Gerlich 2025, Kosmyna et al. 2025 arXiv preprint). Click 2 for the 30-second rhetorical thought experiment: imagine an ecotoxicologist asking an LLM about survival-model assumptions—they catch a subtle mistake instantly. Now imagine the same person asking it to write an unfamiliar microbial metagenomics or bioinformatics pipeline—it will return fluent, plausible code whose hidden flaws they cannot audit. Practical guardrail: keep cognitive friction for reasoning, writing, and analysis; delegate routine formatting or syntax lookup.
+- **Spoken core (4 clicks):**
+  - *Initial state:* Point to the gap between Raw Information and Durable Expertise: "To move from raw papers, data, and code to genuine expertise, one critical step is required..."
+  - *Click 1 (Teal Effortful Processing):* That step is effortful processing—cognitive friction and schema building. Struggle is not a bug in learning; it is the mechanism.
+  - *Click 2 (Red GenAI Shortcut):* Using GenAI to bypass that middle step does *not* reach expertise faster—it branches away into an illusion of learning and cognitive debt.
+  - *Click 3 (Empirical Evidence + Expertise Asymmetry):* Point briefly to the empirical evidence on the left (Barcaui 2025 RCT, Gerlich 2025, Kosmyna et al. 2025 arXiv preprint), then run a 30-second rhetorical thought experiment on the right: an ecotoxicologist prompting an LLM about survival-model assumptions catches subtle flaws instantly; the same person prompting an unfamiliar metagenomics or bioinformatics pipeline gets fluent code whose hidden bugs go undetected.
+  - *Click 4 (How LLMs Actually Operate swaps into bottom-left):* Explain *why* low-background prompting is risky—LLMs generate high-probability next tokens for fluency, not verified truth. Practical guardrail: keep cognitive friction for reasoning, writing, and analysis; delegate routine formatting or syntax checks.
 - **Callback:** Directly operationalizes the bio-inspired paradox from Slide 11.
 - **Bridge:** Cognitive cost is only half the picture—there is also a physical cost behind every query.
 :::
@@ -677,7 +766,7 @@ Alpine et al. (2026) *npj Clim. Action* 5, 71 [10.1038/s44168-026-00411-0](https
 
 
 ## When Does a Research Problem Need AI? {.smaller}
-*Scenario:* Monitoring **100 river sites** across temperature, water chemistry, pollutants, and species communities.
+*Scenario:* Monitoring **100 river sites** to explain or predict **species richness** across temperature, water chemistry, pollutants, and community variables.
 
 ::: {.flex-row style="margin-top: 8px;"}
 
@@ -686,59 +775,64 @@ Alpine et al. (2026) *npj Clim. Action* 5, 71 [10.1038/s44168-026-00411-0](https
 **What Is a "Dimension"?**
 
 - **In Ecology / Env. Science:** Usually 3D physical space $(x, y, z)$ + time.
-- **In Data Science / ML:** **Every measured variable is an axis ($d$).** Fifty measured variables place each river site in a 50-dimensional space.
+- **In Data Science / ML:** **Every measured river variable is an axis ($d$).** Recording 50 chemistry, land-use, and species variables places each river site in a 50-dimensional space.
 :::
 
-::: {.fragment .box-red style="margin-bottom: 0;"}
-**The Curse of High Dimensionality ($n = 100$ sites)**
+::: {.fragment fragment-index="1" .box-red style="margin-bottom: 0;"}
+**Scaling the River Study ($n = 100$ sites)**
 
 <div class="dim-strip">
   <div class="dim-chip"><strong>1D</strong>Temp</div>
   <div class="dim-arrow">→</div>
   <div class="dim-chip"><strong>3D</strong>+ pH, O<sub>2</sub></div>
   <div class="dim-arrow">→</div>
-  <div class="dim-chip"><strong>50D</strong>+ Chemicals &amp; Species</div>
+  <div class="dim-chip"><strong>50D</strong>+ Chemicals, Land Use &amp; Species</div>
 </div>
 
-Keeping $n = 100$ fixed while adding axes makes the space exponentially empty: straight-line Euclidean distances flatten, nearest neighbors stop being similar, and classical models run out of degrees of freedom.
+Keeping $n = 100$ sites fixed while adding axes makes the space exponentially sparse: straight-line Euclidean distances flatten, nearest neighbors stop being truly similar, and classical models run out of degrees of freedom.
 :::
 :::
 
 ::: {.flex-col}
-<div class="plot-placeholder" style="min-height: 225px;">
-![](assets/images/cesab_manifold_swissroll.png){style="max-height: 215px; width: 100%; object-fit: contain;"}
+::: {.fragment fragment-index="1" .img-card style="padding: 8px 10px;"}
+<img src="assets/images/cesab_manifold_swissroll.png" style="max-height: 205px; width: 100%; object-fit: contain;" alt="CESAB Swiss Roll Manifold">
+<div style="font-size: 0.62em; color: #495057; margin-top: 5px; line-height: 1.25;">
+<em>In high $d$, sites often lie on a curved lower-dimensional manifold; straight-line Euclidean distances (white lines) fail to identify truly similar sites.</em>
 </div>
+:::
 
-::: {.fragment .box-teal style="margin-top: 10px; margin-bottom: 0; font-size: 0.77em;"}
-**The Methodological Filter**
+::: {.fragment fragment-index="2" .box-teal style="margin-top: 10px; margin-bottom: 0; font-size: 0.76em;"}
+**The Methodological Filter — Matching the Toolkit to the River Study**
 
-1. **Low $d$, known mechanism:** Exhaust classical statistics first (Correlation, GLMs).
-2. **High $d$, non-linear tabular data:** Dimensionality reduction (PCA/UMAP) + **Machine Learning** *(where my PhD fits)*.
-3. **Unstructured data (images/audio/text) or strict logic:** **Deep Learning** or **Symbolic AI**.
+1. **Stage 1 (1D–3D, known mechanism):** Exhaust classical statistics first (Correlation, GLMs).
+2. **Stage 2 (50D non-linear tabular data):** Dimensionality reduction (PCA/UMAP) + **Machine Learning** *(where my PhD fits)*.
+3. **Stage 3 (Adding satellite imagery/audio or strict sampling constraints):** **Deep Learning** or **Symbolic AI**.
 :::
 :::
 
 :::
 
 ::: {.notes}
-- **Spoken core:** Clarify the word "dimension" first—ecologists think of space and time, whereas ML treats every variable as a new axis. Click 1: walk through the 100 river sites from 1D to 50D; without touching equations, point to the Swiss Roll manifold to show why naive Euclidean distance breaks down when data live on a curved, lower-dimensional structure. Click 2: present the 3-branch filter spanning the whole AI umbrella, and explicitly point out that my PhD sits on Branch #2 (tabular ecotoxicology data needing explainability -> ML).
-- **Callback:** Links back to Slide 12's expertise thought experiment—domain framing comes first, then this filter checks whether AI is justified.
-- **Bridge:** Once you land on Machine Learning, how different is it actually from the regressions we already know?
+- **Spoken core (2 clicks):**
+  - *Initial state:* Anchor the room on one concrete running example—100 river sites where our target is **species richness**—and clarify the word "dimension" (3D space + time in ecology vs. one axis per measured variable in data science).
+  - *Click 1 (Scaling 1D→50D + Swiss Roll visual):* As we expand the same 100 sites from temperature alone to 50 chemical, land-use, and species variables, the space becomes exponentially empty. Point to the Swiss Roll: sites that look close along a straight-line white chord are actually far apart along the true ecological manifold.
+  - *Click 2 (Methodological Filter):* Walk through the 3 stages spanning the full AI umbrella—Stage 1 stays in classical stats, Stage 2 motivates tabular ML (explicitly flagging that my PhD sits here), and Stage 3 justifies Deep Learning or Symbolic AI.
+- **Callback:** Connects directly to Slide 12's expertise thought experiment—domain framing comes first, then this filter checks whether AI is warranted.
+- **Bridge:** Now suppose our river study genuinely hits Stage 2 (50 variables, non-linear thresholds). What actually changes under the hood when we step into Machine Learning?
 :::
 
 
-## Demystifying ML Under the Hood {.smaller}
-Stepping from classical regression into the Machine Learning toolkit on the same environmental dataset:
+## Scaling the River Study: From Classical Stats to ML {.smaller}
+*Suppose our 100 river sites reach Stage 2 (50 variables, non-linear thresholds). What actually changes when stepping into ML?*
 
 ::: {.flex-row style="margin-top: 6px;"}
 ::: {.flex-col}
 ::: {.box-grey style="height: 100%; margin-bottom: 0;"}
-**1. Classical Baseline**
+**Stage 1: Classical Baseline**
 
-Linear trend on a low-dimensional problem:
-$$Y = ax + b + \varepsilon$$
+$$\text{Richness} = a \cdot \text{Temp} + b + \varepsilon$$
 
-Solved analytically (e.g., Ordinary Least Squares) under explicit distributional assumptions.
+1–3 predictors, solved analytically via OLS/GLM; slope $a$ carries a **direct biological meaning**.
 :::
 :::
 
@@ -747,43 +841,48 @@ Solved analytically (e.g., Ordinary Least Squares) under explicit distributional
 :::
 
 ::: {.flex-col .flex-2}
-::: {.fragment .box-teal style="height: 100%; margin-bottom: 0;"}
-**2. Same Problem Framed as Machine Learning**
+::: {.fragment fragment-index="1" .box-teal style="height: 100%; margin-bottom: 0;"}
+**Stage 2: Same Study Framed as Machine Learning**
 
-Any ML workflow rests on **3 building blocks**: **(1) Model** (equation), **(2) Loss Function** (error metric: MSE for regression, Cross-Entropy for classification), and **(3) Solver** (iterative step, e.g., gradient descent).
+$$\text{Richness} \sim f(\text{50 chemical, climate \& land-use features})$$
 
-As non-linearity or dimensionality grows, we step deliberately along the toolkit $\rightarrow$ **Trees, Random Forests, SVMs, or Neural Nets**.
+Framed via **3 ML building blocks**: **(1) Model** (algorithm), **(2) Loss Function** (MSE for continuous richness; Cross-Entropy if classifying ecological status), and **(3) Solver** (iterative optimization, e.g., gradient descent).
+
+As non-linearity or complexity grows, step deliberately along the toolkit $\rightarrow$ **Trees $\rightarrow$ Random Forests $\rightarrow$ SVMs $\rightarrow$ Neural Nets**.
 :::
 :::
 :::
 
-<table style="width: 100%; font-size: 0.72em; border-collapse: collapse; background: #ffffff; border-radius: 6px; overflow: hidden; margin-top: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+<table style="width: 100%; font-size: 0.72em; border-collapse: collapse; background: #ffffff; border-radius: 6px; overflow: hidden; margin-top: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
   <tr style="background: #005a8c; color: #ffffff;">
-    <th style="padding: 7px 14px; text-align: left; width: 50%;">Classical Statistics Dictionary</th>
-    <th style="padding: 7px 14px; text-align: left; width: 50%;">Machine Learning Dictionary</th>
+    <th style="padding: 6px 14px; text-align: left; width: 50%;">Classical Statistics Dictionary</th>
+    <th style="padding: 6px 14px; text-align: left; width: 50%;">Machine Learning Dictionary</th>
   </tr>
   <tr style="border-bottom: 1px solid #dee2e6;">
-    <td style="padding: 7px 14px;">Covariates / Explanatory variables (<i>X</i>)</td>
-    <td style="padding: 7px 14px; color: #005a8c; font-weight: 600;">Features / Inputs</td>
+    <td style="padding: 6px 14px;">Covariates / Explanatory variables (<i>X</i>)</td>
+    <td style="padding: 6px 14px; color: #005a8c; font-weight: 600;">Features / Inputs</td>
   </tr>
   <tr style="border-bottom: 1px solid #dee2e6;">
-    <td style="padding: 7px 14px;">Response variable (<i>Y</i>) &amp; Residuals</td>
-    <td style="padding: 7px 14px; color: #005a8c; font-weight: 600;">Target / Label &amp; Loss Function</td>
+    <td style="padding: 6px 14px;">Response variable (<i>Y</i>) &amp; Residuals</td>
+    <td style="padding: 6px 14px; color: #005a8c; font-weight: 600;">Target / Label &amp; Loss Function</td>
   </tr>
   <tr>
-    <td style="padding: 7px 14px;">Mechanistic / Biological parameters</td>
-    <td style="padding: 7px 14px; color: #005a8c; font-weight: 600;">Weights / Hyperparameters</td>
+    <td style="padding: 6px 14px;">Mechanistic / Biological parameters</td>
+    <td style="padding: 6px 14px; color: #005a8c; font-weight: 600;">Weights / Hyperparameters</td>
   </tr>
 </table>
 
-::: {.fragment .box-red style="margin-top: 10px; margin-bottom: 0; text-align: center; font-size: 0.78em;"}
-**Key difference:** ML weights optimize prediction and rarely carry direct biological meaning. Exhaust classical exploratory data analysis before scaling up.
+::: {.fragment fragment-index="2" .box-red style="margin-top: 10px; margin-bottom: 0; text-align: center; font-size: 0.78em;"}
+**Key difference:** ML weights optimize prediction and rarely carry direct biological meaning. Exhaust classical exploratory statistics first before scaling up.
 :::
 
 ::: {.notes}
-- **Spoken core:** Demystify ML—it is not magic, just structured optimization (Model + Loss + Solver). Walk through the two-column translation dictionary so people coming from R/biostatistics see the exact parallel terms, then click to stress the red bar: unlike mechanistic parameters, ML weights usually have no direct biological meaning.
-- **Callback:** Connects the toolkit hierarchy from Slide 10 to the methodological filter on Slide 15.
-- **Bridge:** Now let's turn this lens onto your own research for two minutes.
+- **Spoken core (2 clicks):**
+  - *Initial state:* Stay on the same 100-river-site richness study. In Stage 1 (1–3 predictors), OLS/GLM gives an exact analytical solution and a biologically interpretable slope $a$. Walk briefly down the left-to-right translation dictionary below so biostatistics users recognize the parallel terms.
+  - *Click 1 (Stage 2 ML framing):* At 50 non-linear features, ML is not magic—it simply reformulates the same richness target into three components: Model, Loss Function (MSE for continuous richness, Cross-Entropy for ecological status classes), and Solver, stepping deliberately along the toolkit as needed.
+  - *Click 2 (Red key difference bar):* Highlight the core scientific caveat—unlike slope $a$, ML weights optimize prediction and rarely have direct biological meaning, which is why exhausting classical EDA comes first.
+- **Callback:** Directly continues the river scenario from Slide 15 and maps onto the toolkit hierarchy from Slide 10.
+- **Bridge:** Now let's pause for two minutes and apply this exact framing to a research question from your own work.
 :::
 
 
@@ -815,7 +914,7 @@ In **Slido 3** (Code: <code>#3791 5273</code>), write a short 1-line formulation
 
 ::: {.notes}
 - **Spoken core:** Switch tab to Slido Poll 3 (Open Text, ~2–3 min). Pick 2 or 3 live submissions from the room and quickly check: is $Y$ continuous or categorical? Is $d$ genuinely high? And look closely at item #3—did the researcher prioritize inference or prediction?
-- **Callback:** Operationalizes the CESAB autonomy objective (Slide 5) and the filter from Slide 15 directly on the audience's own work.
+- **Callback:** Operationalizes the CESAB autonomy objective (Slide 5) and the river-study framing from Slides 15–16 directly on the audience's own work.
 - **Bridge:** That third choice—mechanistic inference versus predictive accuracy—takes us straight into Section 3.
 :::
 
@@ -858,25 +957,29 @@ In **Slido 3** (Code: <code>#3791 5273</code>), write a short 1-line formulation
 
 :::
 
+```{=html}
+<div class="fragment" data-fragment-index="1">
 <div class="spectrum-bar">
-  <div class="spectrum-col" style="text-align: left; border-right: 1px dashed #adb5bd; padding-right: 12px;">
-    <div class="spec-title" style="color: #006f7a;">White Box · High Interpretability</div>
-    <div class="spec-eq"><i>Y</i> = &beta;<sub>0</sub> + &beta;<sub>1</sub><i>X</i> &nbsp;|&nbsp; GUTS ODEs (<i>k<sub>d</sub>, z, b<sub>w</sub></i>)</div>
-    <div class="spec-reg">Transparent mechanism &rarr; directly defensible in regulation.</div>
-  </div>
-  <div class="spectrum-col" style="text-align: center; border-right: 1px dashed #adb5bd; padding: 0 12px;">
-    <div class="spec-title" style="color: #005a8c;">Grey Box · Interpretable ML &amp; XAI</div>
-    <div class="spec-eq">Decision Trees · Random Forests + Feature Importance</div>
-    <div class="spec-reg">Captures non-linear patterns while auditing key drivers.</div>
-  </div>
-  <div class="spectrum-col" style="text-align: right; padding-left: 12px;">
-    <div class="spec-title" style="color: #8c1d18;">Black Box · High Predictive Capacity</div>
-    <div class="spec-eq"><i>ŷ</i> = <i>f</i><sub>&theta;</sub>(<i>X</i>) (millions of weights &amp; interactions)</div>
-    <div class="spec-reg">Higher quantitative accuracy, opaque &rarr; harder to justify in regulation.</div>
-  </div>
+<div class="spectrum-col" style="text-align: left; border-right: 1px dashed #adb5bd; padding-right: 12px;">
+<div class="spec-title" style="color: #006f7a;">White Box · High Interpretability</div>
+<div class="spec-eq">River GLM (<i>Y</i> = &beta;<sub>0</sub> + &beta;<sub>1</sub>Temp) &nbsp;|&nbsp; GUTS ODEs (<i>k<sub>d</sub>, z, b<sub>w</sub></i>)</div>
+<div class="spec-reg">Transparent mechanism &rarr; directly defensible in regulation.</div>
 </div>
+<div class="spectrum-col" style="text-align: center; border-right: 1px dashed #adb5bd; padding: 0 12px;">
+<div class="spec-title" style="color: #005a8c;">Grey Box · Interpretable ML &amp; XAI</div>
+<div class="spec-eq">Decision Trees · Random Forests + Feature Importance</div>
+<div class="spec-reg">50 river variables &rarr; captures non-linearities while auditing key drivers.</div>
+</div>
+<div class="spectrum-col" style="text-align: right; padding-left: 12px;">
+<div class="spec-title" style="color: #8c1d18;">Black Box · High Predictive Capacity</div>
+<div class="spec-eq">Deep Neural Nets (<i>ŷ</i> = <i>f</i><sub>&theta;</sub>(<i>X</i>) on river satellite/acoustic data)</div>
+<div class="spec-reg">Higher accuracy on complex inputs, opaque &rarr; harder to justify in regulation.</div>
+</div>
+</div>
+</div>
+```
 
-::: {.fragment .box-blue style="margin-top: 8px; margin-bottom: 4px;"}
+::: {.fragment fragment-index="2" .box-blue style="margin-top: 8px; margin-bottom: 4px;"}
 **A Pragmatic, Objective-Driven Choice:** Interpretability is not a dogma—it is an explicit scientific decision. High-throughput screening (e.g., QSARs) may justify prioritizing accuracy; regulatory or mechanistic risk assessment demands explainability. Increasingly, **hybrid pipelines** combine both.
 :::
 
@@ -885,8 +988,11 @@ Breiman, L. (2001). Statistical modeling: The two cultures. *Statistical Science
 :::
 
 ::: {.notes}
-- **Spoken core:** Walk left-to-right across the spectrum: White Box models (linear regression, mechanistic GUTS ODEs) expose biological parameters and are directly defensible to regulators; Black Box models maximize predictive accuracy across millions of weights but are opaque. Click to emphasize flexibility—do not treat interpretability as dogma; match the tool to the objective. Note briefly why my PhD deliberately stays in the left/center zone (GUTS + interpretable ML) rather than jumping to deep learning.
-- **Callback:** Connects Breiman's cultures back to the Statistics-vs-ML dictionary (Slide 16) and the audience's priorities (Slide 17).
+- **Spoken core (2 clicks):**
+  - *Initial state:* Contrast Breiman's two cultures—Data Modeling (explicit stochastic/mechanistic assumptions for inference) versus Algorithmic Modeling (treating the mechanism as unknown to maximize out-of-sample predictive accuracy).
+  - *Click 1 (3-column Spectrum Bar):* Map our exact river study across the continuum alongside ecotoxicology: Stage 1's River GLM and mechanistic GUTS ODEs sit in the White Box (transparent, directly defensible in regulation); Stage 2's 50-variable Random Forest sits in the Grey Box (capturing non-linearities while auditing drivers); Stage 3's Deep Neural Nets on satellite or acoustic river streams sit in the Black Box (high accuracy, harder to defend to regulators).
+  - *Click 2 (Bottom Blue Box):* Emphasize pragmatism—interpretability is an objective-driven choice, not dogma. Connect directly to my PhD: because regulatory ecotoxicology requires mechanistic justification, my work deliberately operates in the White/Grey Box zone (GUTS + interpretable ML) rather than jumping to opaque Deep Learning.
+- **Callback:** Unifies the 3-stage river example (Slides 15–16) with the audience's inference-vs-prediction choices (Slide 17).
 - **Bridge:** Let's close the loop with our opening word cloud and preview how all four insights shaped Part 2.
 :::
 
