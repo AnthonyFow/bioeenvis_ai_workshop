@@ -263,7 +263,7 @@ Autonomy to assess which algorithms fit your research question ([ai-ecol.github.
 :::
 
 ## Why Learn AI? A Bio-Inspired Paradox {.smaller}
-As a scientist trained to look for mechanistic explanations, why invest in learning opaque algorithms?
+As a scientist trained to look for mechanistic explanations, why invest in learning "black-box" algorithms?
 
 ::: {.flex-row style="margin-top: 10px;"}
 
@@ -327,7 +327,7 @@ Save file as: <code>assets/images/artificial_perceptron.png</code>
 <div class="plot-placeholder" style="margin: 6px 0; min-height: 155px;">
 **[IMAGE: IFC 2026 Data Centers Map — Uruguay 1.77]**<br>
 Save file as: <code>assets/images/datacenters_uruguay_ifc2026.png</code>
-<!-- ![](assets/images/datacenters_uruguay_ifc2026.png){width="100%"} -->
+![](assets/images/datacenters_uruguay_ifc2026.png){width="100%"}
 </div>
 
 <div style="font-size: 0.72em; font-style: italic; color: #005a8c; border-left: 3px solid #005a8c; padding-left: 8px; margin-top: 4px;">
@@ -348,7 +348,7 @@ Stiegler (2010) *For a New Critique of Political Economy* · Messeri & Crockett 
 
 
 ## AI is Not a Monolith... It Is an Umbrella Term {.smaller}
-**Quick Poll (Slido 2):** Which of these four diagrams correctly organizes Artificial Intelligence?
+**Quick Poll (Slido 2):** Which of these four diagrams correctly organises Artificial Intelligence?
 
 ::: {.flex-row style="margin-top: 8px;"}
 
@@ -357,12 +357,12 @@ Stiegler (2010) *For a New Critique of Political Economy* · Messeri & Crockett 
 <div class="plot-placeholder" style="height: 210px;">
 **A. Nested Algorithms**<br>
 <code>assets/images/taxo_1_nested_algorithms.png</code>
-<!-- ![](assets/images/taxo_1_nested_algorithms.png){height="195px"} -->
+![](assets/images/taxo_1_nested_algorithms.png){height="195px"}
 </div>
 <div class="plot-placeholder" style="height: 210px;">
 **B. AI / ML / DL / NLP / LLM**<br>
 <code>assets/images/taxo_2_venn_nlp_llm.png</code>
-<!-- ![](assets/images/taxo_2_venn_nlp_llm.png){height="195px"} -->
+![](assets/images/taxo_2_venn_nlp_llm.png){height="195px"}
 </div>
 :::
 
@@ -370,12 +370,12 @@ Stiegler (2010) *For a New Critique of Political Economy* · Messeri & Crockett 
 <div class="plot-placeholder" style="height: 210px;">
 **C. AI / Data Science / Big Data**<br>
 <code>assets/images/taxo_3_venn_bigdata.png</code>
-<!-- ![](assets/images/taxo_3_venn_bigdata.png){height="195px"} -->
+![](assets/images/taxo_3_venn_bigdata.png){height="195px"}
 </div>
 <div class="plot-placeholder" style="height: 210px;">
 **D. CS / AI / Data Science / Math**<br>
 <code>assets/images/taxo_4_venn_cs_stats.png</code>
-<!-- ![](assets/images/taxo_4_venn_cs_stats.png){height="195px"} -->
+![](assets/images/taxo_4_venn_cs_stats.png){height="195px"}
 </div>
 :::
 :::
@@ -384,8 +384,8 @@ Stiegler (2010) *For a New Critique of Political Economy* · Messeri & Crockett 
 <div class="plot-placeholder" style="height: 240px;">
 **[QR CODE: Slido 2 — Multiple Choice]**<br>
 <code>assets/images/slido_2_taxonomy_qr.png</code><br>
-Code: <code>#[SLIDO_2_CODE]</code>
-<!-- ![](assets/images/slido_2_taxonomy_qr.png){width="85%"} -->
+Code: <code>#3791 5273</code>
+![](assets/images/slido_1_wordcloud_qr.png){width="85%"} 
 </div>
 
 ::: {.fragment .box-teal style="margin-top: 10px;"}
@@ -619,7 +619,7 @@ How would you formulate one question from your own research as <span style="colo
 </h3>
 
 ::: {.box-teal}
-In **Slido 3** (`#[SLIDO_3_CODE]`), write a short 1-line formulation:
+In **Slido 3** (Code: <code>#3791 5273</code>), write a short 1-line formulation:
 
 1. **Target ($Y$):** What do you want to explain or predict? *(continuous value or category?)*
 2. **Features ($X$):** What predictors do you have—and roughly how many dimensions ($d$)?
@@ -629,10 +629,7 @@ In **Slido 3** (`#[SLIDO_3_CODE]`), write a short 1-line formulation:
 
 ::: {.flex-col style="align-items: center;"}
 <div class="plot-placeholder" style="height: 350px; width: 350px;">
-**[QR CODE: Slido 3 — Open Text ($Y \sim X$)]**<br><br>
-Save file as:<br><code>assets/images/slido_3_research_qr.png</code><br><br>
-<em>(Switch browser tab to Slido Present Mode to discuss live examples)</em>
-<!-- ![](assets/images/slido_3_research_qr.png){width="100%"} -->
+![](assets/images/slido_1_wordcloud_qr.png){width="85%"} 
 </div>
 :::
 
