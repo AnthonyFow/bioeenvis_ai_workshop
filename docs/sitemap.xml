@@ -2,14 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://AnthonyFow.github.io/bioeenvis_ai_workshop/01_philosophy_seminar.html</loc>
+    <lastmod>2026-11-22T14:55:18.614Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AnthonyFow.github.io/bioeenvis_ai_workshop/01_philosophy_seminar_upto21.11.html</loc>
     <lastmod>2026-11-22T12:11:12.733Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AnthonyFow.github.io/bioeenvis_ai_workshop/03_references.html</loc>
+    <lastmod>2026-11-22T13:10:39.656Z</lastmod>
   </url>
   <url>
     <loc>https://AnthonyFow.github.io/bioeenvis_ai_workshop/02_technical_workshop.html</loc>
     <lastmod>2026-11-13T10:56:35.091Z</lastmod>
-  </url>
-  <url>
-    <loc>https://AnthonyFow.github.io/bioeenvis_ai_workshop/03_references.html</loc>
-    <lastmod>2026-11-13T10:56:41.907Z</lastmod>
   </url>
 </urlset>

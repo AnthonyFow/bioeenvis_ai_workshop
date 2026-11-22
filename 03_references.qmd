@@ -1,0 +1,58 @@
+---
+title: "References & Further Reading"
+subtitle: "Curated sources, frameworks, and complementary lectures for the FR BioEEnViS AI Restitution Workshop"
+---
+
+This page compiles all peer-reviewed articles, preprints, institutional frameworks, reports, and multimedia lectures cited or used as conceptual inspiration during **Part 1 (Philosophy, Taxonomy & ML Foundations)**. References for **Part 2 (Technical Case Study)** will be added alongside the Session 2 slides.
+
+---
+
+## Core Training & Institutional Frameworks
+
+*   **Blondel, L., Bourel, B., Challand, M., Coux, C., Justeau-Allaire, D., Frelat, R., Marcos, D., Servajean, M., Tieo, S. M., Tresson, P., & Ubilla, P. (2026).** *AI for ecologists: a toolkit for beginners.* An FRB-CESAB training course. <https://ai-ecol.github.io/>
+*   **AI4BioMed (2026).** Local seminar/training series mainly organized and promoted by LBBE members, Université Claude Bernard Lyon 1. <https://indico.engineering.univ-lyon1.fr/event/29/>
+*   **OECD.AI Policy Observatory.** *OECD Framework for the Classification of AI Systems.* <https://oecd.ai/en/classification>
+
+---
+
+## Epistemology, Cognition & GenAI Guardrails
+
+*   **Abbosh, A., Al-Anbuky, A., Xue, F., & Mahmoud, S. S. (2025).** Perspective on the Role of AI in Shaping Human Cognitive Development. *Information*, 16(11), 1011. <https://doi.org/10.3390/info16111011>
+*   **Barcaui, A. (2025).** ChatGPT as a cognitive crutch: Evidence from a randomized controlled trial on knowledge retention. *Social Sciences & Humanities Open*, 12, 102287. <https://doi.org/10.1016/j.ssaho.2025.102287>
+*   **Gerlich, M. (2025).** AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking. *Societies*, 15(1), 6. <https://doi.org/10.3390/soc15010006>
+*   **Kim, T. W., Usman, U., Garvey, A., & Duhachek, A. (2025).** From algorithm aversion to AI dependence: Deskilling, upskilling, and emerging addictions in the GenAI age. *Consumer Psychology Review*, 9, 142. <https://doi.org/10.1002/arcp.70008>
+*   **Kosmyna, N., Hauptmann, E., Yuan, Y. T., Situ, J., Liao, X. H., Beresnitzky, A. V., Braunstein, I., & Maes, P. (2025).** Your brain on ChatGPT: Accumulation of cognitive debt when using an AI assistant for essay writing task. *arXiv preprint*. <https://arxiv.org/abs/2506.08872>
+*   **Liu, G., Christian, B., Dumbalska, T., Bakker, M. A., & Dubey, R. (2026).** AI Assistance Reduces Persistence and Hurts Independent Performance. *arXiv preprint*. <https://arxiv.org/abs/2604.04721>
+*   **Messeri, L., & Crockett, M. J. (2024).** Artificial intelligence and illusions of understanding in scientific research. *Nature*, 627(8002), 49–58. <https://doi.org/10.1038/s41586-024-07146-0>
+*   **Stiegler, B. (2010).** *For a New Critique of Political Economy.* Polity Press.
+
+---
+
+## Statistical Modelling, Explainability & Scientific Benchmarks
+
+*   **Breiman, L. (2001).** Statistical modeling: The two cultures. *Statistical Science*, 16(3), 199–231. <https://doi.org/10.1214/ss/1009213726>
+*   **Rudin, C. (2019).** Stop explaining black box machine learning models for high stakes decisions and use interpretable models instead. *Nature Machine Intelligence*, 1, 206–215. <https://doi.org/10.1038/s42256-019-0048-x>
+*   **The Nobel Prize in Chemistry (2024).** Press release: Computational protein design and protein structure prediction (AlphaFold). <https://www.nobelprize.org/prizes/chemistry/2024/press-release/>
+
+---
+
+## Material & Ecological Footprint of AI
+
+*   **Alpine, W., Geldner, N., Alpine, H., & Chepeliev, M. G. (2026).** AI-driven productivity gains enable more CO₂ emissions than they avoid in a global energy–economy model. *npj Climate Action*, 5, 71. <https://doi.org/10.1038/s44168-026-00411-0>
+*   **International Finance Corporation (IFC, 2026).** *Risks and Opportunities in Data Center and AI Investment in Emerging Markets* (Figure 2: Geographical Distribution of Data Centers, 2025). <https://www.ifc.org/en/insights-reports/2026/risks-and-opportunities-in-data-center-and-ai-investment-in-ems#group-section-Fig-2-K8AjwpCMpV>
+*   **Rest of World (2026).** Global resistance to AI data centers and water consumption (Daniel Pena, University of the Republic). <https://restofworld.org/2026/ai-datacenters-water-resistance-global/>
+
+---
+
+## Conceptual Lectures & Multimedia (Complementary Viewing)
+
+*   **Andalman, A. (2025).** *The biological foundations of artificial intelligence.* The Deep View. <https://www.youtube.com/watch?v=6b4KPGtu9c0>
+*   **Karpathy, A. (2025).** *How LLMs are unlike the human brain.* Dwarkesh Clips. <https://www.youtube.com/watch?v=wkCx2Xmi8dg>
+*   **Simon, C. (2025).** *Neurons vs AI: They're Nothing Alike.* AI Neuro Insight. <https://www.youtube.com/watch?v=I6PC8f8GRtU>
+*   **Sung, J. (2025).** *How ChatGPT Slowly Destroys Your Brain.* <https://www.youtube.com/watch?v=6sJ50Ybp44I>
+
+---
+
+## Website & Presentation Architecture
+
+*   **Franklin, E.** *Reproducible Research Workshop* (Quarto RevealJS & site design inspiration). <https://ellfran-7.github.io/repro-research-workshop/00-welcome-page.html>
