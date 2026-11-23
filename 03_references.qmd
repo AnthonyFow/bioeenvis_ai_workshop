@@ -1,6 +1,12 @@
 ---
 title: "References & Further Reading"
 subtitle: "Curated sources, frameworks, and complementary lectures for the FR BioEEnViS AI Restitution Workshop"
+format:
+  html:
+    theme:
+      - cosmo
+      - assets/css/custom.scss
+    toc: true
 ---
 
 This page compiles all peer-reviewed articles, preprints, institutional frameworks, reports, and multimedia lectures cited or used as conceptual inspiration during **Part 1 (Philosophy, Taxonomy & ML Foundations)**. References for **Part 2 (Technical Case Study)** will be added alongside the Session 2 slides.

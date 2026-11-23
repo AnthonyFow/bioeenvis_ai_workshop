@@ -1,0 +1,950 @@
+---
+title: "Beyond Standardised Guidelines"
+subtitle: "An Explainable Machine Learning Case Study for Model-Guided Ecotoxicological Study Designs"
+author: "**Anthony Fow Esteves** <img src='assets/images/ws2/pe.webp' style='height:0.75em; vertical-align:middle; margin-left:8px;' alt='PE'> <br>"
+institute: "<span style='font-size: 0.8em;'>LBBE – UCB Lyon 1 (UMR CNRS 5558) | Ecotox – INRAE <img src='assets/images/ws2/fr.webp' style='height:1em; vertical-align:middle; margin-left:8px;' alt='FR'></span><br><span style='font-size: 0.65em; color: #ced4da;'>FR BioEEnViS Knowledge-Sharing Seminar · December 16, 2026 · Part 2: Technical Case Study</span>"
+title-slide-attributes:
+  data-background-color: "#005a8c"
+format:
+  revealjs:
+    theme: default
+    transition: fade
+    slide-number: true
+    chalkboard: false
+    hash: false
+    history: false
+    embed-resources: false
+    width: 1280
+    height: 720
+    include-in-header:
+      text: |
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+        <style>
+        /* Global Font & Background overrides */
+        * { box-sizing: border-box; }
+        .reveal { font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; background: #e9ecef; color: #212529; }
+        .reveal h1, .reveal h2, .reveal h3 { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; color: #005a8c; margin-top: 0; margin-bottom: 12px; }
+        .reveal h2 { font-size: 1.45em; line-height: 1.15; }
+        .reveal section:not(.title-slide):not(.center):not(.no-logos) > h2 { max-width: calc(100% - 355px); }
+
+        /* ========================================================================= */
+        /* CONFIGURATION FOR LOGOS IN THE TOP-RIGHT CORNER                           */
+        /* ========================================================================= */
+
+        /* Logo 1: LBBE */
+        .reveal::before {
+          content: "";
+          position: absolute;
+          top: 20px;
+          right: 185px;
+          width: 170px;
+          height: 60px;
+          background-image: url('assets/images/logos/LBBE_LOGO_color.png');
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: right center;
+          z-index: 2;
+          pointer-events: none;
+          opacity: 0.5;
+          transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        /* Logo 2: INRAE */
+        .reveal::after {
+          content: "";
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          width: 140px;
+          height: 60px;
+          background-image: url('assets/images/logos/INRAE_LOGO_color.png');
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: right center;
+          z-index: 2;
+          pointer-events: none;
+          opacity: 0.5;
+          transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        /* Full opacity on title slide */
+        .reveal:has(.title-slide.present)::before,
+        .reveal:has(.title-slide.present)::after {
+          opacity: 1.0 !important;
+          visibility: visible !important;
+        }
+
+        /* Hide logos on final slide */
+        .reveal:has(.slide:last-of-type.present)::before,
+        .reveal:has(.slide:last-of-type.present)::after,
+        .reveal:has(.no-logos.present)::before,
+        .reveal:has(.no-logos.present)::after {
+          opacity: 0 !important;
+          visibility: hidden !important;
+        }
+        /* ========================================================================= */
+
+        /* Title Slide Styling */
+        .reveal .title-slide { background-color: #005a8c; color: #ffffff; }
+        .reveal .title-slide h1 { color: #ffffff; font-size: 3.1em; font-weight: 700; line-height: 1.1; max-width: 100%; }
+        .reveal .title-slide .subtitle { color: #00a3a6; font-size: 1.35em; font-weight: 600; margin-bottom: 36px; line-height: 1.25; }
+        .reveal .title-slide p { color: #e9ecef; font-size: 1.05em; }
+
+        /* Responsive UI Components */
+        .box-grey { background-color: #f1f3f5; padding: 13px 18px; border-left: 6px solid #adb5bd; border-radius: 4px; font-size: 0.82em; margin-bottom: 12px; }
+        .box-teal { background-color: #e6f6f6; padding: 13px 18px; border-left: 6px solid #00a3a6; border-radius: 4px; font-size: 0.82em; margin-bottom: 12px; }
+        .box-red { background-color: #fdf0f0; padding: 13px 18px; border-left: 6px solid #e53935; border-radius: 4px; font-size: 0.82em; margin-bottom: 12px; }
+        .box-purple { background-color: #f6eef9; padding: 13px 18px; border-left: 6px solid #7b1fa2; border-radius: 4px; font-size: 0.82em; margin-bottom: 12px; }
+
+        /* Card Titles */
+        .card-title { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; font-weight: 700; display: block; line-height: 1.2; }
+
+        /* Bulletproof Flexbox Grids */
+        .flex-row { display: flex; gap: 22px; width: 100%; height: auto; min-height: 0; align-items: stretch; }
+        .flex-col { display: flex; flex-direction: column; flex: 1; min-width: 0; min-height: 0; }
+        .flex-2 { flex: 2; }
+        .center-content { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; }
+
+        /* Clean text scaling inside flexboxes */
+        .reveal p, .reveal li { font-size: 0.82em; line-height: 1.38; margin-bottom: 8px; }
+        .reveal ul, .reveal ol { margin-top: 4px; margin-bottom: 6px; }
+        .slide-lead { font-size: 0.78em !important; color: #495057; margin-top: -6px; margin-bottom: 14px !important; max-width: calc(100% - 355px); }
+
+        /* Placeholders for pending figures */
+        .plot-placeholder {
+          background-color: #ffffff;
+          border: 3px dashed #ced4da;
+          border-radius: 8px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          color: #495057;
+          width: 100%;
+          flex: 1;
+          padding: 16px;
+          text-align: center;
+          overflow: hidden;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+        }
+        .plot-placeholder .ph-path {
+          font-family: monospace;
+          font-size: 0.78em;
+          color: #005a8c;
+          background: #eef4f8;
+          padding: 4px 10px;
+          border-radius: 4px;
+          margin-bottom: 10px;
+          font-weight: 600;
+        }
+        .plot-placeholder .ph-caption {
+          font-size: 0.76em;
+          font-weight: 500;
+          line-height: 1.35;
+          color: #495057;
+          margin: 0;
+        }
+
+        /* Native Architecture Diagram Styles (Slide 8) */
+        .arch-stage {
+          border-radius: 8px;
+          padding: 11px 14px;
+          display: flex;
+          flex-direction: column;
+          gap: 7px;
+        }
+        .arch-stage-blue { border: 2.5px dashed #005a8c; background-color: #f2f7fa; }
+        .arch-stage-teal { border: 2.5px dashed #00a3a6; background-color: #edf8f8; }
+        .arch-stage-purple { border: 2.5px dashed #7b1fa2; background-color: #f6eef9; }
+        .arch-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 8px;
+          font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif;
+          font-weight: 700;
+          font-size: 0.76em;
+        }
+        .arch-badge {
+          font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+          font-size: 0.74em;
+          font-weight: 600;
+          padding: 2px 8px;
+          border-radius: 999px;
+          color: #ffffff;
+          white-space: nowrap;
+        }
+        .arch-node {
+          background: #ffffff;
+          border: 1px solid #ced4da;
+          border-radius: 5px;
+          padding: 7px 10px;
+          font-size: 0.70em;
+          line-height: 1.3;
+          text-align: center;
+        }
+        .arch-arrow-down {
+          text-align: center;
+          font-size: 0.85em;
+          font-weight: 700;
+          line-height: 0.9;
+          color: #495057;
+        }
+        .arch-arrow-right {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.4em;
+          font-weight: 700;
+          color: #005a8c;
+          flex: 0 0 28px;
+        }
+        .cite-small { font-size: 0.52em; text-align: left; line-height: 1.2; color: #495057; margin-top: 2px; }
+        </style>
+---
+
+## Connecting Part 1 to Practice: Why Explainable ML as a Meta-Model? {.smaller}
+
+<p class="slide-lead">Bridging Part 1's modelling epistemology to our ecotoxicological case study: operating strictly at the <strong>White Box + Grey Box</strong> intersection.</p>
+
+::: {.flex-row}
+
+::: {.flex-col}
+::: {.box-teal style="flex: 1;"}
+**Two-Stage Meta-Modelling Architecture**
+
+Machine learning here does **not** replace the biological model. Instead, it audits how laboratory inputs govern mechanistic inference:
+
+- **Stage 1 — White Box Core:** Mechanistic survival models (**GUTS** and **DR**) calibrated on empirical survival data.
+- **Stage 2 — Grey Box xAI Audit:** Explainable ML linking experimental design features ($X$) to parameter precision and accuracy ($Y$).
+- **Deliberate Exclusion:** We avoid Deep Learning / Neural Networks, which are ill-suited to this sample regime and opaque to regulators.
+:::
+:::
+
+::: {.flex-col}
+::: {.box-grey style="flex: 1;"}
+**Three-Point Rationale**
+
+1. **Moderate Tabular Sample Size ($n = 216$ datasets):** Structured tabular data with low-to-moderate $n$ favour tree ensembles over deep architectures, limiting overfitting.
+2. **Regulatory Auditability (EFSA / OECD):** Environmental risk assessment requires transparent, inspectable links between experimental choices and model outputs.
+3. **Protocol Design, Not Black-Box Prediction:** Our goal is to derive actionable laboratory guidelines, not to deploy an unexamined predictive oracle.
+:::
+:::
+
+:::
+
+::: {.notes}
+Start by tying Part 2 directly back to Part 1's framework. Emphasise for the bioinformatics and AI colleagues that choosing Random Forests over Deep Learning is a deliberate methodological choice driven by n = 216 tabular records and regulatory auditability. Make clear that ML is used as a meta-model auditing the mechanistic GUTS/DR stage—not as a replacement for biology.
+:::
+
+## From Everyday Products to Freshwater Risk: Where We Work {.smaller}
+
+<p class="slide-lead">Regulatory context for non-ecotoxicologists: tracing agricultural chemical inputs to aquatic toxicity modelling.</p>
+
+::: {.flex-row style="min-height: 410px;"}
+
+::: {.flex-col}
+::: {.plot-placeholder}
+<div class="ph-path">assets/images/ws2/ws2_hook_ppp_products.png</div>
+<p class="ph-caption"><strong>Everyday Products to Aquatic Exposure</strong><br>Apple, Red Wine, Baguette $\rightarrow$ large-scale agriculture uses Plant Protection Products (PPPs) $\rightarrow$ runoff into freshwater ecosystems.</p>
+:::
+:::
+
+::: {.flex-col}
+::: {.plot-placeholder}
+<div class="ph-path">assets/images/ws2/ws2_era_flowchart.png</div>
+<p class="ph-caption"><strong>EU Environmental Risk Assessment (ERA) Pipeline</strong><br>Problem Formulation $\rightarrow$ Exposure Assessment vs. <strong>Effect Assessment</strong> $\rightarrow$ Risk Characterisation $\rightarrow$ EU approval (e.g., Captan renewed until 2039).</p>
+:::
+:::
+
+:::
+
+::: {.box-teal style="margin-top: 14px; margin-bottom: 0; text-align: center;"}
+Our modelling work operates directly inside **Effect Assessment**: estimating how toxic a chemical is to aquatic organisms.
+:::
+
+::: {.notes}
+Briefly walk the AI/bioinformatics audience through where ecotoxicological modelling sits inside European regulation. We are not estimating environmental concentrations (Exposure Assessment); we work inside Effect Assessment, estimating how sensitive aquatic organisms are to a given substance.
+:::
+
+## The Scale Crisis & The Legacy Regulatory Clash {.smaller}
+
+::: {.flex-row}
+
+::: {.flex-col}
+::: {.box-red style="flex: 1; display: flex; flex-direction: column; margin-bottom: 0;"}
+**The Scale & Ethical Bottleneck**
+
+- $>350,000$ registered chemicals globally; $19,670$ mapped across EU frameworks; $1,474$ PPPs in the EU database.
+- $440,000$–$2.2\text{ million}$ fish and birds used annually ($>\$39\text{M/yr}$; Schür et al., 2025) $\rightarrow$ ethical and economic imperative for **Predictive Ecotoxicology**.
+
+::: {.plot-placeholder style="margin-top: 8px; min-height: 195px; padding: 10px;"}
+<div class="ph-path">assets/images/ws2/ws2_chemicals_scale.png</div>
+<p class="ph-caption">Chemical inventory scale vs. annual animal testing burden.</p>
+:::
+:::
+:::
+
+::: {.flex-col}
+::: {.box-teal style="flex: 1; display: flex; flex-direction: column; margin-bottom: 0;"}
+**The Historical Mismatch**
+
+- **~1980s OECD Test Guidelines:** Built for static, frequentist, fixed-time endpoints like $LC(50, 96\text{h})$ via Dose-Response (DR) models ([Daniels et al., 2026](https://doi.org/10.1093/inteam/vjaf113)).
+
+![](assets/images/ws2/Daniels_paper.png){style="max-height: 110px; width: 100%; object-fit: contain; margin: 2px 0;"}
+
+- **2018+ EFSA Shift:** Recommends dynamic **TKTD** mechanistic models—specifically **GUTS** (General Unified Threshold model of Survival)—for time-variable risk assessment ([EFSA, 2018](https://onlinelibrary.wiley.com/doi/abs/10.2903/j.efsa.2018.5377)).
+
+![](assets/images/ws2/tktd_efsaguideline.png){style="max-height: 110px; width: 100%; object-fit: contain; margin: 2px 0;"}
+:::
+:::
+
+:::
+
+::: {.notes}
+Highlight two converging pressures: (1) experimental testing cannot scale to hundreds of thousands of compounds without severe ethical and financial costs (3Rs); (2) even for the tests we do run, regulatory protocols designed in the 1980s for static 96-hour endpoints are now being fed into dynamic mechanistic TKTD models (GUTS) recommended by EFSA since 2018.
+:::
+
+## Our Objective {.smaller}
+
+::: {.center-content style="justify-content: space-evenly; padding-top: 10px;"}
+
+![](assets/images/ws2/plots/model_process.png){style="max-height: 300px; width: 96%; object-fit: contain;"}
+
+::: {style="text-align: center; font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; font-size: 1.95em; font-weight: 700; color: #005a8c; line-height: 1.28; max-width: 92%; margin-top: 10px;"}
+How do <span style="color: #e53935;">experimental design features</span> influence <span style="color: #018b8d;">DR and GUTS parameter precision</span>?
+:::
+
+:::
+
+## The Empirical Landscape & Why Data Quality Comes First {.smaller}
+
+<p class="slide-lead">Mapping <strong>216 time-resolved survival datasets</strong> across organisms, substances, and exposure profiles.</p>
+
+::: {.flex-row}
+
+::: {.flex-col .flex-2}
+![](assets/images/ws2/plots/demographics_plot.png){style="max-height: 500px; width: 100%; object-fit: contain;"}
+:::
+
+::: {.flex-col}
+::: {.box-grey}
+**Dataset Conceptualisation**
+
+$$\mathcal{D} = (\mathbf{N}, \mathcal{E})$$
+
+Separating raw **survival records** ($\mathbf{N}$) from structured **experimental context** ($\mathcal{E}$):
+
+- Organism–substance **Archetype**
+- **OECD** regulatory constraints
+- **Mechanistic** model requirements
+:::
+
+::: {.plot-placeholder style="min-height: 215px; padding: 12px;"}
+<div class="ph-path">assets/images/ws2/ws2_dq_decay_example.png</div>
+<p class="ph-caption"><strong>Data Quality Audit Example</strong><br>A study labelled "constant exposure" whose measured concentration decays over time.</p>
+:::
+:::
+
+:::
+
+::: {.notes}
+Before any model fitting or ML, data curation is critical. Separating survival counts N from experimental metadata E revealed substantial discrepancies—such as studies labelled constant exposure where analytical chemistry shows rapid concentration decay. Feeding unverified labels into Stage 2 would corrupt feature importance.
+:::
+
+## Experimental Design Features (All 216 Datasets) {.smaller}
+
+::: {.flex-row}
+
+::: {.flex-col}
+Characterising the **experimental design features** across all 216 time-resolved survival datasets.
+
+::: {.box-grey style="margin-top: 14px;"}
+**OECD TG Constraints**<br>
+Minimum experimental criteria specified by each OECD Test Guideline corresponding to our database characteristics.
+:::
+
+::: {.box-grey style="margin-top: 10px;"}
+**Mechanistic Model Requirements**<br>
+Specific experimental design features required to ensure **identifiability** and parameter precision according to [EFSA (2018)](https://onlinelibrary.wiley.com/doi/abs/10.2903/j.efsa.2018.5377) and [Jager & Ashauer (2025)](https://leanpub.com/guts_book).
+:::
+:::
+
+::: {.flex-col .flex-2 .fragment}
+![](assets/images/ws2/plots/legacy_readiness_216.png){style="max-height: 525px; width: 100%; object-fit: contain;"}
+:::
+
+:::
+
+## Analytical Subset: Trout & Daphnia {.smaller}
+
+::: {.flex-row}
+
+::: {.flex-col}
+Isolating a focused analytical subset: **Trout (*O. mykiss*)** and **Daphnia (*D. magna*)**.
+
+::: {.box-grey style="margin-top: 14px;"}
+**Why this subset?**
+
+- Represents **~50%** of the full 216-dataset database.
+- Preserves the categorical design proportions observed across all 216 datasets.
+:::
+
+::: {.fragment .box-teal style="margin-top: 10px;"}
+**Next Methodological Step**
+
+- Define a formal **precision metric** to address our objective:
+  *How do **experimental design features** influence **DR and GUTS parameter precision**?*
+:::
+:::
+
+::: {.flex-col .flex-2}
+![](assets/images/ws2/plots/legacy_readiness_daphniasandtrouts.png){style="max-height: 525px; width: 100%; object-fit: contain;"}
+:::
+
+:::
+
+## Two-Stage Hybrid Architecture: Stage 1 $\rightarrow$ Stage 2 {.smaller}
+
+::: {.flex-row style="gap: 12px; align-items: stretch;"}
+
+::: {.flex-col style="flex: 1.15;"}
+::: {.arch-stage .arch-stage-blue style="height: 100%;"}
+<div class="arch-header" style="color: #005a8c;"><span>Stage 1: Mechanistic Core</span><span class="arch-badge" style="background: #005a8c;">Active in Proof-of-Concept</span></div>
+<div class="arch-node"><strong>GUTS-$\theta$ or DR-$\theta$</strong> fitted to survival dataset</div>
+<div class="arch-arrow-down">↓</div>
+<div class="arch-node"><strong>Bayesian Posterior Distribution ($\theta$)</strong></div>
+<div class="arch-arrow-down">↓</div>
+<div class="arch-node"><strong>Precision Metrics: CV, PUI, (GoK)</strong><br><span style="color: #495057;"><em>"How precise are the parameters?"</em></span></div>
+<div class="arch-arrow-down">↓</div>
+<div class="arch-node" style="background: #e6f0f7; border-color: #005a8c;"><strong>Tabular Matrix</strong> <code>[ X: Design features | Y: Parameter Precision ]</code></div>
+:::
+:::
+
+::: {.arch-arrow-right .fragment}
+→
+:::
+
+::: {.flex-col .fragment style="flex: 0.95;"}
+::: {.arch-stage .arch-stage-teal style="height: 100%; justify-content: space-between;"}
+<div class="arch-header" style="color: #018b8d;"><span>Stage 2: xAI Meta-Model</span><span class="arch-badge" style="background: #018b8d;">Active in Proof-of-Concept</span></div>
+<div class="arch-node" style="padding: 16px 10px;"><strong>Random Forest ($Y \sim X$)</strong><br><span style="color: #495057;">Non-linear mapping from design features to precision</span></div>
+<div class="arch-arrow-down">↓</div>
+<div class="arch-node" style="padding: 16px 10px; background: #e6f6f6; border-color: #00a3a6;"><strong>Feature Importance Metric (<code>%IncMSE</code>)</strong><br><span style="color: #495057;"><em>"How relevant is $X$ to predict $Y$ when non-linear relationships are involved?"</em></span></div>
+:::
+:::
+
+:::
+
+::: {.fragment style="margin-top: 10px;"}
+::: {.arch-stage .arch-stage-purple}
+<div class="arch-header" style="color: #7b1fa2;"><span>Planned Stage 1 Extension — Additional Response Variables ($Y$) Feeding Stage 2</span><span class="arch-badge" style="background: #7b1fa2;">Next Methodological Layer</span></div>
+::: {.flex-row style="gap: 14px;"}
+<div class="arch-node" style="flex: 1; border-color: #c9a3d8;"><strong>Goodness-of-Fit (GoF)</strong> <em>(same dataset: MSE, RMSE, NRMSE, PPC, SPPE)</em><br><span style="color: #495057;"><em>"Does $\theta$ match training data?"</em></span></div>
+<div class="arch-node" style="flex: 1; border-color: #c9a3d8;"><strong>Predictive Capacity</strong> <em>(unseen dataset)</em><br><span style="color: #495057;"><em>"How well does $\theta$ predict unseen data?"</em></span></div>
+:::
+:::
+:::
+
+::: {.box-grey style="margin-top: 10px; margin-bottom: 0; padding: 9px 14px; font-size: 0.74em;"}
+<strong>Transparency Note:</strong> The empirical results shown next represent our methodological Proof-of-Concept on the active pipeline (Stage 1 Precision $\rightarrow$ Stage 2 xAI).
+:::
+
+::: {.notes}
+Take time here—this slide is the structural anchor for both teams.
+1. Stage 1 (blue) is our Bayesian mechanistic core: we fit DR and GUTS models to each dataset, extract posterior distributions, and summarise parameter precision (CV, PUI, and GoK). This produces a clean tabular dataset [X | Y].
+2. Stage 2 (teal) fits a Random Forest (Y ~ X) and extracts %IncMSE strictly as a feature importance metric—not an accuracy metric—to see which design features govern precision under non-linear interactions.
+3. Explicitly flag the purple layer as planned work: precision alone is not enough, because a model can be narrowly precise yet biased. Adding Goodness-of-Fit (on training data) and Predictive Capacity (on unseen data) will turn Y into a multi-response problem—which we will revisit in the discussion at the end.
+4. Emphasise the Proof-of-Concept disclaimer: everything shown in the next slides comes from the active Precision -> xAI pipeline.
+:::
+
+## The Data Analysis $\rightarrow$ ML Bridge {.smaller}
+
+<p class="slide-lead">In regulatory ecotoxicology, black-box AI faces justified skepticism. Every step toward ML must be documented.</p>
+
+::: {.flex-row}
+
+::: {.flex-col .fragment style="flex: 0.34;"}
+::: {.box-teal style="margin-bottom: 0;"}
+[1. Descriptive]{.card-title style="font-size: 1.08em; color: #005a8c; margin-bottom: 8px;"}
+
+Compute the **precision metrics** and visualise them by experimental design feature.
+:::
+:::
+
+::: {.flex-col .fragment style="flex: 0.66;"}
+![](assets/images/ws2/descriptive1.png){style="max-height: 495px; width: 100%; object-fit: contain;"}
+:::
+
+:::
+
+## The Data Analysis $\rightarrow$ ML Bridge {.smaller}
+
+<p class="slide-lead">In regulatory ecotoxicology, black-box AI faces justified skepticism. Every step toward ML must be documented.</p>
+
+::: {.flex-row}
+
+::: {.flex-col style="flex: 0.34;"}
+::: {.box-teal style="margin-bottom: 0;"}
+[1. Descriptive]{.card-title style="font-size: 1.08em; color: #005a8c; margin-bottom: 8px;"}
+
+Compute the **precision metrics** and visualise them by experimental design feature.
+:::
+:::
+
+::: {.flex-col style="flex: 0.66;"}
+![](assets/images/ws2/descriptive2.png){style="max-height: 495px; width: 100%; object-fit: contain;"}
+:::
+
+:::
+
+## The Data Analysis $\rightarrow$ ML Bridge {.smaller}
+
+<p class="slide-lead">In regulatory ecotoxicology, black-box AI faces justified skepticism. Every step toward ML must be documented.</p>
+
+::: {.flex-row}
+
+::: {.flex-col style="flex: 0.34;"}
+::: {.box-teal style="margin-bottom: 0;"}
+[1. Descriptive]{.card-title style="font-size: 1.08em; color: #005a8c; margin-bottom: 8px;"}
+
+Compute the **precision metrics** and visualise them by experimental design feature.
+:::
+:::
+
+::: {.flex-col style="flex: 0.66;"}
+![](assets/images/ws2/descriptive4.1.png){style="max-height: 495px; width: 100%; object-fit: contain;"}
+:::
+
+:::
+
+## The Data Analysis $\rightarrow$ ML Bridge {.smaller}
+
+<p class="slide-lead">In regulatory ecotoxicology, black-box AI faces justified skepticism. Every step toward ML must be documented.</p>
+
+::: {.flex-row}
+
+::: {.flex-col style="flex: 0.34;"}
+::: {.box-teal style="margin-bottom: 0;"}
+[1. Descriptive]{.card-title style="font-size: 1.08em; color: #005a8c; margin-bottom: 8px;"}
+
+Compute the **precision metrics** and visualise them by experimental design feature.
+
+[1.1 Precision Metrics]{.card-title style="font-size: 1.04em; color: #005a8c; margin-top: 14px; margin-bottom: 6px;"}
+
+- **Coefficient of Variation (CV):** Individual parameter uncertainty.
+- **Parameter Uncertainty Index (PUI)** ([Bauer et al., 2024](https://academic.oup.com/etc/article/43/1/197/7728569)): Global precision metric.
+:::
+:::
+
+::: {.flex-col style="flex: 0.66;"}
+![](assets/images/ws2/descriptive4.png){style="max-height: 495px; width: 100%; object-fit: contain;"}
+:::
+
+:::
+
+## The Data Analysis $\rightarrow$ ML Bridge {.smaller}
+
+<p class="slide-lead">In regulatory ecotoxicology, black-box AI faces justified skepticism. Every step toward ML must be documented.</p>
+
+::: {.flex-row}
+
+::: {.flex-col style="flex: 0.34;"}
+::: {.box-teal style="margin-bottom: 0;"}
+[1. Descriptive]{.card-title style="font-size: 1.08em; color: #005a8c; margin-bottom: 8px;"}
+
+Compute the **precision metrics** and visualise them by experimental design feature.
+
+[1.1 Precision Metrics]{.card-title style="font-size: 1.04em; color: #005a8c; margin-top: 14px; margin-bottom: 6px;"}
+
+- **Coefficient of Variation (CV):** Individual parameter uncertainty.
+- **Parameter Uncertainty Index (PUI)** ([Bauer et al., 2024](https://academic.oup.com/etc/article/43/1/197/7728569)): Global precision metric.
+:::
+:::
+
+::: {.flex-col style="flex: 0.66;"}
+![](assets/images/ws2/descriptive6.png){style="max-height: 495px; width: 100%; object-fit: contain;"}
+:::
+
+:::
+
+## The Data Analysis $\rightarrow$ ML Bridge {.smaller}
+
+<p class="slide-lead">In regulatory ecotoxicology, black-box AI faces justified skepticism. Every step toward ML must be documented.</p>
+
+::: {.flex-row}
+
+::: {.flex-col style="flex: 0.34;"}
+::: {.box-teal style="margin-bottom: 0;"}
+[1. Descriptive]{.card-title style="font-size: 1.08em; color: #005a8c; margin-bottom: 8px;"}
+
+Compute the **precision metrics** and visualise them by experimental design feature.
+
+[1.1 Precision Metrics]{.card-title style="font-size: 1.04em; color: #005a8c; margin-top: 14px; margin-bottom: 6px;"}
+
+- **Coefficient of Variation (CV):** Individual parameter uncertainty.
+- **Parameter Uncertainty Index (PUI)** ([Bauer et al., 2024](https://academic.oup.com/etc/article/43/1/197/7728569)): Global precision metric.
+:::
+:::
+
+::: {.flex-col style="flex: 0.66;"}
+![](assets/images/ws2/descriptive7.png){style="max-height: 495px; width: 100%; object-fit: contain;"}
+:::
+
+:::
+
+## Full 4-Step Documented Bridge {.smaller}
+
+<p class="slide-lead">Insight 3 from Part 1 in action: exhaust classical statistical methods before invoking non-linear Machine Learning.</p>
+
+::: {.flex-row style="gap: 16px; margin-top: 14px;"}
+
+::: {.flex-col .box-grey style="margin-bottom: 0;"}
+[1. Descriptive]{.card-title style="font-size: 1.08em; color: #212529; margin-bottom: 8px;"}
+
+Compute precision metrics (`CV`, `PUI`) and visualise them across design features.
+
+[Metrics]{.card-title style="font-size: 0.96em; color: #495057; margin-top: 18px; margin-bottom: 6px;"}
+
+- **CV:** Individual parameter uncertainty.
+- **PUI** ([Bauer et al., 2024](https://academic.oup.com/etc/article/43/1/197/7728569)): Global parameter precision.
+:::
+
+::: {.flex-col .box-grey style="margin-bottom: 0;"}
+[2. Univariate]{.card-title style="font-size: 1.08em; color: #212529; margin-bottom: 8px;"}
+
+Test 1-vs-1 monotonic relationships between design features and precision.
+
+[Method]{.card-title style="font-size: 0.96em; color: #495057; margin-top: 18px; margin-bottom: 6px;"}
+
+- **Spearman coefficient** across experimental design features and precision metrics.
+:::
+
+::: {.flex-col .fragment .box-grey style="margin-bottom: 0;"}
+[3. Multivariate]{.card-title style="font-size: 1.08em; color: #212529; margin-bottom: 8px;"}
+
+Quantify how much variance is captured by linear multivariate combinations.
+
+[Method]{.card-title style="font-size: 0.96em; color: #495057; margin-top: 18px; margin-bottom: 6px;"}
+
+- **Redundancy Analysis (RDA)** relating design features to precision metrics.
+:::
+
+::: {.flex-col .fragment .box-teal style="margin-bottom: 0;"}
+[4. ML Audit]{.card-title style="font-size: 1.08em; color: #005a8c; margin-bottom: 8px;"}
+
+Capture non-linear relationships and feature interactions.
+
+[Method]{.card-title style="font-size: 0.96em; color: #005a8c; margin-top: 18px; margin-bottom: 6px;"}
+
+- **Random Forest** ($Y \sim X$) predicting precision metrics from design features.
+:::
+
+:::
+
+::: {.notes}
+This four-step ladder operationalises Insight 3 from Part 1: we do not jump straight to ML. We systematically document what descriptive summaries, rank correlations (Spearman), and linear multivariate models (RDA) can and cannot explain before invoking Random Forests.
+:::
+
+## Step 1 (Descriptive): The Feature Translation Matrix {.smaller}
+
+::: {.flex-row}
+
+::: {.flex-col .fragment}
+**The Feature Translation Matrix**
+
+We translated binary OECD and mechanistic rules into continuous numerical gradients.
+
+<table style="width: 100%; font-size: 0.85em; border-collapse: collapse; margin-top: 12px;">
+<thead>
+<tr style="border-bottom: 2px solid #005a8c;">
+<th style="padding: 8px; text-align: left;">Binary Rule</th>
+<th style="padding: 8px; text-align: left;">Continuous Feature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding: 8px;">Max Spacing</td>
+<td style="padding: 8px; color: #005a8c; font-family: monospace;">actual_max_spacing</td>
+</tr>
+<tr>
+<td style="padding: 8px;">Min 5 Timepts</td>
+<td style="padding: 8px; color: #005a8c; font-family: monospace;">num_timepoints</td>
+</tr>
+<tr>
+<td style="padding: 8px;">Effect Range</td>
+<td style="padding: 8px; color: #005a8c; font-family: monospace;">max_mortality_delta &amp;<br>partial_effect_concs</td>
+</tr>
+<tr style="border-bottom: 2px solid #005a8c;">
+<td style="padding: 8px;">Extended Duration</td>
+<td style="padding: 8px; color: #005a8c; font-family: monospace;">extended_hours</td>
+</tr>
+</tbody>
+</table>
+:::
+
+::: {.flex-col .flex-2}
+![](assets/images/ws2/plots/legacy_readiness_daphniasandtrouts.png){style="max-height: 520px; width: 100%; object-fit: contain;"}
+:::
+
+:::
+
+## Step 1 (Descriptive): Effect Range vs. PUI {.smaller}
+
+::: {.flex-row}
+
+::: {.flex-col}
+**The Feature Translation Matrix**
+
+Focusing on **Effect Range** features against global parameter precision (`PUI`).
+
+<table style="width: 100%; font-size: 0.85em; border-collapse: collapse; margin-top: 12px;">
+<thead>
+<tr style="border-bottom: 2px solid #005a8c;">
+<th style="padding: 8px; text-align: left;">Binary Rule</th>
+<th style="padding: 8px; text-align: left;">Continuous Feature</th>
+</tr>
+</thead>
+<tbody>
+<tr style="opacity: 0.3;">
+<td style="padding: 8px;">Max Spacing</td>
+<td style="padding: 8px; color: #005a8c; font-family: monospace;">actual_max_spacing</td>
+</tr>
+<tr style="opacity: 0.3;">
+<td style="padding: 8px;">Min 5 Timepts</td>
+<td style="padding: 8px; color: #005a8c; font-family: monospace;">num_timepoints</td>
+</tr>
+<tr>
+<td style="padding: 8px; font-weight: 700;">Effect Range</td>
+<td style="padding: 8px; color: #005a8c; font-family: monospace; font-weight: 700;">max_mortality_delta &amp;<br>partial_effect_concs</td>
+</tr>
+<tr style="opacity: 0.3; border-bottom: 2px solid #005a8c;">
+<td style="padding: 8px;">Extended Duration</td>
+<td style="padding: 8px; color: #005a8c; font-family: monospace;">extended_hours</td>
+</tr>
+</tbody>
+</table>
+:::
+
+::: {.flex-col .flex-2}
+![](assets/images/ws2/plots/effect_num_PUI.png){style="max-height: 520px; width: 100%; object-fit: contain;"}
+:::
+
+:::
+
+## Steps 2 & 3 (Univariate & Multivariate): Hitting the Linear Ceiling {.smaller}
+
+::: {.flex-row}
+
+::: {.flex-col}
+::: {.box-grey style="margin-top: 12px;"}
+- **Spearman correlations:** Distinct, weak, or scattered signals across individual parameters and experimental design features.
+- **Redundancy Analysis (RDA):** Linear multivariate modelling explains a maximum of **~25%** of total variance across models.
+:::
+
+::: {.fragment .box-teal style="margin-top: 10px;"}
+Classical linear tools are exhausted $\rightarrow$ empirically justifying **Stage 2 (non-linear ML)**.
+:::
+:::
+
+::: {.flex-col .flex-2}
+![](assets/images/ws2/plots/corr_pre_rf.png){style="max-height: 515px; width: 100%; object-fit: contain;"}
+:::
+
+:::
+
+::: {.notes}
+Point out that Spearman correlations reveal isolated parameter-specific trends, while Redundancy Analysis tops out at roughly 25% of explained variance. That empirical ceiling—not novelty—is what justifies stepping into Random Forests in Stage 2.
+:::
+
+## Step 4 (ML Audit): Random Forest Feature Importance (`%IncMSE`) {.smaller}
+
+::: {.flex-row}
+
+::: {.flex-col style="flex: 1.05;"}
+::: {style="font-size: 0.78em; margin-top: -4px; margin-bottom: 8px;"}
+$$\%\text{IncMSE} = \frac{\text{MSE}_{\text{permuted}} - \text{MSE}_{\text{base}}}{\text{MSE}_{\text{base}}} \times 100$$
+:::
+
+::: {.box-teal style="padding: 10px 14px; font-size: 0.76em; margin-bottom: 10px;"}
+**`%IncMSE` (Percentage Increase in Mean Squared Error)** is a **feature importance metric**: a high value means Random Forest predictions of parameter precision became **less accurate** when that design feature was randomly permuted.
+:::
+
+::: {.fragment .box-grey style="padding: 10px 14px; font-size: 0.76em; margin-bottom: 10px;"}
+- **Maximum Mortality Delta** and **Number of time points** are almost equally relevant across all three models.
+- **DR** precision is heavily driven by capturing **Partial Effect Concentrations**.
+:::
+
+::: {.box-grey style="padding: 8px 12px; font-size: 0.68em; margin-bottom: 0; color: #495057;"}
+**Model sanity check (OOB $R^2$ on global `PUI`, $n = 112\text{--}114$):**<br>
+GUTS-IT: **68.4%** | DR: **40.6%** | GUTS-SD: **24.5%**<br>
+*(Confirms real non-linear signal behind `%IncMSE` on `PUI`; individual `cv_*` ratios exhibit numerical instability near $\log_{10}(\theta)\approx 0$.)*
+:::
+:::
+
+::: {.flex-col .flex-2 style="flex: 1.55;"}
+![](assets/images/ws2/plots/random_forest.png){style="max-height: 515px; width: 100%; object-fit: contain;"}
+:::
+
+:::
+
+::: {.notes}
+Be explicit about two methodological safeguards:
+1. %IncMSE stands for Percentage Increase in Mean Squared Error and is a permutation-based feature importance metric, NOT a standalone accuracy metric.
+2. Before interpreting %IncMSE rankings, we audited Out-Of-Bag (OOB) predictive performance so we do not interpret noise. On the global precision index (PUI), OOB R-squared reaches 68.4% for GUTS-IT, 40.6% for DR, and 24.5% for GUTS-SD (n = 112–114), confirming genuine signal.
+3. Auditing OOB R-squared on individual parameter CVs also caught a mathematical artifact: dividing log10 interval width by |log10(median)| explodes whenever a parameter median is close to 1 (log10 ≈ 0), producing extreme outliers (up to 316x the median) and negative OOB R-squared. For the next iteration, individual parameters will use direct log10 widths or GoK instead of this ratio.
+:::
+
+## Applying the Insight: Why Historical Data Are Not Enough {.smaller}
+
+::: {.flex-row}
+
+::: {.flex-col}
+::: {.box-grey style="margin-top: 10px;"}
+**Recap from Stage 2 Audit**
+
+**Maximum Mortality Delta** and **Number of time points** co-drive parameter precision across models.
+:::
+
+::: {.fragment .box-red style="margin-top: 10px;"}
+**Structural Limitations of Retrospective Data**
+
+- Historical datasets leave large gaps in the experimental design space (heavily biased toward legacy OECD protocols).
+- The relationship is non-linear and multidimensional—we cannot yet extract robust numeric thresholds.
+- **Open regulatory question:** *If a laboratory design inflates parameter uncertainty (high PUI), how severely does it degrade the final $LC_{50}$?*
+:::
+:::
+
+::: {.flex-col .flex-2}
+![](assets/images/ws2/plots/mountain_post_rf.png){style="max-height: 515px; width: 100%; object-fit: contain;"}
+:::
+
+:::
+
+::: {.notes}
+Use the response surface on the right to illustrate sampling sparsity: because historical studies cluster around legacy OECD protocols, large regions of the design space remain empty. Retrospective ML tells us which variables matter, but cannot safely extrapolate thresholds into untested protocol designs.
+:::
+
+## Next Step: From Retrospective Audit to Prospective Simulation {.smaller}
+
+::: {.plot-placeholder style="min-height: 310px; margin-bottom: 14px;"}
+<div class="ph-path">assets/images/ws2/ws2_prospective_workflow.png</div>
+<p class="ph-caption"><strong>Prospective Simulation &amp; Validation Pipeline</strong><br>Empirical Archetypes (organism–substance parameter distributions) $\rightarrow$ Synthetic Experimental Scenarios (Poor / Regulatory / Model-Guided) $\rightarrow$ Forward GUTS/DR Simulation &amp; Refitting $\rightarrow$ ML Meta-Model Training $\rightarrow$ Validation via Data Thinning.</p>
+:::
+
+::: {.flex-row style="gap: 18px;"}
+
+::: {.flex-col .box-teal style="margin-bottom: 0;"}
+**Immediate Goal**<br>
+Move from identifying *which* features matter to quantifying **actionable design thresholds** that balance statistical precision with the 3Rs.
+:::
+
+::: {.flex-col .box-grey style="margin-bottom: 0;"}
+**Longer-Term Thesis Horizon**<br>
+Once reliable model-guided designs are validated, extend the GUTS framework to combined **chemical + climate-change stressors**.
+:::
+
+:::
+
+::: {.notes}
+Explain the functional transition: Retrospective Audit exposed what matters and where historical data are blind; Prospective Simulation uses empirical organism–substance archetypes to systematically generate synthetic protocols, refit GUTS/DR, and validate model-guided designs via data thinning on dense empirical curves. Once validated, this design foundation supports multi-stressor (chemical + climate) extensions.
+:::
+
+## Take-Home Messages {.smaller}
+
+::: {.flex-row style="min-height: 460px; align-items: stretch;"}
+
+::: {.flex-col .flex-2 style="justify-content: center; padding-right: 18px;"}
+<ol style="font-size: 1.08em; line-height: 1.65;">
+<li class="fragment" style="margin-bottom: 18px;"><strong>The Legacy Mismatch:</strong> Standardised <span style="color: #005a8c;"><strong>OECD experimental designs are</strong></span> not optimised for dynamic mechanistic models like GUTS.</li>
+<li class="fragment" style="margin-bottom: 18px;"><strong>Justified, Explainable ML:</strong> Pairing a mechanistic White Box with an interpretable Grey Box meta-model—only after exhausting classical statistics—preserves regulatory auditability.</li>
+<li class="fragment" style="margin-bottom: 0;"><strong>Audit Before Simulation:</strong> Retrospective ML shows <em>what</em> drives precision and exposes historical data gaps, justifying targeted synthetic simulations.</li>
+</ol>
+:::
+
+::: {.flex-col style="border-left: 2px dashed #ced4da; padding-left: 26px; justify-content: center;"}
+::: {.plot-placeholder style="min-height: 310px;"}
+<div class="ph-path">assets/images/ws2/ws2_repo_qr.png</div>
+<p class="ph-caption"><strong>Workshop Website &amp; Open Materials</strong><br>QR code &amp; repository link</p>
+:::
+:::
+
+:::
+
+::: {.notes}
+Summarise the three core points cleanly, then move straight to Slide 23 to open the 15-minute inter-team discussion between ecotoxicologists and bioinformatics/AI researchers.
+:::
+
+## Open Methodological Challenges: Ecotox $\leftrightarrow$ AI/Bioinformatics Discussion {.smaller}
+
+<p class="slide-lead">Moving from our current Proof-of-Concept to the extended Stage 1 + Stage 2 pipeline—your input is welcome.</p>
+
+::: {.flex-row style="gap: 18px; margin-top: 14px; min-height: 430px;"}
+
+::: {.flex-col .box-purple style="margin-bottom: 0; justify-content: flex-start;"}
+[1. Multi-Response Learning]{.card-title style="font-size: 1.08em; color: #7b1fa2; margin-bottom: 12px;"}
+
+Adding **Goodness-of-Fit (GoF)** and **Predictive Capacity** alongside **Precision** (`CV`, `PUI`, `GoK`) yields correlated targets $Y$.
+
+With $n \approx 200$ and collinear design features $X$, should we move to **multi-output algorithms** (e.g., Multivariate Random Forests) or keep separate single-target models?
+:::
+
+::: {.flex-col .box-teal style="margin-bottom: 0; justify-content: flex-start;"}
+[2. Leakage-Free Data Splitting]{.card-title style="font-size: 1.08em; color: #005a8c; margin-bottom: 12px;"}
+
+To evaluate GUTS **Predictive Capacity** on unseen data without data leakage across shared species, chemicals, or source studies:
+
+How should we structure **grouped / stratified splits** on an unbalanced ecotoxicological database?
+:::
+
+::: {.flex-col .box-grey style="margin-bottom: 0; justify-content: flex-start;"}
+[3. Efficient Optimization Under 3Rs Constraints]{.card-title style="font-size: 1.08em; color: #212529; margin-bottom: 12px;"}
+
+In the prospective simulation phase, running Bayesian GUTS calibration across thousands of candidate designs is computationally heavy.
+
+Could **surrogate models + Active Learning / Bayesian Optimization** guide the search under ethical and budget constraints?
+:::
+
+:::
+
+::: {.notes}
+Leave this slide on screen for the 15-minute open discussion. Prompt both groups specifically:
+- Question 1 (AI / Stats): Trade-offs between Multivariate RF / multi-task models vs. separate single-output RFs when n ~ 200 and targets (Precision, GoF, Predictive Capacity) are correlated. Also ask about handling collinearity in permutation importance (e.g., conditional permutation importance or SHAP).
+- Question 2 (Ecotox + AI): What defines a truly independent test split—holding out a study, a chemical, or a species-chemical pair—and how to avoid collapsing sample size in sparse taxa?
+- Question 3 (AI + Ecotox): Using emulators/surrogates and Bayesian Optimization to search the protocol space under hard 3Rs constraints (maximum animals, minimum timepoints) instead of brute-force grid MCMC calibration.
+:::
+
+## {.no-logos background-color="#005a8c"}
+
+::: {.center-content style="color: #ffffff; justify-content: center; gap: 36px;"}
+
+<div style="font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; font-size: 2.8em; font-weight: 700; color: #ffffff; letter-spacing: -0.01em;">
+Thank you &amp; Questions
+</div>
+
+<div style="font-size: 0.95em; color: #e9ecef; margin-top: -18px;">
+FR BioEEnViS Knowledge-Sharing Seminar · LBBE / INRAE · December 16, 2026
+</div>
+
+<div style="display: flex; align-items: center; justify-content: center; gap: 48px; width: 85%; margin-top: 24px;">
+<div style="flex: 1; display: flex; justify-content: center;">
+<img src="assets/images/logos/LBBE_LOGO.png" style="max-height: 95px; max-width: 240px; object-fit: contain;" alt="LBBE Logo">
+</div>
+<div style="flex: 1; display: flex; justify-content: center;">
+<img src="assets/images/logos/INRAE_LOGO.png" style="max-height: 95px; max-width: 240px; object-fit: contain;" alt="INRAE Logo">
+</div>
+<div style="flex: 1; display: flex; justify-content: center;">
+<div style="border: 2px dashed rgba(255,255,255,0.55); border-radius: 6px; padding: 14px 18px; color: #e9ecef; font-size: 0.65em; text-align: center; min-width: 210px;">
+<div style="font-family: monospace; margin-bottom: 4px;">assets/images/logos/BIOEENVIS_LOGO.png</div>
+<div>FR BioEEnViS Logo</div>
+</div>
+</div>
+</div>
+
+:::
+
+::: {.footer}
+[Built with [Quarto](https://quarto.org)]{style="color: #e9ecef;"}
+:::
