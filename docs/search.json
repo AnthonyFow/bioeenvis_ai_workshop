@@ -133,277 +133,81 @@
     "text": "Thank you — Questions?\n\n\nAnthony Fow Esteves · anthony.fow@univ-lyon1.fr\n\n\n\n\n\nassets/images/LBBE_LOGO_color.png \n\n\n\n\n\nassets/images/INRAE_LOGO_color.png \n\n\n\n\n\nassets/images/BIOEENVIS_LOGO.png \n\n\n\n\nBuilt with Quarto · Supported by FR BioEEnViS\n\n\n\nSpoken core: Thank FR BioEEnViS, LBBE, INRAE, and my supervisors, and open the floor for questions (~10 min). Remind remote participants they can unmute or type in the Visio chat.\nCallback: Keep the OECD AI Classification link (oecd.ai/en/classification) and 03_references.qmd ready if someone asks for formal taxonomies or primary papers.\nBridge: Announce the 15-minute break at 10:30 and confirm Part 2 starts promptly at 10:45 on the same Visio link and room."
   },
   {
-    "objectID": "02_technical_workshop_upto25.11.html#connecting-part-1-to-practice-why-explainable-ml-as-a-meta-model",
-    "href": "02_technical_workshop_upto25.11.html#connecting-part-1-to-practice-why-explainable-ml-as-a-meta-model",
-    "title": "Beyond Standardised Guidelines",
-    "section": "Connecting Part 1 to Practice: Why Explainable ML as a Meta-Model?",
-    "text": "Connecting Part 1 to Practice: Why Explainable ML as a Meta-Model?\n\nBridging Part 1’s modelling epistemology to our ecotoxicological case study: operating strictly at the White Box + Grey Box intersection.\n\n\n\n\nTwo-Stage Meta-Modelling Architecture\nMachine learning here does not replace the biological model. Instead, it audits how laboratory inputs govern mechanistic inference:\n\nStage 1 — White Box Core: Mechanistic survival models (GUTS and DR) calibrated on empirical survival data.\nStage 2 — Grey Box xAI Audit: Explainable ML linking experimental design features (\\(X\\)) to parameter precision and accuracy (\\(Y\\)).\nDeliberate Exclusion: We avoid Deep Learning / Neural Networks, which are ill-suited to this sample regime and opaque to regulators.\n\n\n\n\n\nThree-Point Rationale\n\nModerate Tabular Sample Size (\\(n = 216\\) datasets): Structured tabular data with low-to-moderate \\(n\\) favour tree ensembles over deep architectures, limiting overfitting.\nRegulatory Auditability (EFSA / OECD): Environmental risk assessment requires transparent, inspectable links between experimental choices and model outputs.\nProtocol Design, Not Black-Box Prediction: Our goal is to derive actionable laboratory guidelines, not to deploy an unexamined predictive oracle.\n\n\n\n\n\nStart by tying Part 2 directly back to Part 1’s framework. Emphasise for the bioinformatics and AI colleagues that choosing Random Forests over Deep Learning is a deliberate methodological choice driven by n = 216 tabular records and regulatory auditability. Make clear that ML is used as a meta-model auditing the mechanistic GUTS/DR stage—not as a replacement for biology."
-  },
-  {
-    "objectID": "02_technical_workshop_upto25.11.html#from-everyday-products-to-freshwater-risk-where-we-work",
-    "href": "02_technical_workshop_upto25.11.html#from-everyday-products-to-freshwater-risk-where-we-work",
-    "title": "Beyond Standardised Guidelines",
-    "section": "From Everyday Products to Freshwater Risk: Where We Work",
-    "text": "From Everyday Products to Freshwater Risk: Where We Work\n\nRegulatory context for non-ecotoxicologists: tracing agricultural chemical inputs to aquatic toxicity modelling.\n\n\n\n\n\nassets/images/ws2/ws2_hook_ppp_products.png\n\n\nEveryday Products to Aquatic ExposureApple, Red Wine, Baguette \\(\\rightarrow\\) large-scale agriculture uses Plant Protection Products (PPPs) \\(\\rightarrow\\) runoff into freshwater ecosystems.\n\n\n\n\n\n\nassets/images/ws2/ws2_era_flowchart.png\n\n\nEU Environmental Risk Assessment (ERA) PipelineProblem Formulation \\(\\rightarrow\\) Exposure Assessment vs. Effect Assessment \\(\\rightarrow\\) Risk Characterisation \\(\\rightarrow\\) EU approval (e.g., Captan renewed until 2039).\n\n\n\n\n\nOur modelling work operates directly inside Effect Assessment: estimating how toxic a chemical is to aquatic organisms.\n\n\nBriefly walk the AI/bioinformatics audience through where ecotoxicological modelling sits inside European regulation. We are not estimating environmental concentrations (Exposure Assessment); we work inside Effect Assessment, estimating how sensitive aquatic organisms are to a given substance."
-  },
-  {
-    "objectID": "02_technical_workshop_upto25.11.html#the-scale-crisis-the-legacy-regulatory-clash",
-    "href": "02_technical_workshop_upto25.11.html#the-scale-crisis-the-legacy-regulatory-clash",
-    "title": "Beyond Standardised Guidelines",
-    "section": "The Scale Crisis & The Legacy Regulatory Clash",
-    "text": "The Scale Crisis & The Legacy Regulatory Clash\n\n\n\nThe Scale & Ethical Bottleneck\n\n\\(&gt;350,000\\) registered chemicals globally; \\(19,670\\) mapped across EU frameworks; \\(1,474\\) PPPs in the EU database.\n\\(440,000\\)–\\(2.2\\text{ million}\\) fish and birds used annually (\\(&gt;\\$39\\text{M/yr}\\); Schür et al., 2025) \\(\\rightarrow\\) ethical and economic imperative for Predictive Ecotoxicology.\n\n\n\nassets/images/ws2/ws2_chemicals_scale.png\n\n\nChemical inventory scale vs. annual animal testing burden.\n\n\n\n\n\n\nThe Historical Mismatch\n\n~1980s OECD Test Guidelines: Built for static, frequentist, fixed-time endpoints like \\(LC(50, 96\\text{h})\\) via Dose-Response (DR) models (Daniels et al., 2026).\n\n\n\n2018+ EFSA Shift: Recommends dynamic TKTD mechanistic models—specifically GUTS (General Unified Threshold model of Survival)—for time-variable risk assessment (EFSA, 2018).\n\n\n\n\n\n\nHighlight two converging pressures: (1) experimental testing cannot scale to hundreds of thousands of compounds without severe ethical and financial costs (3Rs); (2) even for the tests we do run, regulatory protocols designed in the 1980s for static 96-hour endpoints are now being fed into dynamic mechanistic TKTD models (GUTS) recommended by EFSA since 2018."
-  },
-  {
-    "objectID": "02_technical_workshop_upto25.11.html#our-objective",
-    "href": "02_technical_workshop_upto25.11.html#our-objective",
-    "title": "Beyond Standardised Guidelines",
-    "section": "Our Objective",
-    "text": "Our Objective\n\n\n\nHow do experimental design features influence DR and GUTS parameter precision?"
-  },
-  {
-    "objectID": "02_technical_workshop_upto25.11.html#the-empirical-landscape-why-data-quality-comes-first",
-    "href": "02_technical_workshop_upto25.11.html#the-empirical-landscape-why-data-quality-comes-first",
-    "title": "Beyond Standardised Guidelines",
-    "section": "The Empirical Landscape & Why Data Quality Comes First",
-    "text": "The Empirical Landscape & Why Data Quality Comes First\n\nMapping 216 time-resolved survival datasets across organisms, substances, and exposure profiles.\n\n\n\n\n\n\n\nDataset Conceptualisation\n\\[\\mathcal{D} = (\\mathbf{N}, \\mathcal{E})\\]\nSeparating raw survival records (\\(\\mathbf{N}\\)) from structured experimental context (\\(\\mathcal{E}\\)):\n\nOrganism–substance Archetype\nOECD regulatory constraints\nMechanistic model requirements\n\n\n\n\nassets/images/ws2/ws2_dq_decay_example.png\n\n\nData Quality Audit ExampleA study labelled “constant exposure” whose measured concentration decays over time.\n\n\n\n\n\nBefore any model fitting or ML, data curation is critical. Separating survival counts N from experimental metadata E revealed substantial discrepancies—such as studies labelled constant exposure where analytical chemistry shows rapid concentration decay. Feeding unverified labels into Stage 2 would corrupt feature importance."
-  },
-  {
-    "objectID": "02_technical_workshop_upto25.11.html#experimental-design-features-all-216-datasets",
-    "href": "02_technical_workshop_upto25.11.html#experimental-design-features-all-216-datasets",
-    "title": "Beyond Standardised Guidelines",
-    "section": "Experimental Design Features (All 216 Datasets)",
-    "text": "Experimental Design Features (All 216 Datasets)\n\n\nCharacterising the experimental design features across all 216 time-resolved survival datasets.\n\nOECD TG Constraints Minimum experimental criteria specified by each OECD Test Guideline corresponding to our database characteristics.\n\n\nMechanistic Model Requirements Specific experimental design features required to ensure identifiability and parameter precision according to EFSA (2018) and Jager & Ashauer (2025)."
-  },
-  {
-    "objectID": "02_technical_workshop_upto25.11.html#analytical-subset-trout-daphnia",
-    "href": "02_technical_workshop_upto25.11.html#analytical-subset-trout-daphnia",
-    "title": "Beyond Standardised Guidelines",
-    "section": "Analytical Subset: Trout & Daphnia",
-    "text": "Analytical Subset: Trout & Daphnia\n\n\nIsolating a focused analytical subset: Trout (O. mykiss) and Daphnia (D. magna).\n\nWhy this subset?\n\nRepresents ~50% of the full 216-dataset database.\nPreserves the categorical design proportions observed across all 216 datasets.\n\n\n\nNext Methodological Step\n\nDefine a formal precision metric to address our objective: How do experimental design features influence DR and GUTS parameter precision?"
-  },
-  {
-    "objectID": "02_technical_workshop_upto25.11.html#two-stage-hybrid-architecture-stage-1-rightarrow-stage-2",
-    "href": "02_technical_workshop_upto25.11.html#two-stage-hybrid-architecture-stage-1-rightarrow-stage-2",
-    "title": "Beyond Standardised Guidelines",
-    "section": "Two-Stage Hybrid Architecture: Stage 1 \\(\\rightarrow\\) Stage 2",
-    "text": "Two-Stage Hybrid Architecture: Stage 1 \\(\\rightarrow\\) Stage 2\n\n\n\n\nStage 1: Mechanistic CoreActive in Proof-of-Concept\n\n\nGUTS-\\(\\theta\\) or DR-\\(\\theta\\) fitted to survival dataset\n\n\n↓\n\n\nBayesian Posterior Distribution (\\(\\theta\\))\n\n\n↓\n\n\nPrecision Metrics: CV, PUI, (GoK)“How precise are the parameters?”\n\n\n↓\n\n\nTabular Matrix [ X: Design features | Y: Parameter Precision ]\n\n\n\n\n→\n\n\n\n\nStage 2: xAI Meta-ModelActive in Proof-of-Concept\n\n\nRandom Forest (\\(Y \\sim X\\))Non-linear mapping from design features to precision\n\n\n↓\n\n\nFeature Importance Metric (%IncMSE)“How relevant is \\(X\\) to predict \\(Y\\) when non-linear relationships are involved?”\n\n\n\n\n\n\n\nPlanned Stage 1 Extension — Additional Response Variables (\\(Y\\)) Feeding Stage 2Next Methodological Layer\n\n\n\nGoodness-of-Fit (GoF) (same dataset: MSE, RMSE, NRMSE, PPC, SPPE)“Does \\(\\theta\\) match training data?”\n\n\nPredictive Capacity (unseen dataset)“How well does \\(\\theta\\) predict unseen data?”\n\n\n\n\n\nTransparency Note: The empirical results shown next represent our methodological Proof-of-Concept on the active pipeline (Stage 1 Precision \\(\\rightarrow\\) Stage 2 xAI).\n\n\nTake time here—this slide is the structural anchor for both teams. 1. Stage 1 (blue) is our Bayesian mechanistic core: we fit DR and GUTS models to each dataset, extract posterior distributions, and summarise parameter precision (CV, PUI, and GoK). This produces a clean tabular dataset [X | Y]. 2. Stage 2 (teal) fits a Random Forest (Y ~ X) and extracts %IncMSE strictly as a feature importance metric—not an accuracy metric—to see which design features govern precision under non-linear interactions. 3. Explicitly flag the purple layer as planned work: precision alone is not enough, because a model can be narrowly precise yet biased. Adding Goodness-of-Fit (on training data) and Predictive Capacity (on unseen data) will turn Y into a multi-response problem—which we will revisit in the discussion at the end. 4. Emphasise the Proof-of-Concept disclaimer: everything shown in the next slides comes from the active Precision -&gt; xAI pipeline."
-  },
-  {
-    "objectID": "02_technical_workshop_upto25.11.html#the-data-analysis-rightarrow-ml-bridge",
-    "href": "02_technical_workshop_upto25.11.html#the-data-analysis-rightarrow-ml-bridge",
-    "title": "Beyond Standardised Guidelines",
-    "section": "The Data Analysis \\(\\rightarrow\\) ML Bridge",
-    "text": "The Data Analysis \\(\\rightarrow\\) ML Bridge\n\nIn regulatory ecotoxicology, black-box AI faces justified skepticism. Every step toward ML must be documented.\n\n\n\n\n1. Descriptive\nCompute the precision metrics and visualise them by experimental design feature."
-  },
-  {
-    "objectID": "02_technical_workshop_upto25.11.html#the-data-analysis-rightarrow-ml-bridge-1",
-    "href": "02_technical_workshop_upto25.11.html#the-data-analysis-rightarrow-ml-bridge-1",
-    "title": "Beyond Standardised Guidelines",
-    "section": "The Data Analysis \\(\\rightarrow\\) ML Bridge",
-    "text": "The Data Analysis \\(\\rightarrow\\) ML Bridge\n\nIn regulatory ecotoxicology, black-box AI faces justified skepticism. Every step toward ML must be documented.\n\n\n\n\n1. Descriptive\nCompute the precision metrics and visualise them by experimental design feature."
-  },
-  {
-    "objectID": "02_technical_workshop_upto25.11.html#the-data-analysis-rightarrow-ml-bridge-2",
-    "href": "02_technical_workshop_upto25.11.html#the-data-analysis-rightarrow-ml-bridge-2",
-    "title": "Beyond Standardised Guidelines",
-    "section": "The Data Analysis \\(\\rightarrow\\) ML Bridge",
-    "text": "The Data Analysis \\(\\rightarrow\\) ML Bridge\n\nIn regulatory ecotoxicology, black-box AI faces justified skepticism. Every step toward ML must be documented.\n\n\n\n\n1. Descriptive\nCompute the precision metrics and visualise them by experimental design feature."
-  },
-  {
-    "objectID": "02_technical_workshop_upto25.11.html#the-data-analysis-rightarrow-ml-bridge-3",
-    "href": "02_technical_workshop_upto25.11.html#the-data-analysis-rightarrow-ml-bridge-3",
-    "title": "Beyond Standardised Guidelines",
-    "section": "The Data Analysis \\(\\rightarrow\\) ML Bridge",
-    "text": "The Data Analysis \\(\\rightarrow\\) ML Bridge\n\nIn regulatory ecotoxicology, black-box AI faces justified skepticism. Every step toward ML must be documented.\n\n\n\n\n1. Descriptive\nCompute the precision metrics and visualise them by experimental design feature.\n1.1 Precision Metrics\n\nCoefficient of Variation (CV): Individual parameter uncertainty.\nParameter Uncertainty Index (PUI) (Bauer et al., 2024): Global precision metric."
-  },
-  {
-    "objectID": "02_technical_workshop_upto25.11.html#the-data-analysis-rightarrow-ml-bridge-4",
-    "href": "02_technical_workshop_upto25.11.html#the-data-analysis-rightarrow-ml-bridge-4",
-    "title": "Beyond Standardised Guidelines",
-    "section": "The Data Analysis \\(\\rightarrow\\) ML Bridge",
-    "text": "The Data Analysis \\(\\rightarrow\\) ML Bridge\n\nIn regulatory ecotoxicology, black-box AI faces justified skepticism. Every step toward ML must be documented.\n\n\n\n\n1. Descriptive\nCompute the precision metrics and visualise them by experimental design feature.\n1.1 Precision Metrics\n\nCoefficient of Variation (CV): Individual parameter uncertainty.\nParameter Uncertainty Index (PUI) (Bauer et al., 2024): Global precision metric."
-  },
-  {
-    "objectID": "02_technical_workshop_upto25.11.html#the-data-analysis-rightarrow-ml-bridge-5",
-    "href": "02_technical_workshop_upto25.11.html#the-data-analysis-rightarrow-ml-bridge-5",
-    "title": "Beyond Standardised Guidelines",
-    "section": "The Data Analysis \\(\\rightarrow\\) ML Bridge",
-    "text": "The Data Analysis \\(\\rightarrow\\) ML Bridge\n\nIn regulatory ecotoxicology, black-box AI faces justified skepticism. Every step toward ML must be documented.\n\n\n\n\n1. Descriptive\nCompute the precision metrics and visualise them by experimental design feature.\n1.1 Precision Metrics\n\nCoefficient of Variation (CV): Individual parameter uncertainty.\nParameter Uncertainty Index (PUI) (Bauer et al., 2024): Global precision metric."
-  },
-  {
-    "objectID": "02_technical_workshop_upto25.11.html#full-4-step-documented-bridge",
-    "href": "02_technical_workshop_upto25.11.html#full-4-step-documented-bridge",
-    "title": "Beyond Standardised Guidelines",
-    "section": "Full 4-Step Documented Bridge",
-    "text": "Full 4-Step Documented Bridge\n\nInsight 3 from Part 1 in action: exhaust classical statistical methods before invoking non-linear Machine Learning.\n\n\n\n1. Descriptive\nCompute precision metrics (CV, PUI) and visualise them across design features.\nMetrics\n\nCV: Individual parameter uncertainty.\nPUI (Bauer et al., 2024): Global parameter precision.\n\n\n\n2. Univariate\nTest 1-vs-1 monotonic relationships between design features and precision.\nMethod\n\nSpearman coefficient across experimental design features and precision metrics.\n\n\n\n3. Multivariate\nQuantify how much variance is captured by linear multivariate combinations.\nMethod\n\nRedundancy Analysis (RDA) relating design features to precision metrics.\n\n\n\n4. ML Audit\nCapture non-linear relationships and feature interactions.\nMethod\n\nRandom Forest (\\(Y \\sim X\\)) predicting precision metrics from design features.\n\n\n\n\nThis four-step ladder operationalises Insight 3 from Part 1: we do not jump straight to ML. We systematically document what descriptive summaries, rank correlations (Spearman), and linear multivariate models (RDA) can and cannot explain before invoking Random Forests."
-  },
-  {
-    "objectID": "02_technical_workshop_upto25.11.html#step-1-descriptive-the-feature-translation-matrix",
-    "href": "02_technical_workshop_upto25.11.html#step-1-descriptive-the-feature-translation-matrix",
-    "title": "Beyond Standardised Guidelines",
-    "section": "Step 1 (Descriptive): The Feature Translation Matrix",
-    "text": "Step 1 (Descriptive): The Feature Translation Matrix\n\n\nThe Feature Translation Matrix\nWe translated binary OECD and mechanistic rules into continuous numerical gradients.\n\n\n\n\nBinary Rule\n\n\nContinuous Feature\n\n\n\n\n\n\nMax Spacing\n\n\nactual_max_spacing\n\n\n\n\nMin 5 Timepts\n\n\nnum_timepoints\n\n\n\n\nEffect Range\n\n\nmax_mortality_delta &partial_effect_concs\n\n\n\n\nExtended Duration\n\n\nextended_hours"
-  },
-  {
-    "objectID": "02_technical_workshop_upto25.11.html#step-1-descriptive-effect-range-vs.-pui",
-    "href": "02_technical_workshop_upto25.11.html#step-1-descriptive-effect-range-vs.-pui",
-    "title": "Beyond Standardised Guidelines",
-    "section": "Step 1 (Descriptive): Effect Range vs. PUI",
-    "text": "Step 1 (Descriptive): Effect Range vs. PUI\n\n\nThe Feature Translation Matrix\nFocusing on Effect Range features against global parameter precision (PUI).\n\n\n\n\nBinary Rule\n\n\nContinuous Feature\n\n\n\n\n\n\nMax Spacing\n\n\nactual_max_spacing\n\n\n\n\nMin 5 Timepts\n\n\nnum_timepoints\n\n\n\n\nEffect Range\n\n\nmax_mortality_delta &partial_effect_concs\n\n\n\n\nExtended Duration\n\n\nextended_hours"
-  },
-  {
-    "objectID": "02_technical_workshop_upto25.11.html#steps-2-3-univariate-multivariate-hitting-the-linear-ceiling",
-    "href": "02_technical_workshop_upto25.11.html#steps-2-3-univariate-multivariate-hitting-the-linear-ceiling",
-    "title": "Beyond Standardised Guidelines",
-    "section": "Steps 2 & 3 (Univariate & Multivariate): Hitting the Linear Ceiling",
-    "text": "Steps 2 & 3 (Univariate & Multivariate): Hitting the Linear Ceiling\n\n\n\n\nSpearman correlations: Distinct, weak, or scattered signals across individual parameters and experimental design features.\nRedundancy Analysis (RDA): Linear multivariate modelling explains a maximum of ~25% of total variance across models.\n\n\n\nClassical linear tools are exhausted \\(\\rightarrow\\) empirically justifying Stage 2 (non-linear ML).\n\n\n\n\n\n\n\nPoint out that Spearman correlations reveal isolated parameter-specific trends, while Redundancy Analysis tops out at roughly 25% of explained variance. That empirical ceiling—not novelty—is what justifies stepping into Random Forests in Stage 2."
-  },
-  {
-    "objectID": "02_technical_workshop_upto25.11.html#step-4-ml-audit-random-forest-feature-importance-incmse",
-    "href": "02_technical_workshop_upto25.11.html#step-4-ml-audit-random-forest-feature-importance-incmse",
-    "title": "Beyond Standardised Guidelines",
-    "section": "Step 4 (ML Audit): Random Forest Feature Importance (%IncMSE)",
-    "text": "Step 4 (ML Audit): Random Forest Feature Importance (%IncMSE)\n\n\n\n\\[\\%\\text{IncMSE} = \\frac{\\text{MSE}_{\\text{permuted}} - \\text{MSE}_{\\text{base}}}{\\text{MSE}_{\\text{base}}} \\times 100\\]\n\n\n%IncMSE (Percentage Increase in Mean Squared Error) is a feature importance metric: a high value means Random Forest predictions of parameter precision became less accurate when that design feature was randomly permuted.\n\n\n\nMaximum Mortality Delta and Number of time points are almost equally relevant across all three models.\nDR precision is heavily driven by capturing Partial Effect Concentrations.\n\n\n\nModel sanity check (OOB \\(R^2\\) on global PUI, \\(n = 112\\text{--}114\\)): GUTS-IT: 68.4% | DR: 40.6% | GUTS-SD: 24.5% (Confirms real non-linear signal behind %IncMSE on PUI; individual cv_* ratios exhibit numerical instability near \\(\\log_{10}(\\theta)\\approx 0\\).)\n\n\n\n\n\n\n\nBe explicit about two methodological safeguards: 1. %IncMSE stands for Percentage Increase in Mean Squared Error and is a permutation-based feature importance metric, NOT a standalone accuracy metric. 2. Before interpreting %IncMSE rankings, we audited Out-Of-Bag (OOB) predictive performance so we do not interpret noise. On the global precision index (PUI), OOB R-squared reaches 68.4% for GUTS-IT, 40.6% for DR, and 24.5% for GUTS-SD (n = 112–114), confirming genuine signal. 3. Auditing OOB R-squared on individual parameter CVs also caught a mathematical artifact: dividing log10 interval width by |log10(median)| explodes whenever a parameter median is close to 1 (log10 ≈ 0), producing extreme outliers (up to 316x the median) and negative OOB R-squared. For the next iteration, individual parameters will use direct log10 widths or GoK instead of this ratio."
-  },
-  {
-    "objectID": "02_technical_workshop_upto25.11.html#applying-the-insight-why-historical-data-are-not-enough",
-    "href": "02_technical_workshop_upto25.11.html#applying-the-insight-why-historical-data-are-not-enough",
-    "title": "Beyond Standardised Guidelines",
-    "section": "Applying the Insight: Why Historical Data Are Not Enough",
-    "text": "Applying the Insight: Why Historical Data Are Not Enough\n\n\n\nRecap from Stage 2 Audit\nMaximum Mortality Delta and Number of time points co-drive parameter precision across models.\n\n\nStructural Limitations of Retrospective Data\n\nHistorical datasets leave large gaps in the experimental design space (heavily biased toward legacy OECD protocols).\nThe relationship is non-linear and multidimensional—we cannot yet extract robust numeric thresholds.\nOpen regulatory question: If a laboratory design inflates parameter uncertainty (high PUI), how severely does it degrade the final \\(LC_{50}\\)?\n\n\n\n\n\n\n\n\nUse the response surface on the right to illustrate sampling sparsity: because historical studies cluster around legacy OECD protocols, large regions of the design space remain empty. Retrospective ML tells us which variables matter, but cannot safely extrapolate thresholds into untested protocol designs."
-  },
-  {
-    "objectID": "02_technical_workshop_upto25.11.html#next-step-from-retrospective-audit-to-prospective-simulation",
-    "href": "02_technical_workshop_upto25.11.html#next-step-from-retrospective-audit-to-prospective-simulation",
-    "title": "Beyond Standardised Guidelines",
-    "section": "Next Step: From Retrospective Audit to Prospective Simulation",
-    "text": "Next Step: From Retrospective Audit to Prospective Simulation\n\n\nassets/images/ws2/ws2_prospective_workflow.png\n\n\nProspective Simulation & Validation PipelineEmpirical Archetypes (organism–substance parameter distributions) \\(\\rightarrow\\) Synthetic Experimental Scenarios (Poor / Regulatory / Model-Guided) \\(\\rightarrow\\) Forward GUTS/DR Simulation & Refitting \\(\\rightarrow\\) ML Meta-Model Training \\(\\rightarrow\\) Validation via Data Thinning.\n\n\n\n\nImmediate Goal Move from identifying which features matter to quantifying actionable design thresholds that balance statistical precision with the 3Rs.\n\n\nLonger-Term Thesis Horizon Once reliable model-guided designs are validated, extend the GUTS framework to combined chemical + climate-change stressors.\n\n\n\nExplain the functional transition: Retrospective Audit exposed what matters and where historical data are blind; Prospective Simulation uses empirical organism–substance archetypes to systematically generate synthetic protocols, refit GUTS/DR, and validate model-guided designs via data thinning on dense empirical curves. Once validated, this design foundation supports multi-stressor (chemical + climate) extensions."
-  },
-  {
-    "objectID": "02_technical_workshop_upto25.11.html#take-home-messages",
-    "href": "02_technical_workshop_upto25.11.html#take-home-messages",
-    "title": "Beyond Standardised Guidelines",
-    "section": "Take-Home Messages",
-    "text": "Take-Home Messages\n\n\n\n\nThe Legacy Mismatch: Standardised OECD experimental designs are not optimised for dynamic mechanistic models like GUTS.\n\n\nJustified, Explainable ML: Pairing a mechanistic White Box with an interpretable Grey Box meta-model—only after exhausting classical statistics—preserves regulatory auditability.\n\n\nAudit Before Simulation: Retrospective ML shows what drives precision and exposes historical data gaps, justifying targeted synthetic simulations.\n\n\n\n\n\n\nassets/images/ws2/ws2_repo_qr.png\n\n\nWorkshop Website & Open MaterialsQR code & repository link\n\n\n\n\n\nSummarise the three core points cleanly, then move straight to Slide 23 to open the 15-minute inter-team discussion between ecotoxicologists and bioinformatics/AI researchers."
-  },
-  {
-    "objectID": "02_technical_workshop_upto25.11.html#open-methodological-challenges-ecotox-leftrightarrow-aibioinformatics-discussion",
-    "href": "02_technical_workshop_upto25.11.html#open-methodological-challenges-ecotox-leftrightarrow-aibioinformatics-discussion",
-    "title": "Beyond Standardised Guidelines",
-    "section": "Open Methodological Challenges: Ecotox \\(\\leftrightarrow\\) AI/Bioinformatics Discussion",
-    "text": "Open Methodological Challenges: Ecotox \\(\\leftrightarrow\\) AI/Bioinformatics Discussion\n\nMoving from our current Proof-of-Concept to the extended Stage 1 + Stage 2 pipeline—your input is welcome.\n\n\n\n1. Multi-Response Learning\nAdding Goodness-of-Fit (GoF) and Predictive Capacity alongside Precision (CV, PUI, GoK) yields correlated targets \\(Y\\).\nWith \\(n \\approx 200\\) and collinear design features \\(X\\), should we move to multi-output algorithms (e.g., Multivariate Random Forests) or keep separate single-target models?\n\n\n2. Leakage-Free Data Splitting\nTo evaluate GUTS Predictive Capacity on unseen data without data leakage across shared species, chemicals, or source studies:\nHow should we structure grouped / stratified splits on an unbalanced ecotoxicological database?\n\n\n3. Efficient Optimization Under 3Rs Constraints\nIn the prospective simulation phase, running Bayesian GUTS calibration across thousands of candidate designs is computationally heavy.\nCould surrogate models + Active Learning / Bayesian Optimization guide the search under ethical and budget constraints?\n\n\n\nLeave this slide on screen for the 15-minute open discussion. Prompt both groups specifically: - Question 1 (AI / Stats): Trade-offs between Multivariate RF / multi-task models vs. separate single-output RFs when n ~ 200 and targets (Precision, GoF, Predictive Capacity) are correlated. Also ask about handling collinearity in permutation importance (e.g., conditional permutation importance or SHAP). - Question 2 (Ecotox + AI): What defines a truly independent test split—holding out a study, a chemical, or a species-chemical pair—and how to avoid collapsing sample size in sparse taxa? - Question 3 (AI + Ecotox): Using emulators/surrogates and Bayesian Optimization to search the protocol space under hard 3Rs constraints (maximum animals, minimum timepoints) instead of brute-force grid MCMC calibration."
-  },
-  {
-    "objectID": "02_technical_workshop_upto25.11.html#section",
-    "href": "02_technical_workshop_upto25.11.html#section",
-    "title": "Beyond Standardised Guidelines",
-    "section": "",
-    "text": "Thank you & Questions\n\n\nFR BioEEnViS Knowledge-Sharing Seminar · LBBE / INRAE · December 16, 2026\n\n\n\n\n\n\n\n\n\n\n\nassets/images/logos/BIOEENVIS_LOGO.png\n\n\nFR BioEEnViS Logo\n\n\n\n\n\n\nBuilt with Quarto"
-  },
-  {
-    "objectID": "03_references.html",
-    "href": "03_references.html",
-    "title": "References & Further Reading",
-    "section": "",
-    "text": "This page compiles all peer-reviewed articles, preprints, institutional frameworks, reports, and multimedia lectures cited or used as conceptual inspiration during Part 1 (Philosophy, Taxonomy & ML Foundations). References for Part 2 (Technical Case Study) will be added alongside the Session 2 slides."
-  },
-  {
-    "objectID": "03_references.html#core-training-institutional-frameworks",
-    "href": "03_references.html#core-training-institutional-frameworks",
-    "title": "References & Further Reading",
-    "section": "Core Training & Institutional Frameworks",
-    "text": "Core Training & Institutional Frameworks\n\nBlondel, L., Bourel, B., Challand, M., Coux, C., Justeau-Allaire, D., Frelat, R., Marcos, D., Servajean, M., Tieo, S. M., Tresson, P., & Ubilla, P. (2026). AI for ecologists: a toolkit for beginners. An FRB-CESAB training course. https://ai-ecol.github.io/\nAI4BioMed (2026). Local seminar/training series mainly organized and promoted by LBBE members, Université Claude Bernard Lyon 1. https://indico.engineering.univ-lyon1.fr/event/29/\nOECD.AI Policy Observatory. OECD Framework for the Classification of AI Systems. https://oecd.ai/en/classification"
-  },
-  {
-    "objectID": "03_references.html#epistemology-cognition-genai-guardrails",
-    "href": "03_references.html#epistemology-cognition-genai-guardrails",
-    "title": "References & Further Reading",
-    "section": "Epistemology, Cognition & GenAI Guardrails",
-    "text": "Epistemology, Cognition & GenAI Guardrails\n\nAbbosh, A., Al-Anbuky, A., Xue, F., & Mahmoud, S. S. (2025). Perspective on the Role of AI in Shaping Human Cognitive Development. Information, 16(11), 1011. https://doi.org/10.3390/info16111011\nBarcaui, A. (2025). ChatGPT as a cognitive crutch: Evidence from a randomized controlled trial on knowledge retention. Social Sciences & Humanities Open, 12, 102287. https://doi.org/10.1016/j.ssaho.2025.102287\nGerlich, M. (2025). AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking. Societies, 15(1), 6. https://doi.org/10.3390/soc15010006\nKim, T. W., Usman, U., Garvey, A., & Duhachek, A. (2025). From algorithm aversion to AI dependence: Deskilling, upskilling, and emerging addictions in the GenAI age. Consumer Psychology Review, 9, 142. https://doi.org/10.1002/arcp.70008\nKosmyna, N., Hauptmann, E., Yuan, Y. T., Situ, J., Liao, X. H., Beresnitzky, A. V., Braunstein, I., & Maes, P. (2025). Your brain on ChatGPT: Accumulation of cognitive debt when using an AI assistant for essay writing task. arXiv preprint. https://arxiv.org/abs/2506.08872\nLiu, G., Christian, B., Dumbalska, T., Bakker, M. A., & Dubey, R. (2026). AI Assistance Reduces Persistence and Hurts Independent Performance. arXiv preprint. https://arxiv.org/abs/2604.04721\nMesseri, L., & Crockett, M. J. (2024). Artificial intelligence and illusions of understanding in scientific research. Nature, 627(8002), 49–58. https://doi.org/10.1038/s41586-024-07146-0\nStiegler, B. (2010). For a New Critique of Political Economy. Polity Press."
-  },
-  {
-    "objectID": "03_references.html#statistical-modelling-explainability-scientific-benchmarks",
-    "href": "03_references.html#statistical-modelling-explainability-scientific-benchmarks",
-    "title": "References & Further Reading",
-    "section": "Statistical Modelling, Explainability & Scientific Benchmarks",
-    "text": "Statistical Modelling, Explainability & Scientific Benchmarks\n\nBreiman, L. (2001). Statistical modeling: The two cultures. Statistical Science, 16(3), 199–231. https://doi.org/10.1214/ss/1009213726\nRudin, C. (2019). Stop explaining black box machine learning models for high stakes decisions and use interpretable models instead. Nature Machine Intelligence, 1, 206–215. https://doi.org/10.1038/s42256-019-0048-x\nThe Nobel Prize in Chemistry (2024). Press release: Computational protein design and protein structure prediction (AlphaFold). https://www.nobelprize.org/prizes/chemistry/2024/press-release/"
-  },
-  {
-    "objectID": "03_references.html#material-ecological-footprint-of-ai",
-    "href": "03_references.html#material-ecological-footprint-of-ai",
-    "title": "References & Further Reading",
-    "section": "Material & Ecological Footprint of AI",
-    "text": "Material & Ecological Footprint of AI\n\nAlpine, W., Geldner, N., Alpine, H., & Chepeliev, M. G. (2026). AI-driven productivity gains enable more CO₂ emissions than they avoid in a global energy–economy model. npj Climate Action, 5, 71. https://doi.org/10.1038/s44168-026-00411-0\nInternational Finance Corporation (IFC, 2026). Risks and Opportunities in Data Center and AI Investment in Emerging Markets (Figure 2: Geographical Distribution of Data Centers, 2025). https://www.ifc.org/en/insights-reports/2026/risks-and-opportunities-in-data-center-and-ai-investment-in-ems#group-section-Fig-2-K8AjwpCMpV\nRest of World (2026). Global resistance to AI data centers and water consumption (Daniel Pena, University of the Republic). https://restofworld.org/2026/ai-datacenters-water-resistance-global/"
-  },
-  {
-    "objectID": "03_references.html#conceptual-lectures-multimedia-complementary-viewing",
-    "href": "03_references.html#conceptual-lectures-multimedia-complementary-viewing",
-    "title": "References & Further Reading",
-    "section": "Conceptual Lectures & Multimedia (Complementary Viewing)",
-    "text": "Conceptual Lectures & Multimedia (Complementary Viewing)\n\nAndalman, A. (2025). The biological foundations of artificial intelligence. The Deep View. https://www.youtube.com/watch?v=6b4KPGtu9c0\nKarpathy, A. (2025). How LLMs are unlike the human brain. Dwarkesh Clips. https://www.youtube.com/watch?v=wkCx2Xmi8dg\nSimon, C. (2025). Neurons vs AI: They’re Nothing Alike. AI Neuro Insight. https://www.youtube.com/watch?v=I6PC8f8GRtU\nSung, J. (2025). How ChatGPT Slowly Destroys Your Brain. https://www.youtube.com/watch?v=6sJ50Ybp44I"
-  },
-  {
-    "objectID": "03_references.html#website-presentation-architecture",
-    "href": "03_references.html#website-presentation-architecture",
-    "title": "References & Further Reading",
-    "section": "Website & Presentation Architecture",
-    "text": "Website & Presentation Architecture\n\nFranklin, E. Reproducible Research Workshop (Quarto RevealJS & site design inspiration). https://ellfran-7.github.io/repro-research-workshop/00-welcome-page.html"
-  },
-  {
     "objectID": "02_technical_workshop.html#section",
     "href": "02_technical_workshop.html#section",
     "title": "Let's Talk About AI",
     "section": "",
-    "text": "Beyond Standardised Guidelines\n\n\nTowards an Explainable Machine Learning for Model-Guided Ecotoxicological Study Designs\n\n\nRestitution of the FRB-CESAB ‘AI for Ecologists: A Toolkit’ Training — FR BioEEnViS\n\n\nAnthony Fow Esteves\n\n\nLBBE – UCB Lyon 1 (UMR CNRS 5558) | Ecotox – UR RiverLy (INRAE)\n\n\nDecember 16, 2026"
+    "text": "Beyond Standardised Guidelines\n\n\nTowards an Explainable Machine Learning for Model-Guided Ecotoxicological Study Designs\n\n\nRestitution of the FRB-CESAB ‘AI for Ecologists: A Toolkit’ Training — FR BioEEnViS\n\n\nAnthony Fow Esteves \n\n\nLBBE – UCB Lyon 1 (UMR CNRS 5558) | Ecotox – UR RiverLy (INRAE) \n\n\nDecember 16, 2026"
   },
   {
     "objectID": "02_technical_workshop.html#why-ml-in-my-project",
     "href": "02_technical_workshop.html#why-ml-in-my-project",
     "title": "Let's Talk About AI",
     "section": "Why ML in My Project?",
-    "text": "Why ML in My Project?\n\nPositioning this case study along Part 1’s modelling spectrum: coupling a mechanistic core with an interpretable audit.\n\n\n\nWhite Box\nMechanistic Core: GUTS & DR\nExplicit toxicokinetic–toxicodynamic equations calibrated on survival data.\n\n\n→\n\n\nGrey Box\nTowards Explainable ML Audit — Current Focus\nAuditing how experimental design features govern mechanistic parameter uncertainty.\n\n\n→\n\n\nBlack Box\nDeep Learning / Neural Networks\nDeliberately excluded in this sample regime and regulatory context.\n\n\n\n\n\n1. Tabular Data Regime (\\(n = 216\\))\nTree ensembles limit overfitting compared to deep architectures.\n\n\n2. Regulatory Traceability (EFSA / OECD)\nAuditable links between experimental inputs and parameter uncertainty.\n\n\n3. Protocol Design Objective\nGuiding laboratory study designs, not black-box prediction.\n\n\n\n\nFrame this slide directly as a continuation of Part 1’s spectrum. Remind the audience that Random Forest is already an interpretable ML method used here strictly as an exploratory audit—not yet a final predictive optimizer. Keep the rationale against Deep Learning grounded on objective scientific criteria (moderate tabular n = 216 + regulatory traceability under EFSA/OECD), and explicitly invite the bioinformatics/AI team to challenge this modelling choice during the closing discussion."
+    "text": "Why ML in My Project?\n\nPositioning this case study along Part 1’s modelling spectrum: coupling a mechanistic core with an interpretable audit.\n\n\n\nWhite Box · High Interpretability\nMechanistic Core: GUTS & DR\nExplicit toxicokinetic–toxicodynamic equations calibrated on survival data.\n\n\nCURRENT FOCUS Grey Box · Interpretable ML & XAI\nTowards Explainable ML Audit\nRandom Forest + %IncMSE auditing how experimental design features govern parameter uncertainty.\n\n\nBlack Box · High Predictive Capacity\nDeep Learning / Neural Networks\nDeliberately not used in this sample regime and regulatory context.\n\n\n\n\n\n1. Tabular Data Regime (\\(n = 216\\))\nTree ensembles limit overfitting compared to deep architectures.\n\n\n2. Regulatory Traceability (EFSA / OECD)\nAuditable links between experimental inputs and parameter uncertainty.\n\n\n3. Protocol Design Objective\nGuiding laboratory study designs, not black-box prediction.\n\n\n\n\nFrame this slide directly as a continuation of Part 1’s spectrum (Slide 19). Remind the audience that Random Forest is already an interpretable ML method used here strictly as an exploratory audit—not yet a final predictive optimizer. Keep the rationale against Deep Learning grounded on objective scientific criteria (moderate tabular n = 216 + regulatory traceability under EFSA/OECD), and explicitly invite the bioinformatics/AI team to challenge this modelling choice during the closing discussion."
   },
   {
     "objectID": "02_technical_workshop.html#from-everyday-products-to-freshwater-exposure",
     "href": "02_technical_workshop.html#from-everyday-products-to-freshwater-exposure",
     "title": "Let's Talk About AI",
     "section": "From Everyday Products to Freshwater Exposure",
-    "text": "From Everyday Products to Freshwater Exposure\n\nRegulatory context for non-ecotoxicologists: tracing everyday agricultural products to freshwater screening.\n\n\n\n1. Everyday Products\n🍎   🍷   🥖\nApple, red wine, and baguette represent routine food chains sustained by intensive crop production.\n\n\n→\n\n\n2. Large-Scale Agriculture\n🌾   🚜\nRelies on Plant Protection Products (PPPs) to protect yields against fungi, insects, and weeds.\n\n\n→\n\n\n3. Freshwater Runoff\n🌧️   🏞️   🐟\nRunoff exposes non-target aquatic organisms, triggering mandatory pre-market regulatory screening.\n\n\n\n\nassets/images/ws2/ws2_hook_ppp_products.png\n\n\nVisual Hook Strip — Everyday products (Apple, Red Wine, Baguette) → large-scale PPP agriculture → freshwater runoff into aquatic ecosystems.\n\n\n\nKeep this fast and concrete for the bioinformatics/AI colleagues: every PPP entering European agriculture must pass pre-market freshwater risk screening before authorisation."
+    "text": "From Everyday Products to Freshwater Exposure\n\nRegulatory context for non-ecotoxicologists: tracing everyday agricultural products to freshwater screening.\n\n\n\n1. Everyday Products\n🍎   🍷   🥖\nApple, red wine, and baguette represent routine food chains sustained by intensive crop production.\n\n\n→\n\n\n2. Large-Scale Agriculture\n🌾   🚜   🧴\nRelies on Plant Protection Products (PPPs) to protect yields against fungi, insects, and weeds.\n\n\n→\n\n\n3. Freshwater Runoff\n🌧️   🏞️   🐟\nRunoff exposes non-target aquatic organisms, triggering mandatory pre-market regulatory screening.\n\n\n\n\n\n\n🍎  +  🧴\n\nEveryday agricultural use\n\n\n\n\nassets/images/ws2/ws2_captan_eu_regulation.png\n\n\nEU Regulatory Approval Example (Captan renewed until 2039)How does this regulatory process work?\n\n\n\n\n\n\nKeep this fast and concrete for the bioinformatics/AI colleagues: every PPP entering European agriculture must pass pre-market freshwater risk screening before authorisation or renewal—such as the fungicide Captan, renewed in the EU until 2039. Use the question at the bottom right to transition directly into the EU ERA pipeline."
   },
   {
     "objectID": "02_technical_workshop.html#eu-environmental-risk-assessment-era-pipeline",
     "href": "02_technical_workshop.html#eu-environmental-risk-assessment-era-pipeline",
     "title": "Let's Talk About AI",
     "section": "EU Environmental Risk Assessment (ERA) Pipeline",
-    "text": "EU Environmental Risk Assessment (ERA) Pipeline\n\nWhere experimental ecotoxicology and mechanistic modelling enter European chemical regulation.\n\n\n\nProblem Formulation\nDefine substance, use scenario, and protection goals.\n\n\n→\n\n\n\nExposure Assessment (Environmental Fate)\nPredicted environmental concentrations (\\(PEC\\)) in water.\n\n\nEffect Assessment — Laboratory Ecotoxicity Experiments\nEmpirical survival bioassays estimating organism sensitivity (\\(LC_{50}\\), \\(EC_x\\), TKTD).\n\n\n\n→\n\n\nRisk Characterisation\nCompare exposure against effect thresholds.\n\n\n→\n\n\nEU Approval Decision\nAuthorisation or renewal (e.g., Captan renewed until 2039).\n\n\n\n\nassets/images/ws2/ws2_era_flowchart.png\n\n\nEU ERA Regulatory Flowchart — Highlighting Effect Assessment and empirical aquatic toxicity testing leading to EU regulatory approval.\n\n\n\nOur modelling work operates directly inside Effect Assessment—and up to here, we have only talked about PPPs.\n\n\nEmphasise that Effect Assessment depends directly on laboratory ecotoxicity experiments. Close the slide with the pivot line: “Up to here, we have only talked about PPPs”—setting up the chemical scale bottleneck on the next slide."
+    "text": "EU Environmental Risk Assessment (ERA) Pipeline\n\nWhere experimental ecotoxicology and mechanistic modelling enter European chemical regulation.\n\n\n\nProblem Formulation\n\n🍎 🧴 🌊 🐟 🦐\n\nDefine substance, receiving water body, and aquatic protection goals (fish & crustaceans).\n\n\n→\n\n\n\nExposure Assessment\n\n🧴   🌊\n\nPredicted Environmental Concentrations (\\(PEC\\)) in surface water.\n\n\nEffect Assessment — Laboratory Ecotoxicity Experiments\n\n🧴   🐟   🦐\n\nEmpirical survival bioassays estimating \\(LC_{50}\\) and \\(EC_x\\) under Dose-Response (DR) models.\n\n\n\n→\n\n\nRisk Characterisation\nCompare \\(PEC\\) vs. Effect threshold (risk ratio).\n\n\n→\n\n\nEU Decision\n\n🧴  |  🐟 ✓ / ☠️ ✗\n\nApproval vs. Non-approval\n\nws2_captan_eu_regulation.png Captan renewed until 2039\n\n\n\n\n\nOur modelling work operates directly inside Effect Assessment—and up to here, we have only talked about PPPs.\n\n\n\nWalk cleanly through the flowchart: Problem Formulation splits into Exposure Assessment (which fades once we click into Effect Assessment) and Effect Assessment, where laboratory survival bioassays estimate LC50 and ECx under classical Dose-Response models. Close with the pivot line: “Up to here, we have only talked about PPPs”—setting up the chemical scale bottleneck next."
   },
   {
     "objectID": "02_technical_workshop.html#the-scale-ethical-bottleneck",
     "href": "02_technical_workshop.html#the-scale-ethical-bottleneck",
     "title": "Let's Talk About AI",
     "section": "The Scale & Ethical Bottleneck",
-    "text": "The Scale & Ethical Bottleneck\n\nBeyond PPPs: why testing every chemical experimentally is neither scalable nor ethically defensible.\n\n\n\n\nGlobal Chemical Inventory vs. Testing Burden\n\n\\(&gt;350,000\\) registered chemicals globally.\n\\(19,670\\) substances mapped across EU legal frameworks.\n\\(1,474\\) PPPs listed in the EU pesticide database.\n\\(440,000\\)–\\(2.2\\text{ million}\\) fish and birds used annually in ecotoxicity testing (\\(&gt;\\$39\\text{M/yr}\\); Schür et al., 2025).\n\n\nThis creates an urgent ethical (3Rs) and economic imperative for Predictive Ecotoxicology.\n\n\n\n\n\n\nassets/images/ws2/ws2_chemicals_scale.png\n\n\nChemical Scale & Animal Testing BurdenComparing global chemical inventories against annual vertebrate usage in regulatory testing.\n\n\n\n\n\nThis slide provides the ethical and practical motivation: brute-force experimental testing cannot cover the chemical universe, so predictive mechanistic models must extract maximum reliable information from every animal test performed."
+    "text": "The Scale & Ethical Bottleneck\n\nBeyond PPPs: why testing every chemical experimentally is neither scalable nor ethically defensible.\n\n\n\n\nGlobal Chemical Inventory vs. Testing Burden\n\n\\(&gt;350,000\\) registered chemicals globally.\n\\(19,670\\) substances mapped across EU legal frameworks.\n\\(1,474\\) PPPs listed in the EU pesticide database.\n\\(440,000\\)–\\(2.2\\text{ million}\\) fish and birds used annually in ecotoxicity testing (\\(&gt;\\$39\\text{M/yr}\\); Schür et al., 2025).\n\n\nThis creates an urgent ethical (3Rs) and economic imperative for Predictive Ecotoxicology.\n\n\n\n\n\n\nassets/images/ws2/ws2_chemicals_scale.png\n\n\nEU Chemical Regulations & Substance Inventory Venn Diagram\n\n\n\n\n\nThis slide provides the ethical and practical motivation: brute-force experimental testing cannot cover the chemical universe, so predictive mechanistic models must extract maximum reliable information from every animal test performed."
   },
   {
     "objectID": "02_technical_workshop.html#efsa-shift-vs.-the-historical-regulatory-mismatch",
     "href": "02_technical_workshop.html#efsa-shift-vs.-the-historical-regulatory-mismatch",
     "title": "Let's Talk About AI",
     "section": "EFSA Shift vs. The Historical Regulatory Mismatch",
-    "text": "EFSA Shift vs. The Historical Regulatory Mismatch\n\n\n\n1. 2018+ EFSA Shift\nEFSA recommends dynamic TKTD mechanistic models—specifically GUTS (General Unified Threshold model of Survival)—for regulatory PPP risk assessment (EFSA, 2018).\n\n\n\n\n\n2. The Legacy Mismatch\nRegulatory testing still depends on ~1980s OECD Test Guidelines built for static, fixed-time endpoints like \\(LC(50, 96\\text{h})\\) via Dose-Response (DR) models (Daniels et al., 2026).\n\n\n\n\n\n\n\nassets/images/ws2/ws2_oecd_guts_preprint.png\n\n\nAside (Preprint): GUTS can be calibrated on standard OECD datasets, yet the limitations and impact on dynamic parameter inference remain unquantified.\n\n\n\n\nWalk through the three clicks deliberately: (1) EFSA recommends dynamic GUTS models; (2) yet laboratory data still come from ~1980s OECD guidelines designed for static 96h Dose-Response endpoints; (3) calibrating GUTS on legacy OECD data is technically feasible, but its impact on parameter identifiability and precision remains unquantified. Cue the direct visual bridge into Slide 5 (model_process.png): we need reproducible, explainable guidance for both laboratory technicians and regulators."
+    "text": "EFSA Shift vs. The Historical Regulatory Mismatch\n\n\n\n\n1. 2018+ EFSA Shift\nEFSA recommends dynamic TKTD mechanistic models—specifically GUTS (General Unified Threshold model of Survival)—for regulatory PPP risk assessment (EFSA, 2018).\n\n\n\n\n\n\n\nassets/images/ws2/ws2_chemicals_scale.png\n\n\nEU Chemical Regulations & Substance Inventory Venn Diagram\n\n\n\n\n\nIntroduce the 2018 EFSA regulatory shift toward dynamic mechanistic TKTD/GUTS models alongside the scale context before swapping the right column to reveal the legacy mismatch."
+  },
+  {
+    "objectID": "02_technical_workshop.html#efsa-shift-vs.-the-historical-regulatory-mismatch-1",
+    "href": "02_technical_workshop.html#efsa-shift-vs.-the-historical-regulatory-mismatch-1",
+    "title": "Let's Talk About AI",
+    "section": "EFSA Shift vs. The Historical Regulatory Mismatch",
+    "text": "EFSA Shift vs. The Historical Regulatory Mismatch\n\n\n\n\n1. 2018+ EFSA Shift\nEFSA recommends dynamic TKTD mechanistic models—specifically GUTS (General Unified Threshold model of Survival)—for regulatory PPP risk assessment (EFSA, 2018).\n\n\n\n\n\n\n\n2. The Legacy Mismatch\nRegulatory testing still depends on ~1980s OECD Test Guidelines built for static, fixed-time endpoints like \\(LC(50, 96\\text{h})\\) via Dose-Response (DR) models (Daniels et al., 2026).\n\n\n\n\n\n\nHere is the core tension: EFSA recommends dynamic GUTS models, yet laboratory datasets still originate from ~1980s OECD Test Guidelines designed for static 96-hour Dose-Response endpoints."
+  },
+  {
+    "objectID": "02_technical_workshop.html#efsa-shift-vs.-the-historical-regulatory-mismatch-2",
+    "href": "02_technical_workshop.html#efsa-shift-vs.-the-historical-regulatory-mismatch-2",
+    "title": "Let's Talk About AI",
+    "section": "EFSA Shift vs. The Historical Regulatory Mismatch",
+    "text": "EFSA Shift vs. The Historical Regulatory Mismatch\n\n\n\n\nassets/images/ws2/ws2_oecd_guts_preprint.png\n\n\nPreprint Evidence: Calibrating GUTS on standard OECD Test Guideline datasets.\n\n\n\nAside (Preprint): GUTS can be calibrated on standard OECD datasets, yet the limitations and impact on dynamic parameter inference remain unquantified.\n\n\n\n\nCalibrating GUTS on legacy OECD data is technically feasible, but its impact on parameter identifiability and precision remains unquantified. Cue the direct visual bridge into the next slide (model_process.png): we need reproducible, explainable guidance for both laboratory technicians and regulators."
   },
   {
     "objectID": "02_technical_workshop.html#our-objective",
     "href": "02_technical_workshop.html#our-objective",
     "title": "Let's Talk About AI",
     "section": "Our Objective",
-    "text": "Our Objective\n\n\n\nHow do experimental design features (\\(\\mathcal{E}\\)) influence DR and GUTS parameter precision?\n\n\n\nPoint directly to the two ends of model_process.png without color confusion: on the left sits the experimental design structure E behind the survival table; on the right sit the calibrated parameter sets for DR and GUTS. Our question quantifies how choices on the left propagate into precision on the right."
+    "text": "Our Objective\n\n\n\nHow do experimental design features (\\(\\mathcal{E}\\)) influence DR and GUTS parameter precision?\n\n\nPreprint gap: GUTS runs on legacy OECD datasets, but design impacts on dynamic inference remain unquantified.\n\n\n\nPoint directly to the two ends of model_process.png without color confusion: on the left sits the experimental design structure E behind the survival table; on the right sit the calibrated parameter sets for DR and GUTS. Our question quantifies how choices on the left propagate into precision on the right."
   },
   {
-    "objectID": "02_technical_workshop.html#the-empirical-landscape-dataset-conceptualisation",
-    "href": "02_technical_workshop.html#the-empirical-landscape-dataset-conceptualisation",
+    "objectID": "02_technical_workshop.html#the-empirical-landscape",
+    "href": "02_technical_workshop.html#the-empirical-landscape",
     "title": "Let's Talk About AI",
-    "section": "The Empirical Landscape & Dataset Conceptualisation",
-    "text": "The Empirical Landscape & Dataset Conceptualisation\n\nMapping 216 time-resolved survival datasets across organisms, substances, and exposure profiles.\n\n\n\n\n\n\n\nDataset Conceptualisation\n\\[\\mathcal{D} = \\{\\mathcal{E}, \\mathbf{N}\\}\\]\n(Adapted from Baudrot & Charles, 2018)\n\n\\(\\mathbf{N}\\) (Survival observations): enters the mechanistic model (GUTS / DR) to estimate parameters \\(\\theta\\).\n\n\n\nRole of \\(\\mathcal{E}\\) (Experimental Design Context)\nAccompanies \\(\\mathbf{N}\\) and \\(\\theta\\) throughout the workflow.\nThis is what we categorise against:\n\nOECD TG Constraints\nMechanistic Model Requirements\n\n\n\n\n\nIntroduce the compact notation D = {E, N} adapted from Baudrot & Charles (2018). From here onward, the tracking pill below each slide title will show which component—E, N, or their mapping—we are operating on."
+    "section": "The Empirical Landscape",
+    "text": "The Empirical Landscape\n\nMapping 216 time-resolved survival datasets across organisms, substances, and exposure profiles."
+  },
+  {
+    "objectID": "02_technical_workshop.html#dataset-conceptualisation-separating-mathbfn-and-mathcale",
+    "href": "02_technical_workshop.html#dataset-conceptualisation-separating-mathbfn-and-mathcale",
+    "title": "Let's Talk About AI",
+    "section": "Dataset Conceptualisation: Separating \\(\\mathbf{N}\\) and \\(\\mathcal{E}\\)",
+    "text": "Dataset Conceptualisation: Separating \\(\\mathbf{N}\\) and \\(\\mathcal{E}\\)\n\n\n\n\nDataset \\(\\mathcal{D} = \\{\\mathbf{N}, \\mathcal{E}\\}\\)\n\n\n\n\\(\\mathbf{N}\\) (Survival Observations)\n\n\n\n\nTime\n\n\nConc\n\n\nN initial\n\n\nN survival\n\n\n\n\n\n\n12\n\n\n0\n\n\n20\n\n\n20\n\n\n\n\n24\n\n\n0\n\n\n20\n\n\n20\n\n\n\n\n48\n\n\n0\n\n\n20\n\n\n19\n\n\n\n\n12\n\n\n10\n\n\n20\n\n\n20\n\n\n\n\n24\n\n\n10\n\n\n20\n\n\n15\n\n\n\n\n…\n\n\n…\n\n\n…\n\n\n…\n\n\n\n\n\n↓\n\n\nGUTS / DR Mechanistic Fit → Parameters \\(\\theta\\)\n\n\n\n\\(\\mathcal{E}\\) (Experimental Design Context)\n\nArchetype (Organism, Substance)\n\n\nOECD Regulatory Constraints\n\n\nMechanistic Model Requirements\n\n\nAccompanies \\(\\mathbf{N}\\) & \\(\\theta\\) (does not enter calibration directly)\n\n\n\n\n\n\n\nDataset Conceptualisation: \\(\\mathcal{D} = \\{\\mathbf{N}, \\mathcal{E}\\}\\)\n(Adapted from Baudrot & Charles, 2018)\n\n\\(\\mathbf{N}\\) (Survival observations): enters the mechanistic models (GUTS / DR) directly to estimate parameters \\(\\theta\\).\n\\(\\mathcal{E}\\) (Experimental design context): accompanies \\(\\mathbf{N}\\) and \\(\\theta\\) throughout the analysis without entering calibration directly.\nNext, we categorise \\(\\mathcal{E}\\) across all 216 datasets against OECD TG Constraints and Mechanistic Model Requirements.\n\n\n\n\n\nIntroduce the compact notation D = {N, E} adapted from Baudrot & Charles (2018). From here onward, the tracking pill below each slide title will show which component—E, N, or their mapping—we are operating on."
   },
   {
     "objectID": "02_technical_workshop.html#experimental-design-features-all-216-datasets",
@@ -508,14 +312,14 @@
     "href": "02_technical_workshop.html#two-stage-hybrid-architecture-stage-1-rightarrow-stage-2",
     "title": "Let's Talk About AI",
     "section": "Two-Stage Hybrid Architecture: Stage 1 \\(\\rightarrow\\) Stage 2",
-    "text": "Two-Stage Hybrid Architecture: Stage 1 \\(\\rightarrow\\) Stage 2\n\n\n\nPlanned Stage 1 Extension — Additional \\(Y(\\theta)\\)Next Methodological Layer\n\n\nGoodness-of-Fit (GoF) (same dataset: MSE, RMSE, NRMSE, PPC, SPPE) — “Does \\(\\theta\\) match training data?”\n\n\nPredictive Capacity (unseen dataset) — “How well does \\(\\theta\\) predict unseen data?”\n\n\nFeeds additional targets \\(Y(\\theta)\\) rightward \\(\\rightarrow\\) Stage 2\n\n\n\n\nStage 2: xAI Meta-ModelActive in Proof-of-Concept\n\n\nRandom Forest (\\(Y(\\theta) \\sim X(\\mathcal{E})\\))Non-linear mapping from experimental design features to mechanistic performance\n\n\n↓\n\n\nFeature Importance Metric (%IncMSE)“How relevant is \\(X(\\mathcal{E})\\) to predict \\(Y(\\theta)\\) under non-linear interactions?”\n\n\n\n\nStage 1: Mechanistic Core — Explicit \\(\\mathcal{D} = \\{\\mathcal{E}, \\mathbf{N}\\}\\) FlowActive in Proof-of-Concept\n\n\n\n\\(\\mathbf{N}\\)Survival records\n\n\n→\n\n\nGUTS-\\(\\theta\\) / DR-\\(\\theta\\)Mechanistic fit\n\n\n→\n\n\nPosterior (\\(\\theta\\))Bayesian inference\n\n\n→\n\n\nPrecision \\(Y(\\theta)\\)CV, PUI, (GoK)\n\n\n→\n\n\nTabulated Matrix[ X(E) | Y(θ) ] \\(\\uparrow\\) Stage 2\n\n\n\n\n\\(\\mathcal{E}\\) (Experimental design context) travels alongside \\(\\mathbf{N}\\) & \\(\\theta\\) \\(\\longrightarrow\\) translated into continuous design features \\(X(\\mathcal{E})\\) inside [ X(E) | Y(θ) ]\n\n\n\n\n\nTransparency Note: The empirical results just presented cover the active blue + teal Proof-of-Concept (Stage 1 Precision \\(\\rightarrow\\) Stage 2 xAI); the purple Stage 1 extension motivates the next step and our open discussion.\n\n\nNow that the audience has seen the empirical pipeline in action, step back to show the full two-stage meta-modelling architecture in a unified L-shape: 1. Active Stage 1 (blue base): survival records N feed GUTS/DR Bayesian inference to produce posterior distributions and precision metrics Y(θ), while experimental context E travels alongside to build the tabulated matrix [X(E) | Y(θ)] entering Stage 2 (teal, top-right). 2. Planned Stage 1 extension (purple arm): precision alone is insufficient because narrow posteriors can still be biased. Extending Stage 1 with Goodness-of-Fit (training dataset) and Predictive Capacity (unseen dataset) feeds richer, correlated Y(θ) targets into Stage 2—directly setting up Discussion Points 1 and 2."
+    "text": "Two-Stage Hybrid Architecture: Stage 1 \\(\\rightarrow\\) Stage 2\n\n\n\n\nStage 1: Mechanistic Core — Explicit \\(\\mathcal{D} = \\{\\mathcal{E}, \\mathbf{N}\\}\\) FlowActive in Proof-of-Concept\n\n\n\n\\(\\mathbf{N}\\)Survival records\n\n\n→\n\n\nGUTS-\\(\\theta\\) / DR-\\(\\theta\\)Mechanistic fit\n\n\n→\n\n\nBayesian Posterior (\\(\\theta\\))Inference\n\n\n→\n\n\nPrecision \\(Y(\\theta)\\)CV, PUI, (GoK)\n\n\n\n\\(\\mathcal{E}\\) (Experimental design context) travels alongside \\(\\mathbf{N}\\) & \\(\\theta\\) \\(\\longrightarrow\\) assembled into tabulated matrix [ X(E) | Y(θ) ]\n\n\n\n\n→\n\n\n\n\nStage 2: xAI Meta-ModelActive in Proof-of-Concept\n\n\nRandom Forest (\\(Y(\\theta) \\sim X(\\mathcal{E})\\))Non-linear mapping from design features to mechanistic performance\n\n\n↓\n\n\nFeature Importance Metric (%IncMSE)“How relevant is \\(X(\\mathcal{E})\\) to predict \\(Y(\\theta)\\)?”\n\n\n\n\n\n\n\n\n\nPlanned Stage 1 Extension — Additional Targets \\(Y(\\theta)\\)Next Methodological Layer\n\n\n\nGoodness-of-Fit (GoF) (same dataset)MSE, RMSE, NRMSE, PPC, SPPE — “Does \\(\\theta\\) match training data?”\n\n\nPredictive Capacity (unseen dataset)“How well does \\(\\theta\\) predict unseen survival curves?”\n\n\n\n\n\n\n↗ Feeds additional targets \\(Y(\\theta)\\) into Stage 2\n\n\n\n\n\nTransparency Note: The empirical results just presented cover the active blue + teal Proof-of-Concept (Stage 1 Precision \\(\\rightarrow\\) Stage 2 xAI); the purple Stage 1 extension motivates the next step and our open discussion.\n\n\nNow that the audience has seen the empirical pipeline in action, step back to show the full two-stage meta-modelling architecture in natural top-to-bottom, left-to-right reading order: 1. Top left (blue): Active Stage 1 runs Bayesian GUTS/DR inference on N to quantify precision Y(θ) while E travels alongside into [X(E) | Y(θ)]. 2. Top right (teal): Stage 2 fits the Random Forest meta-model and extracts %IncMSE feature importance. 3. Middle row (purple): Precision alone is not enough, because narrow posteriors can still be biased. Extending Stage 1 with Goodness-of-Fit (same dataset) and Predictive Capacity (unseen dataset) feeds additional correlated Y(θ) targets up into Stage 2—directly motivating Discussion Points 1 and 2."
   },
   {
     "objectID": "02_technical_workshop.html#next-step-expanding-stage-2-prospective-simulation-active-learning",
     "href": "02_technical_workshop.html#next-step-expanding-stage-2-prospective-simulation-active-learning",
     "title": "Let's Talk About AI",
     "section": "Next Step: Expanding Stage 2 — Prospective Simulation & Active Learning",
-    "text": "Next Step: Expanding Stage 2 — Prospective Simulation & Active Learning\n\nMoving from retrospective auditing on sparse historical studies to prospective design optimisation.\n\n\n\n1. Empirical ArchetypesOrganism–substance \\(\\theta\\) distributions\n\n\n→\n\n\n2. Synthetic Designs \\(\\mathcal{E}_i\\)Poor / Regulatory / Model-Guided\n\n\n→\n\n\n3. Forward SimulationGenerate \\(\\mathbf{N}_i\\) & refit GUTS / DR\n\n\n→\n\n\n4. Stage 2 xAI Meta-ModelThresholds & uncertainty surface\n\n\n→\n\n\n5. ValidationEmpirical Data Thinning\n\n\n\n\\(\\hookleftarrow\\) Perspective: Iterative Bayesian Active Learning (Baudrot & Charles, 2018)\nFeedback loop (Stage 2 \\(\\rightarrow\\) Synthetic Designs \\(\\mathcal{E}_i\\)): Stage 2 acts as a fast surrogate to propose the next informative experimental design \\(\\mathcal{E}^* = \\arg\\max D_{KL}\\) under 3Rs constraints—avoiding brute-force MCMC across thousands of uninformative protocols.\n\n\n\nImmediate Goal\nMove from identifying which features matter to quantifying actionable design thresholds that balance statistical precision with the 3Rs.\n\n\nLonger-Term Thesis Horizon\nOnce reliable model-guided designs are validated, extend the GUTS framework to combined chemical + climate-change stressors.\n\n\n\nExplain how Stage 2 expands in the prospective phase: we draw empirical organism–substance archetypes, generate synthetic designs E_i spanning poor to model-guided protocols, simulate survival data N_i, refit GUTS/DR, and validate recommendations via empirical data thinning. Highlight the dashed purple feedback loop as a key bridge to Baudrot & Charles (2018) and Discussion Point 3: using Stage 2 as a surrogate for iterative Bayesian Active Learning (maximising Kullback–Leibler divergence) under 3Rs constraints."
+    "text": "Next Step: Expanding Stage 2 — Prospective Simulation & Active Learning\n\nBridging retrospective gaps to prospective design optimisation across synthetic experimental scenarios.\n\n\n\nHistorical Design Gaps\n\n\nSparse coverage outside legacy OECD protocols\n\n\n\n→\n\n\n\n\nExpanding Stage 2: Prospective Simulation WorkflowProspective Phase\n\n\n\n1. Empirical Archetypes🐟 🦐 🧴Organism–substance \\(\\theta\\) distributions\n\n\n→\n\n\n2. Synthetic Designs \\(\\mathcal{E}_i\\)Filling the gaps:Poor / Regulatory / Model-Guided\n\n\n→\n\n\n3. Forward SimulationGenerate \\(\\mathbf{N}_i\\) & refit GUTS / DR\n\n\n→\n\n\n4. Stage 2 Meta-ModelActionable thresholds & uncertainty surface\n\n\n→\n\n\n5. ValidationEmpirical Data Thinning\n\n\n\n\n\n\n\\(\\hookleftarrow\\) Perspective: Iterative Bayesian Active Learning (Baudrot & Charles, 2018)\nFeedback loop (Stage 2 \\(\\rightarrow\\) Synthetic Designs \\(\\mathcal{E}_i\\)): Stage 2 acts as a fast surrogate to propose the next most informative experimental design \\(\\mathcal{E}^*\\) that maximizes parameter uncertainty reduction under 3Rs constraints—avoiding brute-force MCMC across thousands of uninformative protocols.\n\n\n\nImmediate Goal\nMove from identifying which features matter to quantifying actionable design thresholds that balance statistical precision with the 3Rs.\n\n\nLonger-Term Thesis Horizon\nOnce reliable model-guided designs are validated, extend the GUTS framework to combined chemical + climate-change stressors.\n\n\n\nTie the left thumbnail directly back to the historical response surface gaps we just saw: instead of extrapolating blindly, we sample empirical organism–substance archetypes, systematically fill the design space with synthetic protocols E_i, forward-simulate survival curves N_i, refit GUTS/DR, and validate recommendations via empirical data thinning. Keep the dashed purple feedback loop conceptual here—Stage 2 acting as a fast surrogate to select the next most informative protocol under 3Rs constraints—before bringing the formal formulation into Discussion Point 3."
   },
   {
     "objectID": "02_technical_workshop.html#take-home-messages",
@@ -529,7 +333,7 @@
     "href": "02_technical_workshop.html#open-methodological-challenges-ecotox-leftrightarrow-aibioinformatics-discussion",
     "title": "Let's Talk About AI",
     "section": "Open Methodological Challenges: Ecotox \\(\\leftrightarrow\\) AI/Bioinformatics Discussion",
-    "text": "Open Methodological Challenges: Ecotox \\(\\leftrightarrow\\) AI/Bioinformatics Discussion\n\nMoving from our Proof-of-Concept to the extended L-shaped Stage 1 + Stage 2 pipeline and prospective simulation—your input is welcome.\n\n\n\n1. Multi-Response Learning\nExpanding Stage 1 (the L-shaped architecture) to jointly include Precision (CV, PUI, GoK), Goodness-of-Fit (GoF), and Predictive Capacity yields correlated targets \\(Y(\\theta)\\).\nWith \\(n \\approx 200\\) and collinear design features \\(X(\\mathcal{E})\\), should we move to multi-output algorithms (e.g., Multivariate Random Forests) or keep separate single-target models?\n\n\n2. Leakage-Free Data Splitting\nTo evaluate GUTS Predictive Capacity on unseen datasets without data leakage across shared species, substances, or source studies:\nHow should we design grouped / stratified splits on an unbalanced ecotoxicological database?\n\n\n3. Coupling Meta-Models with Iterative Active Learning\n(Building on Baudrot & Charles, 2018)\nHow can our Stage 2 xAI meta-model serve as a fast surrogate inside an iterative experimental design loop (\\(\\arg\\max D_{KL}\\) / Bayesian Optimization) under hard 3Rs and budget constraints?\n\n\n\nLeave this slide on screen for the 15-minute open discussion. Prompt both groups specifically: - Question 1 (AI / Stats): Trade-offs between Multivariate RF / multi-task models vs. separate single-output RFs when n ~ 200 and Stage 1 targets (Precision, GoF, Predictive Capacity) are correlated. Also ask about handling collinearity in permutation importance (conditional permutation importance or SHAP) and whether alternative learners should challenge Random Forest here. - Question 2 (Ecotox + AI): What defines a genuinely independent test split—holding out a study, a substance, or a species–substance pair—without collapsing sample size in sparse taxa? - Question 3 (AI + Ecotox): Connecting our Stage 2 surrogate directly to Baudrot & Charles (2018)’s iterative active learning framework (maximising KL divergence) or Bayesian Optimization under hard 3Rs constraints."
+    "text": "Open Methodological Challenges: Ecotox \\(\\leftrightarrow\\) AI/Bioinformatics Discussion\n\nMoving from our Proof-of-Concept to the extended Stage 1 + Stage 2 pipeline and prospective simulation—your input is welcome.\n\n\n\n1. Multi-Response Learning\nExpanding Stage 1 to jointly include Precision (CV, PUI, GoK), Goodness-of-Fit (GoF), and Predictive Capacity yields correlated targets \\(Y(\\theta)\\).\nWith \\(n \\approx 200\\) and collinear design features \\(X(\\mathcal{E})\\), should we move to multi-output algorithms (e.g., Multivariate Random Forests) or keep separate single-target models?\n\n\n2. Leakage-Free Data Splitting\nTo evaluate GUTS Predictive Capacity on unseen datasets without data leakage across shared species, substances, or source studies:\nHow should we design grouped / stratified splits on an unbalanced ecotoxicological database?\n\n\n3. Coupling Meta-Models with Iterative Active Learning\n(Building on Baudrot & Charles, 2018)\nHow can our Stage 2 xAI meta-model serve as a fast surrogate inside an iterative experimental design loop (\\(\\arg\\max D_{KL}\\) / Bayesian Optimization) under hard 3Rs and budget constraints?\n\n\n\nLeave this slide on screen for the 15-minute open discussion. Prompt both groups specifically: - Question 1 (AI / Stats): Trade-offs between Multivariate RF / multi-task models vs. separate single-output RFs when n ~ 200 and Stage 1 targets (Precision, GoF, Predictive Capacity) are correlated. Also ask about handling collinearity in permutation importance (conditional permutation importance or SHAP) and whether alternative learners should challenge Random Forest here. - Question 2 (Ecotox + AI): What defines a genuinely independent test split—holding out a study, a substance, or a species–substance pair—without collapsing sample size in sparse taxa? - Question 3 (AI + Ecotox): Connecting our Stage 2 surrogate directly to Baudrot & Charles (2018)’s iterative active learning framework (maximising KL divergence) or Bayesian Optimization under hard 3Rs constraints."
   },
   {
     "objectID": "02_technical_workshop.html#section-1",
@@ -537,6 +341,55 @@
     "title": "Let's Talk About AI",
     "section": "",
     "text": "Thank you & Questions\n\n\nFR BioEEnViS Knowledge-Sharing Seminar · LBBE / INRAE · December 16, 2026\n\n\n\n\n\n\n\n\n\n\n\nassets/images/logos/BIOEENVIS_LOGO.png\n\n\nFR BioEEnViS Logo\n\n\n\n\n\n\nBuilt with Quarto"
+  },
+  {
+    "objectID": "03_references.html",
+    "href": "03_references.html",
+    "title": "References & Further Reading",
+    "section": "",
+    "text": "This page compiles all peer-reviewed articles, preprints, institutional frameworks, reports, and multimedia lectures cited or used as conceptual inspiration during Part 1 (Philosophy, Taxonomy & ML Foundations). References for Part 2 (Technical Case Study) will be added alongside the Session 2 slides."
+  },
+  {
+    "objectID": "03_references.html#core-training-institutional-frameworks",
+    "href": "03_references.html#core-training-institutional-frameworks",
+    "title": "References & Further Reading",
+    "section": "Core Training & Institutional Frameworks",
+    "text": "Core Training & Institutional Frameworks\n\nBlondel, L., Bourel, B., Challand, M., Coux, C., Justeau-Allaire, D., Frelat, R., Marcos, D., Servajean, M., Tieo, S. M., Tresson, P., & Ubilla, P. (2026). AI for ecologists: a toolkit for beginners. An FRB-CESAB training course. https://ai-ecol.github.io/\nAI4BioMed (2026). Local seminar/training series mainly organized and promoted by LBBE members, Université Claude Bernard Lyon 1. https://indico.engineering.univ-lyon1.fr/event/29/\nOECD.AI Policy Observatory. OECD Framework for the Classification of AI Systems. https://oecd.ai/en/classification"
+  },
+  {
+    "objectID": "03_references.html#epistemology-cognition-genai-guardrails",
+    "href": "03_references.html#epistemology-cognition-genai-guardrails",
+    "title": "References & Further Reading",
+    "section": "Epistemology, Cognition & GenAI Guardrails",
+    "text": "Epistemology, Cognition & GenAI Guardrails\n\nAbbosh, A., Al-Anbuky, A., Xue, F., & Mahmoud, S. S. (2025). Perspective on the Role of AI in Shaping Human Cognitive Development. Information, 16(11), 1011. https://doi.org/10.3390/info16111011\nBarcaui, A. (2025). ChatGPT as a cognitive crutch: Evidence from a randomized controlled trial on knowledge retention. Social Sciences & Humanities Open, 12, 102287. https://doi.org/10.1016/j.ssaho.2025.102287\nGerlich, M. (2025). AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking. Societies, 15(1), 6. https://doi.org/10.3390/soc15010006\nKim, T. W., Usman, U., Garvey, A., & Duhachek, A. (2025). From algorithm aversion to AI dependence: Deskilling, upskilling, and emerging addictions in the GenAI age. Consumer Psychology Review, 9, 142. https://doi.org/10.1002/arcp.70008\nKosmyna, N., Hauptmann, E., Yuan, Y. T., Situ, J., Liao, X. H., Beresnitzky, A. V., Braunstein, I., & Maes, P. (2025). Your brain on ChatGPT: Accumulation of cognitive debt when using an AI assistant for essay writing task. arXiv preprint. https://arxiv.org/abs/2506.08872\nLiu, G., Christian, B., Dumbalska, T., Bakker, M. A., & Dubey, R. (2026). AI Assistance Reduces Persistence and Hurts Independent Performance. arXiv preprint. https://arxiv.org/abs/2604.04721\nMesseri, L., & Crockett, M. J. (2024). Artificial intelligence and illusions of understanding in scientific research. Nature, 627(8002), 49–58. https://doi.org/10.1038/s41586-024-07146-0\nStiegler, B. (2010). For a New Critique of Political Economy. Polity Press."
+  },
+  {
+    "objectID": "03_references.html#statistical-modelling-explainability-scientific-benchmarks",
+    "href": "03_references.html#statistical-modelling-explainability-scientific-benchmarks",
+    "title": "References & Further Reading",
+    "section": "Statistical Modelling, Explainability & Scientific Benchmarks",
+    "text": "Statistical Modelling, Explainability & Scientific Benchmarks\n\nBreiman, L. (2001). Statistical modeling: The two cultures. Statistical Science, 16(3), 199–231. https://doi.org/10.1214/ss/1009213726\nRudin, C. (2019). Stop explaining black box machine learning models for high stakes decisions and use interpretable models instead. Nature Machine Intelligence, 1, 206–215. https://doi.org/10.1038/s42256-019-0048-x\nThe Nobel Prize in Chemistry (2024). Press release: Computational protein design and protein structure prediction (AlphaFold). https://www.nobelprize.org/prizes/chemistry/2024/press-release/"
+  },
+  {
+    "objectID": "03_references.html#material-ecological-footprint-of-ai",
+    "href": "03_references.html#material-ecological-footprint-of-ai",
+    "title": "References & Further Reading",
+    "section": "Material & Ecological Footprint of AI",
+    "text": "Material & Ecological Footprint of AI\n\nAlpine, W., Geldner, N., Alpine, H., & Chepeliev, M. G. (2026). AI-driven productivity gains enable more CO₂ emissions than they avoid in a global energy–economy model. npj Climate Action, 5, 71. https://doi.org/10.1038/s44168-026-00411-0\nInternational Finance Corporation (IFC, 2026). Risks and Opportunities in Data Center and AI Investment in Emerging Markets (Figure 2: Geographical Distribution of Data Centers, 2025). https://www.ifc.org/en/insights-reports/2026/risks-and-opportunities-in-data-center-and-ai-investment-in-ems#group-section-Fig-2-K8AjwpCMpV\nRest of World (2026). Global resistance to AI data centers and water consumption (Daniel Pena, University of the Republic). https://restofworld.org/2026/ai-datacenters-water-resistance-global/"
+  },
+  {
+    "objectID": "03_references.html#conceptual-lectures-multimedia-complementary-viewing",
+    "href": "03_references.html#conceptual-lectures-multimedia-complementary-viewing",
+    "title": "References & Further Reading",
+    "section": "Conceptual Lectures & Multimedia (Complementary Viewing)",
+    "text": "Conceptual Lectures & Multimedia (Complementary Viewing)\n\nAndalman, A. (2025). The biological foundations of artificial intelligence. The Deep View. https://www.youtube.com/watch?v=6b4KPGtu9c0\nKarpathy, A. (2025). How LLMs are unlike the human brain. Dwarkesh Clips. https://www.youtube.com/watch?v=wkCx2Xmi8dg\nSimon, C. (2025). Neurons vs AI: They’re Nothing Alike. AI Neuro Insight. https://www.youtube.com/watch?v=I6PC8f8GRtU\nSung, J. (2025). How ChatGPT Slowly Destroys Your Brain. https://www.youtube.com/watch?v=6sJ50Ybp44I"
+  },
+  {
+    "objectID": "03_references.html#website-presentation-architecture",
+    "href": "03_references.html#website-presentation-architecture",
+    "title": "References & Further Reading",
+    "section": "Website & Presentation Architecture",
+    "text": "Website & Presentation Architecture\n\nFranklin, E. Reproducible Research Workshop (Quarto RevealJS & site design inspiration). https://ellfran-7.github.io/repro-research-workshop/00-welcome-page.html"
   },
   {
     "objectID": "index.html",

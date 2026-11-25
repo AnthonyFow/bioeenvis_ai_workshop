@@ -327,99 +327,17 @@
   * { box-sizing: border-box; }
   .reveal { font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; background: #e9ecef; color: #212529; }
   .reveal h1, .reveal h2, .reveal h3 { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; color: #005a8c; margin-top: 0; margin-bottom: 10px; }
-  .reveal h2 { font-size: 1.42em; line-height: 1.15; }
-  .reveal section:not(.title-slide):not(.center):not(.no-logos) > h2 { max-width: calc(100% - 355px); }
+  .reveal h2 { font-size: 1.24em; line-height: 1.15; }
+  .reveal .slides section.has-dark-background h1,
+  .reveal .slides section.has-dark-background h2 { color: #ffffff; }
 
-  /* ========================================================================= */
-  /* CONFIGURATION FOR LOGOS IN THE TOP-RIGHT CORNER                           */
-  /* ========================================================================= */
-
-  /* Logo 1: LBBE */
-  .reveal::before {
-    content: "";
-    position: absolute;
-    top: 20px;
-    right: 185px;
-    width: 170px;
-    height: 60px;
-    background-image: url('assets/images/logos/LBBE_LOGO_color.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: right center;
-    z-index: 2;
-    pointer-events: none;
-    opacity: 0.5;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-  }
-
-  /* Logo 2: INRAE */
-  .reveal::after {
-    content: "";
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 140px;
-    height: 60px;
-    background-image: url('assets/images/logos/INRAE_LOGO_color.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: right center;
-    z-index: 2;
-    pointer-events: none;
-    opacity: 0.5;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-  }
-
-  /* Hide logos on title slide and final slide */
-  .reveal:has(.title-slide.present)::before,
-  .reveal:has(.title-slide.present)::after,
-  .reveal:has(.slide:last-of-type.present)::before,
-  .reveal:has(.slide:last-of-type.present)::after,
-  .reveal:has(.no-logos.present)::before,
-  .reveal:has(.no-logos.present)::after {
-    opacity: 0 !important;
-    visibility: hidden !important;
-  }
-  /* ========================================================================= */
-
-  /* Title Slide Styling (Left-aligned to match WS1) */
-  .reveal .title-slide {
-    background-color: #005a8c;
-    color: #ffffff;
-    text-align: left !important;
-    padding-left: 48px !important;
-    padding-right: 48px !important;
-  }
-  .reveal .title-slide h1 {
-    color: #ffffff;
-    font-size: 3.1em;
-    font-weight: 700;
-    line-height: 1.08;
-    max-width: 100%;
-    text-align: left;
-    margin-bottom: 16px;
-  }
-  .reveal .title-slide .subtitle {
-    color: #00a3a6;
-    font-size: 1.32em;
-    font-weight: 600;
-    margin-bottom: 34px;
-    line-height: 1.28;
-    text-align: left;
-  }
-  .reveal .title-slide .quarto-title-authors {
-    justify-content: flex-start !important;
-    text-align: left !important;
-  }
-  .reveal .title-slide .quarto-title-author {
-    padding-left: 0 !important;
-    text-align: left !important;
-  }
-  .reveal .title-slide p {
-    color: #e9ecef;
-    font-size: 1.02em;
-    text-align: left;
-  }
+  /* Title Slide Styling (Exact Mirror of WS1) */
+  .title-slide-wrap { display: flex; flex-direction: column; justify-content: center; height: 100%; text-align: left; padding: 20px 10px; }
+  .title-slide-wrap h1 { color: #ffffff; font-size: 3.1em; font-weight: 700; line-height: 1.1; margin-bottom: 18px; }
+  .title-slide-wrap .subtitle-main { color: #00d2d6; font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; font-size: 1.35em; font-weight: 600; line-height: 1.3; margin-bottom: 8px; }
+  .title-slide-wrap .subtitle-sub { color: #e9ecef; font-size: 0.85em; font-weight: 400; margin-bottom: 42px; }
+  .title-slide-wrap .meta-line { color: #ffffff; font-size: 0.98em; margin-bottom: 6px; }
+  .title-slide-wrap .meta-inst { color: #dee2e6; font-size: 0.82em; margin-bottom: 6px; }
 
   /* Responsive UI Components */
   .box-grey { background-color: #f1f3f5; padding: 12px 16px; border-left: 6px solid #adb5bd; border-radius: 4px; font-size: 0.80em; margin-bottom: 12px; }
@@ -458,7 +376,7 @@
   /* Clean text scaling inside flexboxes */
   .reveal p, .reveal li { font-size: 0.80em; line-height: 1.38; margin-bottom: 7px; }
   .reveal ul, .reveal ol { margin-top: 4px; margin-bottom: 6px; }
-  .slide-lead { font-size: 0.76em !important; color: #495057; margin-top: -4px; margin-bottom: 12px !important; max-width: calc(100% - 355px); }
+  .slide-lead { font-size: 0.76em !important; color: #495057; margin-top: -4px; margin-bottom: 12px !important; }
 
   /* Placeholders for pending figures */
   .plot-placeholder {
@@ -479,7 +397,7 @@
   }
   .plot-placeholder .ph-path {
     font-family: monospace;
-    font-size: 0.76em;
+    font-size: 0.74em;
     color: #005a8c;
     background: #eef4f8;
     padding: 3px 10px;
@@ -495,25 +413,56 @@
     margin: 0;
   }
 
-  /* Spectrum & Flow Components */
-  .spec-box {
-    flex: 1;
+  /* WS1 Callback Continuous Spectrum Bar (Slide 2) */
+  .spectrum-bar {
+    display: flex;
+    width: 100%;
+    background: linear-gradient(90deg, #e6f6f6 0%, #d6e9f8 50%, #fdf0f0 100%);
+    border: 1.5px solid #adb5bd;
     border-radius: 8px;
-    padding: 16px 18px;
-    text-align: center;
+    overflow: hidden;
+    margin-top: 12px;
+    margin-bottom: 20px;
+    min-height: 225px;
+  }
+  .spectrum-col {
+    flex: 1;
+    padding: 18px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
     gap: 6px;
   }
+  .spectrum-col + .spectrum-col {
+    border-left: 1.5px dashed #adb5bd;
+  }
+  .spectrum-focus {
+    background: rgba(255, 255, 255, 0.58);
+    box-shadow: inset 0 0 0 2.5px #005a8c;
+  }
+  .focus-pill {
+    display: inline-block;
+    align-self: center;
+    background: #005a8c;
+    color: #ffffff;
+    font-size: 0.62em;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 999px;
+    margin-bottom: 4px;
+    letter-spacing: 0.02em;
+  }
+
+  /* Flow & Step Components */
   .spec-arrow {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.6em;
+    font-size: 1.5em;
     font-weight: 700;
     color: #005a8c;
-    flex: 0 0 32px;
+    flex: 0 0 28px;
   }
   .step-card {
     flex: 1;
@@ -530,68 +479,83 @@
     flex: 1;
     background: #ffffff;
     border: 1.5px solid #ced4da;
-    border-radius: 6px;
-    padding: 10px 12px;
+    border-radius: 8px;
+    padding: 14px 14px;
     text-align: center;
-    font-size: 0.74em;
-    line-height: 1.3;
+    font-size: 0.78em;
+    line-height: 1.32;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 6px;
   }
+  .era-node p { margin: 0 !important; font-size: 1em !important; line-height: 1.3 !important; }
 
-  /* Unified L-Shaped Architecture Grid */
-  .l-arch-grid {
-    display: grid;
-    grid-template-columns: 1.06fr 0.94fr;
-    grid-template-rows: auto auto;
-    column-gap: 14px;
-    row-gap: 0;
-    width: 100%;
-  }
-  .arch-stage {
-    border-radius: 8px;
-    padding: 10px 13px;
+  /* Dataset Conceptualisation Diagram (Slide 8b) */
+  .d-outer {
+    border: 2.5px solid #005a8c;
+    border-radius: 10px;
+    background: #ffffff;
+    padding: 12px 14px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 10px;
+    height: 100%;
   }
-  .arch-stage-purple-arm {
-    grid-column: 1;
-    grid-row: 1;
-    border: 2.5px dashed #7b1fa2;
-    border-bottom: 2px dotted #7b1fa2;
-    background-color: #f6eef9;
-    border-radius: 8px 8px 0 0;
-    padding: 10px 13px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-  .arch-stage-teal-crook {
-    grid-column: 2;
-    grid-row: 1;
-    border: 2.5px dashed #00a3a6;
-    background-color: #edf8f8;
+  .d-panel-n {
+    flex: 1.12;
+    background: #eaf6e9;
+    border: 2px solid #5cb85c;
     border-radius: 8px;
-    padding: 10px 13px;
-    margin-bottom: 12px;
+    padding: 10px 12px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 6px;
   }
-  .arch-stage-blue-base {
-    grid-column: 1 / 3;
-    grid-row: 2;
-    border: 2.5px dashed #005a8c;
-    background-color: #f2f7fa;
-    border-radius: 0 8px 8px 8px;
+  .d-panel-e {
+    flex: 0.88;
+    background: #f6eef9;
+    border: 2px solid #c9a3d8;
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 6px;
+  }
+  .d-pill {
+    background: #ffffff;
+    border: 1.5px solid #c9a3d8;
+    border-radius: 6px;
+    padding: 7px 10px;
+    font-size: 0.72em;
+    font-weight: 600;
+    color: #4a148c;
+    text-align: center;
+  }
+  .d-fit-pill {
+    background: #ffffff;
+    border: 1.5px solid #2e7d32;
+    border-radius: 6px;
+    padding: 7px 10px;
+    font-size: 0.71em;
+    font-weight: 700;
+    color: #1b5e20;
+    text-align: center;
+  }
+
+  /* Natural Top-to-Bottom Architecture Components */
+  .arch-stage {
+    border-radius: 8px;
     padding: 10px 13px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 7px;
   }
+  .arch-stage-blue { border: 2.5px dashed #005a8c; background-color: #f2f7fa; }
+  .arch-stage-teal { border: 2.5px dashed #00a3a6; background-color: #edf8f8; }
+  .arch-stage-purple { border: 2.5px dashed #7b1fa2; background-color: #f6eef9; }
   .arch-header {
     display: flex;
     justify-content: space-between;
@@ -614,7 +578,7 @@
     background: #ffffff;
     border: 1px solid #ced4da;
     border-radius: 5px;
-    padding: 6px 9px;
+    padding: 7px 9px;
     font-size: 0.68em;
     line-height: 1.28;
     text-align: center;
@@ -631,30 +595,30 @@
   }
 
   /* Prospective Workflow Nodes */
-  .wf-row { display: flex; align-items: stretch; gap: 8px; width: 100%; }
+  .wf-row { display: flex; align-items: stretch; gap: 6px; width: 100%; }
   .wf-node {
     flex: 1;
     background: #ffffff;
     border: 1.5px solid #005a8c;
     border-top: 4px solid #005a8c;
     border-radius: 6px;
-    padding: 10px 9px;
+    padding: 9px 7px;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 0.71em;
-    line-height: 1.28;
+    font-size: 0.68em;
+    line-height: 1.25;
   }
-  .wf-node p { margin: 0 !important; font-size: 1em !important; line-height: 1.28 !important; }
-  .wf-node-teal { border-color: #00a3a6; border-top-color: #00a3a6; background: #edf8f8; }
+  .wf-node p { margin: 0 !important; font-size: 1em !important; line-height: 1.25 !important; }
+  .wf-node-teal { border-color: #00a3a6; border-top-color: #00a3a6; background: #e6f6f6; }
   .wf-loop {
-    margin-top: 12px;
+    margin-top: 11px;
     border: 2.5px dashed #7b1fa2;
     background: #f6eef9;
     border-radius: 8px;
-    padding: 11px 16px;
-    font-size: 0.76em;
+    padding: 10px 15px;
+    font-size: 0.74em;
     line-height: 1.35;
   }
   .wf-loop p { margin: 0 !important; font-size: 1em !important; }
@@ -678,10 +642,10 @@ Towards an Explainable Machine Learning for Model-Guided Ecotoxicological Study 
 Restitution of the FRB-CESAB ‘AI for Ecologists: A Toolkit’ Training — FR BioEEnViS
 </div>
 <div class="meta-line">
-<strong>Anthony Fow Esteves</strong>
+<strong>Anthony Fow Esteves</strong> <img src="assets/images/ws2/pe.webp" style="height:0.78em; vertical-align:middle; margin-left:8px;" alt="PE">
 </div>
 <div class="meta-inst">
-LBBE – UCB Lyon 1 (UMR CNRS 5558) | Ecotox – UR RiverLy (INRAE)
+LBBE – UCB Lyon 1 (UMR CNRS 5558) | Ecotox – UR RiverLy (INRAE) <img src="assets/images/ws2/fr.webp" style="height:0.95em; vertical-align:middle; margin-left:8px;" alt="FR">
 </div>
 <div class="meta-inst">
 December 16, 2026
@@ -693,27 +657,21 @@ December 16, 2026
 <p class="slide-lead">
 Positioning this case study along Part 1’s modelling spectrum: coupling a mechanistic core with an interpretable audit.
 </p>
-<div class="flex-row" style="gap: 10px; align-items: stretch; margin-top: 14px; margin-bottom: 22px; min-height: 195px;">
-<div class="spec-box" style="background: #eef4f8; border: 2px solid #005a8c; border-top: 6px solid #005a8c;">
-<p><span class="card-title" style="font-size: 1.15em; color: #005a8c;">White Box</span></p>
+<div class="spectrum-bar">
+<div class="spectrum-col">
+<p><span class="card-title" style="font-size: 0.96em; color: #006f7a;">White Box · High Interpretability</span></p>
 <p><strong>Mechanistic Core: GUTS &amp; DR</strong></p>
 <p>Explicit toxicokinetic–toxicodynamic equations calibrated on survival data.</p>
 </div>
-<div class="spec-arrow">
-<p>→</p>
+<div class="spectrum-col spectrum-focus">
+<p><span class="focus-pill">CURRENT FOCUS</span> <span class="card-title" style="font-size: 0.96em; color: #005a8c;">Grey Box · Interpretable ML &amp; XAI</span></p>
+<p><strong>Towards Explainable ML Audit</strong></p>
+<p>Random Forest + <code>%IncMSE</code> auditing how experimental design features govern parameter uncertainty.</p>
 </div>
-<div class="spec-box box-teal" style="margin-bottom: 0; border: 2.5px solid #00a3a6; border-left: 6px solid #00a3a6; box-shadow: 0 6px 14px rgba(0,163,166,0.12);">
-<p><span class="card-title" style="font-size: 1.15em; color: #018b8d;">Grey Box</span></p>
-<p><strong>Towards Explainable ML Audit — Current Focus</strong></p>
-<p>Auditing how experimental design features govern mechanistic parameter uncertainty.</p>
-</div>
-<div class="spec-arrow" style="opacity: 0.45;">
-<p>→</p>
-</div>
-<div class="spec-box" style="background: #f1f3f5; border: 2px dashed #adb5bd; opacity: 0.45;">
-<p><span class="card-title" style="font-size: 1.15em; color: #495057;">Black Box</span></p>
+<div class="spectrum-col" style="opacity: 0.35;">
+<p><span class="card-title" style="font-size: 0.96em; color: #a71d2a;">Black Box · High Predictive Capacity</span></p>
 <p><strong>Deep Learning / Neural Networks</strong></p>
-<p>Deliberately excluded in this sample regime and regulatory context.</p>
+<p>Deliberately not used in this sample regime and regulatory context.</p>
 </div>
 </div>
 <div class="fragment">
@@ -733,7 +691,7 @@ Positioning this case study along Part 1’s modelling spectrum: coupling a mech
 </div>
 </div>
 <aside class="notes">
-<p>Frame this slide directly as a continuation of Part 1’s spectrum. Remind the audience that Random Forest is already an interpretable ML method used here strictly as an exploratory audit—not yet a final predictive optimizer. Keep the rationale against Deep Learning grounded on objective scientific criteria (moderate tabular n = 216 + regulatory traceability under EFSA/OECD), and explicitly invite the bioinformatics/AI team to challenge this modelling choice during the closing discussion.</p>
+<p>Frame this slide directly as a continuation of Part 1’s spectrum (Slide 19). Remind the audience that Random Forest is already an interpretable ML method used here strictly as an exploratory audit—not yet a final predictive optimizer. Keep the rationale against Deep Learning grounded on objective scientific criteria (moderate tabular n = 216 + regulatory traceability under EFSA/OECD), and explicitly invite the bioinformatics/AI team to challenge this modelling choice during the closing discussion.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -751,7 +709,7 @@ Positioning this case study along Part 1’s modelling spectrum: coupling a mech
 <p class="slide-lead">
 Regulatory context for non-ecotoxicologists: tracing everyday agricultural products to freshwater screening.
 </p>
-<div class="flex-row" style="gap: 12px; align-items: stretch; margin-bottom: 14px;">
+<div class="flex-row" style="gap: 12px; align-items: stretch; margin-bottom: 16px;">
 <div class="step-card">
 <p><span class="card-title" style="font-size: 1.02em; color: #005a8c;">1. Everyday Products</span></p>
 <p><span style="font-size: 1.35em;">🍎 &nbsp; 🍷 &nbsp; 🥖</span></p>
@@ -762,7 +720,7 @@ Regulatory context for non-ecotoxicologists: tracing everyday agricultural produ
 </div>
 <div class="step-card fragment" style="border-top-color: #00a3a6;">
 <p><span class="card-title" style="font-size: 1.02em; color: #018b8d;">2. Large-Scale Agriculture</span></p>
-<p><span style="font-size: 1.35em;">🌾 &nbsp; 🚜</span></p>
+<p><span style="font-size: 1.35em;">🌾 &nbsp; 🚜 &nbsp; 🧴</span></p>
 <p>Relies on <strong>Plant Protection Products (PPPs)</strong> to protect yields against fungi, insects, and weeds.</p>
 </div>
 <div class="spec-arrow fragment">
@@ -771,19 +729,31 @@ Regulatory context for non-ecotoxicologists: tracing everyday agricultural produ
 <div class="step-card fragment" style="border-top-color: #e53935;">
 <p><span class="card-title" style="font-size: 1.02em; color: #e53935;">3. Freshwater Runoff</span></p>
 <p><span style="font-size: 1.35em;">🌧️ &nbsp; 🏞️ &nbsp; 🐟</span></p>
-<p>Runoff exposes non-target aquatic organisms, triggering mandatory pre-market regulatory screening.</p>
+<p>Runoff exposes <strong>non-target aquatic organisms</strong>, triggering <strong>mandatory pre-market regulatory screening</strong>.</p>
 </div>
 </div>
-<div class="plot-placeholder" style="min-height: 195px; padding: 12px;">
+<div class="fragment">
+<div class="flex-row" style="gap: 16px; align-items: stretch; min-height: 185px;">
+<div class="flex-col box-grey" style="flex: 0.42; justify-content: center; align-items: center; text-align: center; margin-bottom: 0;">
+<div style="font-size: 2.1em; margin-bottom: 6px;">
+🍎 &nbsp;+&nbsp; 🧴
+</div>
+<p><em>Everyday agricultural use</em></p>
+</div>
+<div class="flex-col" style="flex: 1.58;">
+<div class="plot-placeholder" style="padding: 12px;">
 <div class="ph-path">
-assets/images/ws2/ws2_hook_ppp_products.png
+assets/images/ws2/ws2_captan_eu_regulation.png
 </div>
 <p class="ph-caption">
-<strong>Visual Hook Strip</strong> — Everyday products (Apple, Red Wine, Baguette) → large-scale PPP agriculture → freshwater runoff into aquatic ecosystems.
+<strong>EU Regulatory Approval Example (Captan renewed until 2039)</strong><br><em>How does this regulatory process work?</em>
 </p>
 </div>
+</div>
+</div>
+</div>
 <aside class="notes">
-<p>Keep this fast and concrete for the bioinformatics/AI colleagues: every PPP entering European agriculture must pass pre-market freshwater risk screening before authorisation.</p>
+<p>Keep this fast and concrete for the bioinformatics/AI colleagues: every PPP entering European agriculture must pass pre-market freshwater risk screening before authorisation or renewal—such as the fungicide Captan, renewed in the EU until 2039. Use the question at the bottom right to transition directly into the EU ERA pipeline.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -801,52 +771,61 @@ assets/images/ws2/ws2_hook_ppp_products.png
 <p class="slide-lead">
 Where experimental ecotoxicology and mechanistic modelling enter European chemical regulation.
 </p>
-<div class="flex-row" style="gap: 10px; align-items: stretch; margin-bottom: 12px;">
-<div class="era-node" style="flex: 0.85; border-top: 4px solid #005a8c;">
-<p><strong>Problem Formulation</strong></p>
-<p>Define substance, use scenario, and protection goals.</p>
+<div class="flex-row" style="gap: 10px; align-items: stretch; min-height: 335px; margin-top: 10px; margin-bottom: 16px;">
+<div class="era-node" style="flex: 0.92; border-top: 5px solid #005a8c;">
+<p><span class="card-title" style="font-size: 1.02em; color: #005a8c;">Problem Formulation</span></p>
+<div style="font-size: 1.35em; margin: 4px 0;">
+🍎 🧴 🌊 🐟 🦐
 </div>
-<div class="arch-flow-arrow">
+<p>Define substance, receiving water body, and aquatic protection goals (fish &amp; crustaceans).</p>
+</div>
+<div class="arch-flow-arrow fragment" data-fragment-index="1">
 <p>→</p>
 </div>
-<div class="flex-col" style="flex: 1.45; gap: 8px;">
-<div class="era-node" style="opacity: 0.48; background: #f1f3f5;">
-<p><strong>Exposure Assessment</strong> <em>(Environmental Fate)</em></p>
-<p>Predicted environmental concentrations (<span class="math inline">\(PEC\)</span>) in water.</p>
+<div class="flex-col" style="flex: 1.52; gap: 12px; justify-content: center;">
+<div class="era-node fragment fade-in-then-semi-out" data-fragment-index="1" style="background: #f1f3f5; border: 1.5px solid #adb5bd;">
+<p><span class="card-title" style="font-size: 1em; color: #495057;">Exposure Assessment</span></p>
+<div style="font-size: 1.3em; margin: 2px 0;">
+🧴 &nbsp; 🌊
 </div>
-<div class="era-node fragment" style="background: #e6f6f6; border: 2px solid #00a3a6; border-left: 6px solid #00a3a6;">
-<p><strong>Effect Assessment — Laboratory Ecotoxicity Experiments</strong></p>
-<p>Empirical survival bioassays estimating organism sensitivity (<span class="math inline">\(LC_{50}\)</span>, <span class="math inline">\(EC_x\)</span>, TKTD).</p>
+<p>Predicted Environmental Concentrations (<span class="math inline">\(PEC\)</span>) in surface water.</p>
+</div>
+<div class="era-node fragment" data-fragment-index="2" style="background: #e6f6f6; border: 2.5px solid #00a3a6; border-left: 7px solid #00a3a6; box-shadow: 0 4px 10px rgba(0,163,166,0.12);">
+<p><span class="card-title" style="font-size: 1em; color: #018b8d;">Effect Assessment — Laboratory Ecotoxicity Experiments</span></p>
+<div style="font-size: 1.3em; margin: 2px 0;">
+🧴 &nbsp; 🐟 &nbsp; 🦐
+</div>
+<p>Empirical survival bioassays estimating <strong><span class="math inline">\(LC_{50}\)</span> and <span class="math inline">\(EC_x\)</span> under Dose-Response (DR) models</strong>.</p>
 </div>
 </div>
-<div class="arch-flow-arrow fragment">
+<div class="arch-flow-arrow fragment" data-fragment-index="3">
 <p>→</p>
 </div>
-<div class="era-node fragment" style="flex: 0.85; border-top: 4px solid #005a8c;">
-<p><strong>Risk Characterisation</strong></p>
-<p>Compare exposure against effect thresholds.</p>
+<div class="era-node fragment" data-fragment-index="3" style="flex: 0.85; border-top: 5px solid #005a8c;">
+<p><span class="card-title" style="font-size: 1em; color: #005a8c;">Risk Characterisation</span></p>
+<p>Compare <span class="math inline">\(PEC\)</span> vs.&nbsp;Effect threshold (risk ratio).</p>
 </div>
-<div class="arch-flow-arrow fragment">
+<div class="arch-flow-arrow fragment" data-fragment-index="3">
 <p>→</p>
 </div>
-<div class="era-node fragment" style="flex: 0.9; border-top: 4px solid #018b8d;">
-<p><strong>EU Approval Decision</strong></p>
-<p>Authorisation or renewal (e.g., <em>Captan</em> renewed until 2039).</p>
+<div class="era-node fragment" data-fragment-index="3" style="flex: 1.02; border-top: 5px solid #018b8d;">
+<p><span class="card-title" style="font-size: 1em; color: #018b8d;">EU Decision</span></p>
+<div style="font-size: 1.2em; margin: 2px 0;">
+🧴 &nbsp;|&nbsp; 🐟 ✓ / ☠️ ✗
+</div>
+<p>Approval vs.&nbsp;Non-approval</p>
+<div style="margin-top: 4px; background: #f8f9fa; border: 1.5px dashed #adb5bd; border-radius: 5px; padding: 5px 6px; font-size: 0.78em;">
+<p><span style="font-family: monospace; color: #005a8c; font-weight: 600;">ws2_captan_eu_regulation.png</span><br> <em>Captan renewed until 2039</em></p>
 </div>
 </div>
-<div class="plot-placeholder" style="min-height: 190px; padding: 10px; margin-bottom: 12px;">
-<div class="ph-path">
-assets/images/ws2/ws2_era_flowchart.png
 </div>
-<p class="ph-caption">
-<strong>EU ERA Regulatory Flowchart</strong> — Highlighting Effect Assessment and empirical aquatic toxicity testing leading to EU regulatory approval.
-</p>
-</div>
-<div class="box-teal" style="margin-bottom: 0; text-align: center;">
+<div class="fragment" data-fragment-index="4">
+<div class="box-teal" style="margin-bottom: 0; text-align: center; border: 2px solid #00a3a6; border-left: 7px solid #00a3a6;">
 <p>Our modelling work operates directly inside <strong>Effect Assessment</strong>—and up to here, we have only talked about PPPs.</p>
 </div>
+</div>
 <aside class="notes">
-<p>Emphasise that Effect Assessment depends directly on laboratory ecotoxicity experiments. Close the slide with the pivot line: “Up to here, we have only talked about PPPs”—setting up the chemical scale bottleneck on the next slide.</p>
+<p>Walk cleanly through the flowchart: Problem Formulation splits into Exposure Assessment (which fades once we click into Effect Assessment) and Effect Assessment, where laboratory survival bioassays estimate LC50 and ECx under classical Dose-Response models. Close with the pivot line: “Up to here, we have only talked about PPPs”—setting up the chemical scale bottleneck next.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -859,13 +838,13 @@ assets/images/ws2/ws2_era_flowchart.png
           display:block!important;
       }</style></aside>
 </section>
-<section id="the-scale-ethical-bottleneck" class="slide level2 smaller">
-<h2>The Scale &amp; Ethical Bottleneck</h2>
+<section id="the-scale-ethical-bottleneck" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">The Scale &amp; Ethical Bottleneck</h2>
 <p class="slide-lead">
 Beyond PPPs: why testing every chemical experimentally is neither scalable nor ethically defensible.
 </p>
-<div class="flex-row" style="min-height: 445px; align-items: stretch;">
-<div class="flex-col">
+<div class="flex-row" style="min-height: 460px; align-items: stretch;">
+<div class="flex-col" data-id="col-left">
 <div class="box-red" style="flex: 1; display: flex; flex-direction: column; justify-content: center; margin-bottom: 0;">
 <p><span class="card-title" style="font-size: 1.06em; color: #e53935; margin-bottom: 10px;">Global Chemical Inventory vs.&nbsp;Testing Burden</span></p>
 <ul>
@@ -879,13 +858,13 @@ Beyond PPPs: why testing every chemical experimentally is neither scalable nor e
 </div>
 </div>
 </div>
-<div class="flex-col">
+<div class="flex-col" data-id="col-right">
 <div class="plot-placeholder">
 <div class="ph-path">
 assets/images/ws2/ws2_chemicals_scale.png
 </div>
 <p class="ph-caption">
-<strong>Chemical Scale &amp; Animal Testing Burden</strong><br>Comparing global chemical inventories against annual vertebrate usage in regulatory testing.
+<strong>EU Chemical Regulations &amp; Substance Inventory Venn Diagram</strong>
 </p>
 </div>
 </div>
@@ -904,36 +883,31 @@ assets/images/ws2/ws2_chemicals_scale.png
           display:block!important;
       }</style></aside>
 </section>
-<section id="efsa-shift-vs.-the-historical-regulatory-mismatch" class="slide level2 smaller">
-<h2>EFSA Shift vs.&nbsp;The Historical Regulatory Mismatch</h2>
-<div class="flex-row" style="gap: 18px; margin-bottom: 12px;">
-<div class="flex-col">
-<div class="box-teal" style="flex: 1; display: flex; flex-direction: column; margin-bottom: 0;">
-<p><span class="card-title" style="font-size: 1.02em; color: #018b8d; margin-bottom: 6px;">1. 2018+ EFSA Shift</span></p>
+<section id="efsa-shift-vs.-the-historical-regulatory-mismatch" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">EFSA Shift vs.&nbsp;The Historical Regulatory Mismatch</h2>
+<div class="flex-row" style="min-height: 475px; gap: 20px; align-items: stretch;">
+<div class="flex-col" data-id="efsa-box">
+<div class="box-teal" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 0;">
+<div>
+<p><span class="card-title" style="font-size: 1.06em; color: #018b8d; margin-bottom: 8px;">1. 2018+ EFSA Shift</span></p>
 <p>EFSA recommends dynamic <strong>TKTD</strong> mechanistic models—specifically <strong>GUTS</strong> (General Unified Threshold model of Survival)—for regulatory PPP risk assessment (<a href="https://onlinelibrary.wiley.com/doi/abs/10.2903/j.efsa.2018.5377">EFSA, 2018</a>).</p>
-<p><img data-src="assets/images/ws2/tktd_efsaguideline.png" style="max-height: 115px; width: 100%; object-fit: contain; margin-top: 8px;"></p>
+</div>
+<p><img data-src="assets/images/ws2/guts_workflow.png" style="max-height: 300px; width: 100%; object-fit: contain; margin-top: 8px;"></p>
 </div>
 </div>
-<div class="flex-col fragment">
-<div class="box-red" style="flex: 1; display: flex; flex-direction: column; margin-bottom: 0;">
-<p><span class="card-title" style="font-size: 1.02em; color: #e53935; margin-bottom: 6px;">2. The Legacy Mismatch</span></p>
-<p>Regulatory testing still depends on ~1980s <strong>OECD Test Guidelines</strong> built for static, fixed-time endpoints like <span class="math inline">\(LC(50, 96\text{h})\)</span> via Dose-Response (DR) models (<a href="https://doi.org/10.1093/inteam/vjaf113">Daniels et al., 2026</a>).</p>
-<p><img data-src="assets/images/ws2/Daniels_paper.png" style="max-height: 115px; width: 100%; object-fit: contain; margin-top: 8px;"></p>
+<div class="flex-col" data-id="col-right">
+<div class="plot-placeholder">
+<div class="ph-path">
+assets/images/ws2/ws2_chemicals_scale.png
 </div>
-</div>
-</div>
-<div class="fragment">
-<div class="box-grey" style="margin-bottom: 0; padding: 10px 14px; display: flex; align-items: center; gap: 16px;">
-<div style="flex: 0 0 290px; background: #ffffff; border: 2px dashed #ced4da; border-radius: 6px; padding: 8px 10px; text-align: center;">
-<p><span style="font-family: monospace; font-size: 0.72em; color: #005a8c; font-weight: 600;">assets/images/ws2/ws2_oecd_guts_preprint.png</span></p>
-</div>
-<div style="flex: 1; font-size: 0.92em; line-height: 1.35;">
-<p><strong>Aside (Preprint):</strong> GUTS can be calibrated on standard OECD datasets, yet the limitations and impact on dynamic parameter inference remain unquantified.</p>
+<p class="ph-caption">
+<strong>EU Chemical Regulations &amp; Substance Inventory Venn Diagram</strong>
+</p>
 </div>
 </div>
 </div>
 <aside class="notes">
-<p>Walk through the three clicks deliberately: (1) EFSA recommends dynamic GUTS models; (2) yet laboratory data still come from ~1980s OECD guidelines designed for static 96h Dose-Response endpoints; (3) calibrating GUTS on legacy OECD data is technically feasible, but its impact on parameter identifiability and precision remains unquantified. Cue the direct visual bridge into Slide 5 (model_process.png): we need reproducible, explainable guidance for both laboratory technicians and regulators.</p>
+<p>Introduce the 2018 EFSA regulatory shift toward dynamic mechanistic TKTD/GUTS models alongside the scale context before swapping the right column to reveal the legacy mismatch.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -946,12 +920,82 @@ assets/images/ws2/ws2_chemicals_scale.png
           display:block!important;
       }</style></aside>
 </section>
-<section id="our-objective" class="slide level2 smaller">
-<h2>Our Objective</h2>
-<div class="center-content" style="justify-content: space-evenly; padding-top: 8px;">
-<p><img data-src="assets/images/ws2/plots/model_process.png" style="max-height: 315px; width: 96%; object-fit: contain;"></p>
-<div style="text-align: center; font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; font-size: 1.88em; font-weight: 700; color: #005a8c; line-height: 1.38; max-width: 94%; margin-top: 8px;">
+<section id="efsa-shift-vs.-the-historical-regulatory-mismatch-1" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">EFSA Shift vs.&nbsp;The Historical Regulatory Mismatch</h2>
+<div class="flex-row" style="min-height: 475px; gap: 20px; align-items: stretch;">
+<div class="flex-col" data-id="efsa-box">
+<div class="box-teal" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 0;">
+<div>
+<p><span class="card-title" style="font-size: 1.06em; color: #018b8d; margin-bottom: 8px;">1. 2018+ EFSA Shift</span></p>
+<p>EFSA recommends dynamic <strong>TKTD</strong> mechanistic models—specifically <strong>GUTS</strong> (General Unified Threshold model of Survival)—for regulatory PPP risk assessment (<a href="https://onlinelibrary.wiley.com/doi/abs/10.2903/j.efsa.2018.5377">EFSA, 2018</a>).</p>
+</div>
+<p><img data-src="assets/images/ws2/guts_workflow.png" style="max-height: 300px; width: 100%; object-fit: contain; margin-top: 8px;"></p>
+</div>
+</div>
+<div class="flex-col" data-id="legacy-box">
+<div class="box-red" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 0;">
+<div>
+<p><span class="card-title" style="font-size: 1.06em; color: #e53935; margin-bottom: 8px;">2. The Legacy Mismatch</span></p>
+<p>Regulatory testing still depends on ~1980s <strong>OECD Test Guidelines</strong> built for static, fixed-time endpoints like <span class="math inline">\(LC(50, 96\text{h})\)</span> via Dose-Response (DR) models (<a href="https://doi.org/10.1093/inteam/vjaf113">Daniels et al., 2026</a>).</p>
+</div>
+<p><img data-src="assets/images/ws2/Daniels_paper.png" style="max-height: 260px; width: 100%; object-fit: contain; margin-top: 8px;"></p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Here is the core tension: EFSA recommends dynamic GUTS models, yet laboratory datasets still originate from ~1980s OECD Test Guidelines designed for static 96-hour Dose-Response endpoints.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="efsa-shift-vs.-the-historical-regulatory-mismatch-2" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">EFSA Shift vs.&nbsp;The Historical Regulatory Mismatch</h2>
+<div class="center-content" style="padding-top: 10px;">
+<div class="box-grey" data-id="preprint-card" style="width: 88%; padding: 18px 22px; display: flex; flex-direction: column; gap: 14px; text-align: left; margin-bottom: 0;">
+<div class="plot-placeholder" style="min-height: 290px;">
+<div class="ph-path">
+assets/images/ws2/ws2_oecd_guts_preprint.png
+</div>
+<p class="ph-caption">
+<strong>Preprint Evidence:</strong> Calibrating GUTS on standard OECD Test Guideline datasets.
+</p>
+</div>
+<div style="font-size: 1.02em; line-height: 1.38; text-align: center; color: #212529;">
+<p><strong>Aside (Preprint):</strong> GUTS can be calibrated on standard OECD datasets, yet the limitations and impact on dynamic parameter inference remain unquantified.</p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Calibrating GUTS on legacy OECD data is technically feasible, but its impact on parameter identifiability and precision remains unquantified. Cue the direct visual bridge into the next slide (model_process.png): we need reproducible, explainable guidance for both laboratory technicians and regulators.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="our-objective" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Our Objective</h2>
+<div class="center-content" style="justify-content: space-between; padding-top: 6px; min-height: 495px;">
+<p><img data-src="assets/images/ws2/plots/model_process.png" style="max-height: 280px; width: 96%; object-fit: contain;"></p>
+<div style="text-align: center; font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; font-size: 1.82em; font-weight: 700; color: #005a8c; line-height: 1.36; max-width: 94%;">
 <p>How do <span class="obj-pill">experimental design features (<span class="math inline">\(\mathcal{E}\)</span>)</span> influence <span class="obj-pill">DR and GUTS parameter precision</span>?</p>
+</div>
+<div class="box-grey" data-id="preprint-card" style="width: 94%; font-size: 0.66em; padding: 6px 14px; margin-bottom: 0; text-align: center; color: #495057;">
+<p><strong>Preprint gap:</strong> GUTS runs on legacy OECD datasets, but design impacts on dynamic inference remain unquantified.</p>
 </div>
 </div>
 <aside class="notes">
@@ -968,37 +1012,169 @@ assets/images/ws2/ws2_chemicals_scale.png
           display:block!important;
       }</style></aside>
 </section>
-<section id="the-empirical-landscape-dataset-conceptualisation" class="slide level2 smaller">
-<h2>The Empirical Landscape &amp; Dataset Conceptualisation</h2>
+<section id="the-empirical-landscape" class="slide level2 smaller">
+<h2>The Empirical Landscape</h2>
 <p class="slide-lead">
 Mapping <strong>216 time-resolved survival datasets</strong> across organisms, substances, and exposure profiles.
 </p>
-<div class="flex-row">
-<div class="flex-col flex-2">
-<p><img data-src="assets/images/ws2/plots/demographics_plot.png" style="max-height: 495px; width: 100%; object-fit: contain;"></p>
+<div class="center-content">
+<p><img data-src="assets/images/ws2/plots/demographics_plot.png" style="max-height: 525px; width: 100%; object-fit: contain;"></p>
 </div>
-<div class="flex-col">
-<div class="box-grey">
-<p><span class="card-title" style="font-size: 1.02em; color: #005a8c; margin-bottom: 6px;">Dataset Conceptualisation</span></p>
-<p><span class="math display">\[\mathcal{D} = \{\mathcal{E}, \mathbf{N}\}\]</span></p>
+</section>
+<section id="dataset-conceptualisation-separating-mathbfn-and-mathcale" class="slide level2 smaller">
+<h2>Dataset Conceptualisation: Separating <span class="math inline">\(\mathbf{N}\)</span> and <span class="math inline">\(\mathcal{E}\)</span></h2>
+<div class="flex-row" style="min-height: 465px; align-items: stretch; margin-top: 6px;">
+<div class="flex-col" style="flex: 1.55;">
+<div class="d-outer">
+<div style="text-align: center; font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; font-weight: 700; font-size: 0.92em; color: #005a8c;">
+Dataset <span class="math inline">\(\mathcal{D} = \{\mathbf{N}, \mathcal{E}\}\)</span>
+</div>
+<div class="flex-row" style="gap: 12px; flex: 1; align-items: stretch;">
+<div class="d-panel-n">
+<p><span class="card-title" style="font-size: 0.86em; color: #1b5e20; text-align: center;"><span class="math inline">\(\mathbf{N}\)</span> (Survival Observations)</span></p>
+<table style="width: 100%; font-size: 0.66em; border-collapse: collapse; background: #ffffff; border: 1px solid #a5d6a7;">
+<thead>
+<tr style="background: #dcedc8; border-bottom: 1.5px solid #5cb85c;">
+<th style="padding: 4px 6px; text-align: center;">
+Time
+</th>
+<th style="padding: 4px 6px; text-align: center;">
+Conc
+</th>
+<th style="padding: 4px 6px; text-align: center;">
+N initial
+</th>
+<th style="padding: 4px 6px; text-align: center;">
+N survival
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom: 1px solid #e0e0e0;">
+<td style="padding: 3px 6px; text-align: center;">
+12
+</td>
+<td style="padding: 3px 6px; text-align: center;">
+0
+</td>
+<td style="padding: 3px 6px; text-align: center;">
+20
+</td>
+<td style="padding: 3px 6px; text-align: center;">
+20
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #e0e0e0;">
+<td style="padding: 3px 6px; text-align: center;">
+24
+</td>
+<td style="padding: 3px 6px; text-align: center;">
+0
+</td>
+<td style="padding: 3px 6px; text-align: center;">
+20
+</td>
+<td style="padding: 3px 6px; text-align: center;">
+20
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #e0e0e0;">
+<td style="padding: 3px 6px; text-align: center;">
+48
+</td>
+<td style="padding: 3px 6px; text-align: center;">
+0
+</td>
+<td style="padding: 3px 6px; text-align: center;">
+20
+</td>
+<td style="padding: 3px 6px; text-align: center;">
+19
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #e0e0e0;">
+<td style="padding: 3px 6px; text-align: center;">
+12
+</td>
+<td style="padding: 3px 6px; text-align: center;">
+10
+</td>
+<td style="padding: 3px 6px; text-align: center;">
+20
+</td>
+<td style="padding: 3px 6px; text-align: center;">
+20
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #e0e0e0;">
+<td style="padding: 3px 6px; text-align: center;">
+24
+</td>
+<td style="padding: 3px 6px; text-align: center;">
+10
+</td>
+<td style="padding: 3px 6px; text-align: center;">
+20
+</td>
+<td style="padding: 3px 6px; text-align: center;">
+15
+</td>
+</tr>
+<tr>
+<td style="padding: 3px 6px; text-align: center;">
+…
+</td>
+<td style="padding: 3px 6px; text-align: center;">
+…
+</td>
+<td style="padding: 3px 6px; text-align: center;">
+…
+</td>
+<td style="padding: 3px 6px; text-align: center;">
+…
+</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: center; font-size: 0.95em; font-weight: 700; color: #2e7d32; line-height: 0.9;">
+↓
+</div>
+<div class="d-fit-pill">
+GUTS / DR Mechanistic Fit → Parameters <span class="math inline">\(\theta\)</span>
+</div>
+</div>
+<div class="d-panel-e">
+<p><span class="card-title" style="font-size: 0.86em; color: #6a1b9a; text-align: center;"><span class="math inline">\(\mathcal{E}\)</span> (Experimental Design Context)</span></p>
+<div class="d-pill">
+Archetype (Organism, Substance)
+</div>
+<div class="d-pill">
+OECD Regulatory Constraints
+</div>
+<div class="d-pill">
+Mechanistic Model Requirements
+</div>
+<div style="font-size: 0.66em; text-align: center; color: #4a148c; font-style: italic; line-height: 1.3;">
+Accompanies <span class="math inline">\(\mathbf{N}\)</span> &amp; <span class="math inline">\(\theta\)</span> (does not enter calibration directly)
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-col fragment" style="flex: 0.95;">
+<div class="box-teal" style="flex: 1; display: flex; flex-direction: column; justify-content: center; margin-bottom: 0;">
+<p><span class="card-title" style="font-size: 1.02em; color: #005a8c; margin-bottom: 8px;">Dataset Conceptualisation: <span class="math inline">\(\mathcal{D} = \{\mathbf{N}, \mathcal{E}\}\)</span></span></p>
 <p><em>(Adapted from Baudrot &amp; Charles, 2018)</em></p>
 <ul>
-<li><strong><span class="math inline">\(\mathbf{N}\)</span> (Survival observations):</strong> enters the mechanistic model (<strong>GUTS</strong> / <strong>DR</strong>) to estimate parameters <span class="math inline">\(\theta\)</span>.</li>
-</ul>
-</div>
-<div class="box-teal" style="margin-bottom: 0;">
-<p><span class="card-title" style="font-size: 1.02em; color: #018b8d; margin-bottom: 6px;">Role of <span class="math inline">\(\mathcal{E}\)</span> (Experimental Design Context)</span></p>
-<p>Accompanies <span class="math inline">\(\mathbf{N}\)</span> and <span class="math inline">\(\theta\)</span> throughout the workflow.</p>
-<p>This is what we categorise against:</p>
-<ul>
-<li><strong>OECD TG Constraints</strong></li>
-<li><strong>Mechanistic Model Requirements</strong></li>
+<li><strong><span class="math inline">\(\mathbf{N}\)</span> (Survival observations):</strong> enters the mechanistic models (<strong>GUTS</strong> / <strong>DR</strong>) directly to estimate parameters <span class="math inline">\(\theta\)</span>.</li>
+<li><strong><span class="math inline">\(\mathcal{E}\)</span> (Experimental design context):</strong> accompanies <span class="math inline">\(\mathbf{N}\)</span> and <span class="math inline">\(\theta\)</span> throughout the analysis without entering calibration directly.</li>
+<li>Next, we categorise <span class="math inline">\(\mathcal{E}\)</span> across all 216 datasets against <strong>OECD TG Constraints</strong> and <strong>Mechanistic Model Requirements</strong>.</li>
 </ul>
 </div>
 </div>
 </div>
 <aside class="notes">
-<p>Introduce the compact notation D = {E, N} adapted from Baudrot &amp; Charles (2018). From here onward, the tracking pill below each slide title will show which component—E, N, or their mapping—we are operating on.</p>
+<p>Introduce the compact notation D = {N, E} adapted from Baudrot &amp; Charles (2018). From here onward, the tracking pill below each slide title will show which component—E, N, or their mapping—we are operating on.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1488,80 +1664,89 @@ extended_hours
 </section>
 <section id="two-stage-hybrid-architecture-stage-1-rightarrow-stage-2" class="slide level2 smaller">
 <h2>Two-Stage Hybrid Architecture: Stage 1 <span class="math inline">\(\rightarrow\)</span> Stage 2</h2>
-<div class="l-arch-grid">
-<div class="arch-stage-purple-arm fragment">
-<div class="arch-header" style="color: #7b1fa2;">
-<span>Planned Stage 1 Extension — Additional <span class="math inline">\(Y(\theta)\)</span></span><span class="arch-badge" style="background: #7b1fa2;">Next Methodological Layer</span>
-</div>
-<div class="arch-node" style="border-color: #c9a3d8;">
-<p><strong>Goodness-of-Fit (GoF)</strong> <em>(same dataset: MSE, RMSE, NRMSE, PPC, SPPE)</em> — <em>“Does <span class="math inline">\(\theta\)</span> match training data?”</em></p>
-</div>
-<div class="arch-node" style="border-color: #c9a3d8;">
-<p><strong>Predictive Capacity</strong> <em>(unseen dataset)</em> — <em>“How well does <span class="math inline">\(\theta\)</span> predict unseen data?”</em></p>
-</div>
-<div style="text-align: right; font-size: 0.66em; font-weight: 700; color: #7b1fa2;">
-Feeds additional targets <span class="math inline">\(Y(\theta)\)</span> rightward <span class="math inline">\(\rightarrow\)</span> Stage 2
-</div>
-</div>
-<div class="arch-stage-teal-crook">
-<div class="arch-header" style="color: #018b8d;">
-<span>Stage 2: xAI Meta-Model</span><span class="arch-badge" style="background: #018b8d;">Active in Proof-of-Concept</span>
-</div>
-<div class="arch-node" style="padding: 10px;">
-<p><strong>Random Forest (<span class="math inline">\(Y(\theta) \sim X(\mathcal{E})\)</span>)</strong><br>Non-linear mapping from experimental design features to mechanistic performance</p>
-</div>
-<div style="text-align: center; font-size: 0.8em; font-weight: 700; color: #018b8d; line-height: 0.9;">
-↓
-</div>
-<div class="arch-node" style="padding: 10px; background: #e6f6f6; border-color: #00a3a6;">
-<p><strong>Feature Importance Metric (<code>%IncMSE</code>)</strong><br><em>“How relevant is <span class="math inline">\(X(\mathcal{E})\)</span> to predict <span class="math inline">\(Y(\theta)\)</span> under non-linear interactions?”</em></p>
-</div>
-</div>
-<div class="arch-stage-blue-base">
+<div class="flex-row" style="gap: 10px; align-items: stretch; margin-top: 4px;">
+<div class="flex-col" style="flex: 1.25;">
+<div class="arch-stage arch-stage-blue" style="height: 100%; justify-content: space-between;">
 <div class="arch-header" style="color: #005a8c;">
 <span>Stage 1: Mechanistic Core — Explicit <span class="math inline">\(\mathcal{D} = \{\mathcal{E}, \mathbf{N}\}\)</span> Flow</span><span class="arch-badge" style="background: #005a8c;">Active in Proof-of-Concept</span>
 </div>
-<div class="flex-row" style="gap: 6px; align-items: stretch;">
-<div class="arch-node" style="flex: 0.9; background: #e6f0f7; border-color: #005a8c;">
+<div class="flex-row" style="gap: 5px; align-items: stretch;">
+<div class="arch-node" style="flex: 0.85; background: #e6f0f7; border-color: #005a8c;">
 <p><strong><span class="math inline">\(\mathbf{N}\)</span></strong><br>Survival records</p>
 </div>
 <div class="arch-flow-arrow">
 →
 </div>
-<div class="arch-node" style="flex: 1.05;">
+<div class="arch-node" style="flex: 1;">
 <p><strong>GUTS-<span class="math inline">\(\theta\)</span> / DR-<span class="math inline">\(\theta\)</span></strong><br>Mechanistic fit</p>
 </div>
 <div class="arch-flow-arrow">
 →
 </div>
-<div class="arch-node" style="flex: 1.05;">
-<p><strong>Posterior (<span class="math inline">\(\theta\)</span>)</strong><br>Bayesian inference</p>
+<div class="arch-node" style="flex: 1;">
+<p><strong>Bayesian Posterior (<span class="math inline">\(\theta\)</span>)</strong><br>Inference</p>
 </div>
 <div class="arch-flow-arrow">
 →
 </div>
-<div class="arch-node" style="flex: 1.25;">
+<div class="arch-node" style="flex: 1.15;">
 <p><strong>Precision <span class="math inline">\(Y(\theta)\)</span></strong><br>CV, PUI, (GoK)</p>
 </div>
-<div class="arch-flow-arrow">
+</div>
+<div class="arch-node" style="background: #ffffff; border: 1.5px dashed #005a8c; padding: 6px 10px;">
+<p><strong><span class="math inline">\(\mathcal{E}\)</span> (Experimental design context)</strong> travels alongside <span class="math inline">\(\mathbf{N}\)</span> &amp; <span class="math inline">\(\theta\)</span> <span class="math inline">\(\longrightarrow\)</span> assembled into tabulated matrix <strong><code>[ X(E) | Y(θ) ]</code></strong></p>
+</div>
+</div>
+</div>
+<div class="spec-arrow" style="flex: 0 0 24px;">
 →
 </div>
-<div class="arch-node" style="flex: 1.35; background: #e6f0f7; border-color: #005a8c;">
-<p><strong>Tabulated Matrix</strong><br><code>[ X(E) | Y(θ) ]</code> <strong><span class="math inline">\(\uparrow\)</span> Stage 2</strong></p>
+<div class="flex-col" style="flex: 0.82;">
+<div class="arch-stage arch-stage-teal" style="height: 100%; justify-content: space-between;">
+<div class="arch-header" style="color: #018b8d;">
+<span>Stage 2: xAI Meta-Model</span><span class="arch-badge" style="background: #018b8d;">Active in Proof-of-Concept</span>
+</div>
+<div class="arch-node" style="padding: 10px 8px;">
+<p><strong>Random Forest (<span class="math inline">\(Y(\theta) \sim X(\mathcal{E})\)</span>)</strong><br>Non-linear mapping from design features to mechanistic performance</p>
+</div>
+<div style="text-align: center; font-size: 0.85em; font-weight: 700; color: #018b8d; line-height: 0.85;">
+↓
+</div>
+<div class="arch-node" style="padding: 10px 8px; background: #e6f6f6; border-color: #00a3a6;">
+<p><strong>Feature Importance Metric (<code>%IncMSE</code>)</strong><br><em>“How relevant is <span class="math inline">\(X(\mathcal{E})\)</span> to predict <span class="math inline">\(Y(\theta)\)</span>?”</em></p>
 </div>
 </div>
-<div class="flex-row" style="gap: 6px; align-items: center;">
-<div class="arch-node" style="flex: 1; background: #ffffff; border: 1px dashed #005a8c; padding: 4px 10px;">
-<p><strong><span class="math inline">\(\mathcal{E}\)</span> (Experimental design context)</strong> travels alongside <span class="math inline">\(\mathbf{N}\)</span> &amp; <span class="math inline">\(\theta\)</span> <span class="math inline">\(\longrightarrow\)</span> translated into continuous design features <span class="math inline">\(X(\mathcal{E})\)</span> inside <code>[ X(E) | Y(θ) ]</code></p>
+</div>
+</div>
+<div class="fragment" style="margin-top: 12px;">
+<div class="flex-row" style="gap: 10px; align-items: stretch;">
+<div class="flex-col" style="flex: 1.25;">
+<div class="arch-stage arch-stage-purple">
+<div class="arch-header" style="color: #7b1fa2;">
+<span>Planned Stage 1 Extension — Additional Targets <span class="math inline">\(Y(\theta)\)</span></span><span class="arch-badge" style="background: #7b1fa2;">Next Methodological Layer</span>
+</div>
+<div class="flex-row" style="gap: 10px; align-items: stretch;">
+<div class="arch-node" style="flex: 1; border-color: #c9a3d8;">
+<p><strong>Goodness-of-Fit (GoF)</strong> <em>(same dataset)</em><br>MSE, RMSE, NRMSE, PPC, SPPE — <em>“Does <span class="math inline">\(\theta\)</span> match training data?”</em></p>
+</div>
+<div class="arch-node" style="flex: 1; border-color: #c9a3d8;">
+<p><strong>Predictive Capacity</strong> <em>(unseen dataset)</em><br><em>“How well does <span class="math inline">\(\theta\)</span> predict unseen survival curves?”</em></p>
 </div>
 </div>
 </div>
 </div>
-<div class="box-grey" style="margin-top: 10px; margin-bottom: 0; padding: 8px 14px; font-size: 0.72em;">
+<div class="flex-col" style="flex: 0.86; justify-content: center;">
+<div style="background: #f6eef9; border: 2px dashed #7b1fa2; border-radius: 8px; padding: 14px 14px; text-align: center; font-size: 0.76em; font-weight: 700; color: #7b1fa2; line-height: 1.35;">
+<p>↗ Feeds additional targets <span class="math inline">\(Y(\theta)\)</span> into Stage 2</p>
+</div>
+</div>
+</div>
+</div>
+<div class="box-grey" style="margin-top: 12px; margin-bottom: 0; padding: 8px 14px; font-size: 0.72em;">
 <p><strong>Transparency Note:</strong> The empirical results just presented cover the active blue + teal Proof-of-Concept (Stage 1 Precision <span class="math inline">\(\rightarrow\)</span> Stage 2 xAI); the purple Stage 1 extension motivates the next step and our open discussion.</p>
 </div>
 <aside class="notes">
-<p>Now that the audience has seen the empirical pipeline in action, step back to show the full two-stage meta-modelling architecture in a unified L-shape: 1. Active Stage 1 (blue base): survival records N feed GUTS/DR Bayesian inference to produce posterior distributions and precision metrics Y(θ), while experimental context E travels alongside to build the tabulated matrix [X(E) | Y(θ)] entering Stage 2 (teal, top-right). 2. Planned Stage 1 extension (purple arm): precision alone is insufficient because narrow posteriors can still be biased. Extending Stage 1 with Goodness-of-Fit (training dataset) and Predictive Capacity (unseen dataset) feeds richer, correlated Y(θ) targets into Stage 2—directly setting up Discussion Points 1 and 2.</p>
+<p>Now that the audience has seen the empirical pipeline in action, step back to show the full two-stage meta-modelling architecture in natural top-to-bottom, left-to-right reading order: 1. Top left (blue): Active Stage 1 runs Bayesian GUTS/DR inference on N to quantify precision Y(θ) while E travels alongside into [X(E) | Y(θ)]. 2. Top right (teal): Stage 2 fits the Random Forest meta-model and extracts %IncMSE feature importance. 3. Middle row (purple): Precision alone is not enough, because narrow posteriors can still be biased. Extending Stage 1 with Goodness-of-Fit (same dataset) and Predictive Capacity (unseen dataset) feeds additional correlated Y(θ) targets up into Stage 2—directly motivating Discussion Points 1 and 2.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1577,53 +1762,72 @@ Feeds additional targets <span class="math inline">\(Y(\theta)\)</span> rightwar
 <section id="next-step-expanding-stage-2-prospective-simulation-active-learning" class="slide level2 smaller">
 <h2>Next Step: Expanding Stage 2 — Prospective Simulation &amp; Active Learning</h2>
 <p class="slide-lead">
-Moving from retrospective auditing on sparse historical studies to prospective design optimisation.
+Bridging retrospective gaps to prospective design optimisation across synthetic experimental scenarios.
 </p>
-<div class="wf-row" style="margin-top: 8px;">
-<div class="wf-node">
-<p><strong>1. Empirical Archetypes</strong><br>Organism–substance <span class="math inline">\(\theta\)</span> distributions</p>
+<div class="flex-row" style="gap: 10px; align-items: stretch; margin-top: 6px;">
+<div class="flex-col box-grey" style="flex: 0.34; margin-bottom: 0; padding: 10px 12px; justify-content: space-between; text-align: center;">
+<p><span class="card-title" style="font-size: 0.88em; color: #005a8c; margin-bottom: 4px;">Historical Design Gaps</span></p>
+<p><img data-src="assets/images/ws2/plots/mountain_post_rf.png" style="max-height: 125px; width: 100%; object-fit: contain;"></p>
+<div style="font-size: 0.76em; color: #495057; line-height: 1.25;">
+<em>Sparse coverage outside legacy OECD protocols</em>
 </div>
-<div class="arch-flow-arrow">
+</div>
+<div class="spec-arrow" style="flex: 0 0 22px;">
+→
+</div>
+<div class="flex-col" style="flex: 1.66;">
+<div class="arch-stage arch-stage-teal" style="height: 100%; justify-content: space-between; padding: 10px 12px;">
+<div class="arch-header" style="color: #018b8d;">
+<span>Expanding Stage 2: Prospective Simulation Workflow</span><span class="arch-badge" style="background: #018b8d;">Prospective Phase</span>
+</div>
+<div class="wf-row">
+<div class="wf-node">
+<p><strong>1. Empirical Archetypes</strong><br>🐟 🦐 🧴<br>Organism–substance <span class="math inline">\(\theta\)</span> distributions</p>
+</div>
+<div class="arch-flow-arrow" style="flex: 0 0 12px;">
 →
 </div>
 <div class="wf-node">
-<p><strong>2. Synthetic Designs <span class="math inline">\(\mathcal{E}_i\)</span></strong><br>Poor / Regulatory / Model-Guided</p>
+<p><strong>2. Synthetic Designs <span class="math inline">\(\mathcal{E}_i\)</span></strong><br><em>Filling the gaps:</em><br>Poor / Regulatory / Model-Guided</p>
 </div>
-<div class="arch-flow-arrow">
+<div class="arch-flow-arrow" style="flex: 0 0 12px;">
 →
 </div>
 <div class="wf-node">
 <p><strong>3. Forward Simulation</strong><br>Generate <span class="math inline">\(\mathbf{N}_i\)</span> &amp; refit GUTS / DR</p>
 </div>
-<div class="arch-flow-arrow">
+<div class="arch-flow-arrow" style="flex: 0 0 12px;">
 →
 </div>
 <div class="wf-node wf-node-teal">
-<p><strong>4. Stage 2 xAI Meta-Model</strong><br>Thresholds &amp; uncertainty surface</p>
+<p><strong>4. Stage 2 Meta-Model</strong><br>Actionable thresholds &amp; uncertainty surface</p>
 </div>
-<div class="arch-flow-arrow">
+<div class="arch-flow-arrow" style="flex: 0 0 12px;">
 →
 </div>
 <div class="wf-node">
 <p><strong>5. Validation</strong><br>Empirical Data Thinning</p>
 </div>
 </div>
-<div class="wf-loop fragment">
-<p><span class="card-title" style="font-size: 0.98em; color: #7b1fa2; margin-bottom: 4px;"><span class="math inline">\(\hookleftarrow\)</span> Perspective: Iterative Bayesian Active Learning (Baudrot &amp; Charles, 2018)</span></p>
-<p><strong>Feedback loop (<code>Stage 2</code> <span class="math inline">\(\rightarrow\)</span> <code>Synthetic Designs</code> <span class="math inline">\(\mathcal{E}_i\)</span>):</strong> Stage 2 acts as a fast surrogate to propose the next informative experimental design <span class="math inline">\(\mathcal{E}^* = \arg\max D_{KL}\)</span> under 3Rs constraints—avoiding brute-force MCMC across thousands of uninformative protocols.</p>
 </div>
-<div class="flex-row" style="gap: 18px; margin-top: 14px;">
+</div>
+</div>
+<div class="wf-loop fragment">
+<p><span class="card-title" style="font-size: 0.96em; color: #7b1fa2; margin-bottom: 4px;"><span class="math inline">\(\hookleftarrow\)</span> Perspective: Iterative Bayesian Active Learning (Baudrot &amp; Charles, 2018)</span></p>
+<p><strong>Feedback loop (<code>Stage 2</code> <span class="math inline">\(\rightarrow\)</span> <code>Synthetic Designs</code> <span class="math inline">\(\mathcal{E}_i\)</span>):</strong> Stage 2 acts as a fast surrogate to propose the next most informative experimental design <span class="math inline">\(\mathcal{E}^*\)</span> that maximizes parameter uncertainty reduction under 3Rs constraints—avoiding brute-force MCMC across thousands of uninformative protocols.</p>
+</div>
+<div class="flex-row" style="gap: 18px; margin-top: 12px;">
 <div class="flex-col box-grey" style="margin-bottom: 0;">
-<p><span class="card-title" style="font-size: 0.98em; color: #005a8c; margin-bottom: 5px;">Immediate Goal</span></p>
+<p><span class="card-title" style="font-size: 0.96em; color: #005a8c; margin-bottom: 4px;">Immediate Goal</span></p>
 <p>Move from identifying <em>which</em> features matter to quantifying <strong>actionable design thresholds</strong> that balance statistical precision with the 3Rs.</p>
 </div>
 <div class="flex-col box-grey" style="margin-bottom: 0;">
-<p><span class="card-title" style="font-size: 0.98em; color: #005a8c; margin-bottom: 5px;">Longer-Term Thesis Horizon</span></p>
+<p><span class="card-title" style="font-size: 0.96em; color: #005a8c; margin-bottom: 4px;">Longer-Term Thesis Horizon</span></p>
 <p>Once reliable model-guided designs are validated, extend the GUTS framework to combined <strong>chemical + climate-change stressors</strong>.</p>
 </div>
 </div>
 <aside class="notes">
-<p>Explain how Stage 2 expands in the prospective phase: we draw empirical organism–substance archetypes, generate synthetic designs E_i spanning poor to model-guided protocols, simulate survival data N_i, refit GUTS/DR, and validate recommendations via empirical data thinning. Highlight the dashed purple feedback loop as a key bridge to Baudrot &amp; Charles (2018) and Discussion Point 3: using Stage 2 as a surrogate for iterative Bayesian Active Learning (maximising Kullback–Leibler divergence) under 3Rs constraints.</p>
+<p>Tie the left thumbnail directly back to the historical response surface gaps we just saw: instead of extrapolating blindly, we sample empirical organism–substance archetypes, systematically fill the design space with synthetic protocols E_i, forward-simulate survival curves N_i, refit GUTS/DR, and validate recommendations via empirical data thinning. Keep the dashed purple feedback loop conceptual here—Stage 2 acting as a fast surrogate to select the next most informative protocol under 3Rs constraints—before bringing the formal formulation into Discussion Point 3.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1680,12 +1884,12 @@ assets/images/ws2/ws2_repo_qr.png
 <section id="open-methodological-challenges-ecotox-leftrightarrow-aibioinformatics-discussion" class="slide level2 smaller">
 <h2>Open Methodological Challenges: Ecotox <span class="math inline">\(\leftrightarrow\)</span> AI/Bioinformatics Discussion</h2>
 <p class="slide-lead">
-Moving from our Proof-of-Concept to the extended L-shaped Stage 1 + Stage 2 pipeline and prospective simulation—your input is welcome.
+Moving from our Proof-of-Concept to the extended Stage 1 + Stage 2 pipeline and prospective simulation—your input is welcome.
 </p>
 <div class="flex-row" style="gap: 18px; margin-top: 12px; min-height: 430px;">
 <div class="flex-col box-purple" style="margin-bottom: 0; justify-content: flex-start;">
 <p><span class="card-title" style="font-size: 1.06em; color: #7b1fa2; margin-bottom: 12px;">1. Multi-Response Learning</span></p>
-<p>Expanding Stage 1 (the L-shaped architecture) to jointly include <strong>Precision</strong> (<code>CV</code>, <code>PUI</code>, <code>GoK</code>), <strong>Goodness-of-Fit (GoF)</strong>, and <strong>Predictive Capacity</strong> yields correlated targets <span class="math inline">\(Y(\theta)\)</span>.</p>
+<p>Expanding Stage 1 to jointly include <strong>Precision</strong> (<code>CV</code>, <code>PUI</code>, <code>GoK</code>), <strong>Goodness-of-Fit (GoF)</strong>, and <strong>Predictive Capacity</strong> yields correlated targets <span class="math inline">\(Y(\theta)\)</span>.</p>
 <p>With <span class="math inline">\(n \approx 200\)</span> and collinear design features <span class="math inline">\(X(\mathcal{E})\)</span>, should we move to <strong>multi-output algorithms</strong> (e.g., Multivariate Random Forests) or keep separate single-target models?</p>
 </div>
 <div class="flex-col box-teal" style="margin-bottom: 0; justify-content: flex-start;">
@@ -1778,8 +1982,8 @@ FR BioEEnViS Logo
 'controlsAuto': true,
 'previewLinksAuto': false,
 'pdfSeparateFragments': false,
-'autoAnimateEasing': "ease",
-'autoAnimateDuration': 1,
+'autoAnimateEasing': "ease-in-out",
+'autoAnimateDuration': 0.75,
 'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'smaller': false,
