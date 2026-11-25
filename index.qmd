@@ -1,6 +1,6 @@
 ---
 title: "Let's Talk About AI"
-subtitle: "FR BioEEnViS Knowledge-Sharing Seminar · LBBE & INRAE (December 16, 2026)"
+subtitle: "FR BioEEnViS Knowledge-Sharing Seminar · LBBE & INRAE"
 format:
   html:
     theme:
@@ -9,4 +9,31 @@ format:
     toc: false
 ---
 
-Landing page under construction. Use the top navigation bar to access **WS1: AI Philosophy**, **WS2: Tech Case Study**, and **References**.
+::: {.callout-note}
+## Work in Progress
+These workshop materials and slide decks are currently under active development ahead of the seminar on **December 16, 2026**. Content, preliminary results, and references will be updated progressively.
+:::
+
+## Overview
+
+This knowledge-sharing seminar is a restitution of the FRB-CESAB intensive training course [**AI for Ecologists: A Toolkit**](https://ai-ecol.github.io/), supported by a mobility grant from **FR BioEEnViS**. The session bridges conceptual and epistemic foundations of AI/ML with an applied ecotoxicological case study, followed by an open inter-team discussion between ecotoxicologists and bioinformatics/AI researchers.
+
+- **Date & Time:** Wednesday, December 16, 2026 · 09:30–11:45 CET
+- **Format:** Hybrid
+- **In-person:** Salle de formation Legay (3rd floor), LBBE – Université Claude Bernard Lyon 1
+- **Online (Visio):** <https://visio.numerique.gouv.fr/icm-tmlx-fvj> *(access code shared via the FR BioEEnViS announcement email)*
+
+## Program & Materials
+
+| Time (CET) | Session | Materials |
+| :--- | :--- | :--- |
+| **09:30 – 10:30** | **Part 1 — AI Philosophy, Taxonomy & ML Foundations** | [Open WS1 Slides](01_philosophy_seminar.html) |
+| **10:30 – 10:45** | *Coffee Break* | — |
+| **10:45 – 11:45** | **Part 2 — Applied ML Case Study in Ecotoxicology & Inter-Team Discussion** | [Open WS2 Slides](02_technical_workshop.html) |
+| **Ongoing** | **Curated Sources & Further Reading** | [Open References](03_references.html) |
+
+## Author & Credits
+
+**Anthony Fow Esteves** · PhD Researcher  
+LBBE – Université Claude Bernard Lyon 1 (UMR CNRS 5558) | Ecotox – UR RiverLy (INRAE)  
+Source repository: [github.com/AnthonyFow/bioeenvis_ai_workshop](https://github.com/AnthonyFow/bioeenvis_ai_workshop) · Supported by **FR BioEEnViS**.
